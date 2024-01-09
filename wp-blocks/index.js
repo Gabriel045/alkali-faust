@@ -9,7 +9,6 @@ import AcfProvideSolutions from "./AcfProvideSolutions";
 import AcfSlider from "./AcfSlider";
 import AcfTestimonials from "./AcfTestimonials";
 import AcfTextImageBlock from "./AcfTextImageBlock";
-import CoreCode from "./CoreCode";
 
 export default {
     AcfAlkali,
@@ -24,5 +23,4 @@ export default {
     AcfTestimonials,
     AcfTestimonials,
     AcfTextImageBlock,
-    CoreCode
 }

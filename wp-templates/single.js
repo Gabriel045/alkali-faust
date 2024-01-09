@@ -70,7 +70,6 @@ Component.query = gql`
   ${BlogInfoFragment}
   ${NavigationMenu.fragments.entry}
   ${FeaturedImage.fragments.entry}
-  ${components.CoreCode.fragments.entry}
   ${components.AcfAlkali.fragments.entry}
   ${components?.AcfGravityForm.fragments.entry}
   ${components.AcfAlkali.fragments.entry}
@@ -94,7 +93,6 @@ Component.query = gql`
         renderedHtml
         id: clientId
         parentClientId
-        ...${components.CoreCode.fragments.key}
         ...${components.AcfAlkali.fragments.key}
         ...${components.AcfGravityForm.fragments.key}
       }
