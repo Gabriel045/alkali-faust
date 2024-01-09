@@ -6,7 +6,7 @@ export default function AcfHeroHome(props) {
   const title = props.heroHomeBlock?.title
   const paragraph = props.heroHomeBlock?.paragraph
   const icons = props.heroHomeBlock?.clientsIcon?.nodes
-  //console.log('all props',icons);
+  console.log('all icons',icons);
 
 
 
