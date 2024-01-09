@@ -70,7 +70,10 @@ Page.query = gql`
 Page.variables = () => {
   return {
     headerLocation: MENUS.PRIMARY_LOCATION,
-    footerLocation: MENUS.FOOTER_LOCATION
+    footerLocation: MENUS.HOW_WE_HELP,
+    footerLocation2: MENUS.WHO_WE_HELP,
+    footerLocation3: MENUS.WHY_APPLY,
+    footerLocation4: MENUS.RESOURCES,
   };
 };
 

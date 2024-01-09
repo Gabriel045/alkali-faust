@@ -119,8 +119,11 @@ Component.query = gql`
 Component.variables = ({ databaseId }, ctx) => {
   return {
     databaseId,
-    headerLocation: MENUS.PRIMARY_LOCATION,
-    footerLocation: MENUS.FOOTER_LOCATION,
+    headerLocation:  MENUS.PRIMARY_LOCATION,
+    footerLocation:  MENUS.HOW_WE_HELP,
+    footerLocation2: MENUS.WHO_WE_HELP,
+    footerLocation3: MENUS.WHY_APPLY,
+    footerLocation4: MENUS.RESOURCES,
     asPreview: ctx?.asPreview,
   };
 };
