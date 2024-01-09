@@ -6,7 +6,9 @@ export default function AcfHeroHome(props) {
   const title = props.heroHomeBlock?.title
   const paragraph = props.heroHomeBlock?.paragraph
   const icons = props.heroHomeBlock?.clientsIcon?.nodes
-  console.log('icons',icons);
+  //console.log('all props',icons);
+
+
 
   return (
     <section className="relative bg-background">
