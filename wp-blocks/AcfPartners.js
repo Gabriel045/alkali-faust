@@ -4,13 +4,13 @@ import Link from 'next/link';
 import {PartnerResponsive} from '../components';
 
 
-export default function AcfPartners(props) {
+export default function AcfPartners({data}) {
 
   // Load values and assign defaults.
-  const title = props.partnersBlock?.title
-  const headline = props.partnersBlock?.headline
-  const columns = props.partnersBlock?.columns[0]
-  const cards = props.partnersBlock?.cards
+  const title = data.partnersBlock?.title
+  const headline = data.partnersBlock?.headline
+  const columns = data.partnersBlock?.columns[0]
+  const cards = data.partnersBlock?.cards
 
   //console.log('all props',props);
   return (

@@ -3,12 +3,12 @@ import {useRef,useState,useEffect} from 'react';
 import {gql} from '@apollo/client';
 import {SliderResponsive} from '../components';
 
-export default function AcfSlider(props) {
+export default function AcfSlider({data}) {
 
-  const background = props.sliderBlock?.background
-  const title = props.sliderBlock?.title
-  const headline = props.sliderBlock?.headline
-  const sliderItems = props.sliderBlock?.sliderItems
+  const background = data.sliderBlock?.background
+  const title = data.sliderBlock?.title
+  const headline = data.sliderBlock?.headline
+  const sliderItems = data.sliderBlock?.sliderItems
 
   const steps = ["01. Discovery","02. Design","03. Development","04. Supporty"];
 

@@ -3,11 +3,11 @@ import {gql} from '@apollo/client';
 import {TestimonialResponsive} from '../components';
 
 
-export default function AcfTestimonials(props) {
+export default function AcfTestimonials({data}) {
   //console.log('all props',props);
 
-  const title = props.testimonialBlock?.title
-  const testimonials = props.testimonialBlock?.testimonial
+  const title = data.testimonialBlock?.title
+  const testimonials = data.testimonialBlock?.testimonial
 
   return (
     <section className=" bg-background relative">

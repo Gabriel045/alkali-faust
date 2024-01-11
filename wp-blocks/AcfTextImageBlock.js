@@ -1,19 +1,19 @@
 import React from 'react';
 import {gql} from '@apollo/client';
 
-export default function AcfTextImageBlock(props) {
-
+export default function AcfTextImageBlock({data}) {
+  
   // Load values and assign defaults.
-  const background = props.textImageBlock?.background
-  const image_position = props.textImageBlock?.imagePosition[0]
-  const image = props.textImageBlock?.image?.node?.sourceUrl
-  const title = props.textImageBlock?.title
-  const paragraph = props.textImageBlock?.paragraph
-  const learnMoreCta = props.textImageBlock?.learnMoreCta[0]
-  const learnMoreUrl = props.textImageBlock?.learnMoreUrl
+  const background = data.textImageBlock?.background
+  const image_position = data.textImageBlock?.imagePosition[0]
+  const image = data.textImageBlock?.image?.node?.sourceUrl
+  const title = data.textImageBlock?.title
+  const paragraph = data.textImageBlock?.paragraph
+  const learnMoreCta = data.textImageBlock?.learnMoreCta[0]
+  const learnMoreUrl = data.textImageBlock?.learnMoreUrl
 
   return (
-    <section className={`text-block ${background} `}>
+    <section className={`text-block ${background}`}>
       <div className={`block_content flex flex-wrap lg:flex-nowrap gap-[80px] flex-${image_position}`} >
         <div className= {`flex flex-wrap lg:flex-nowrap gap-[80px] flex-${image_position} `}>
           {image.length > 0 &&
