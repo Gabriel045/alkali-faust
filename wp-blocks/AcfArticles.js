@@ -3,7 +3,6 @@ import {useQuery,gql} from '@apollo/client';
 import {ArticleSlider} from '../components';
 
 
-
 export default function AcfArticles(props) {
   const title = props.data.articlesBlock?.title 
   const {data} = useQuery(GET_POST);

@@ -1,7 +1,6 @@
 import React from 'react';
 import {gql} from '@apollo/client';
-import Image from 'next/image'
-
+import Image from "next/future/image";
 
 export default function AcfTextImageBlock({data}) {
   
@@ -20,17 +19,36 @@ export default function AcfTextImageBlock({data}) {
         <div className= {`flex flex-wrap lg:flex-nowrap gap-[80px] flex-${image_position} `}>
           {image.length > 0 &&
             <div className="w-full lg:w-[45%]">
-              <img loading="lazy"  className="lg:h-full object-cover object-center m-auto rounded-[5px] lg:m-0" src={image} alt="" />
+              <Image
+                src={image}
+                width={0}
+                height={0}
+                sizes="100vw"
+                layout="responsive"
+                style={{width: '100%',height: '100%', objectFit: "cover",borderRadius: '5px', }} // optional
+                alt="Picture of the author"
+              />
+              {/*<img loading="lazy"  className="lg:h-full object-cover object-center m-auto rounded-[5px] lg:m-0" src={image} alt="" />*/}
             </div>
           }
-          <div className={`${image.length > 0 ? 'w-full lg:w-[50%]' : 'full'} relative lg:flex lg:flex-col lg:justify-center`}>
+          <div className={`${image.length > 0 ? 'w-full lg:w-[50%]' : 'full'} lg:flex lg:flex-col lg:justify-center relative`}>
             <h3 className="z-50 relative"> {title} </h3>
             <p className="paragraph text-[#929292] py-[32px] z-50 relative" dangerouslySetInnerHTML={{__html: paragraph ?? ''}} /> 
             {learnMoreCta == "Yes" &&
               <a href={learnMoreUrl} className="button_custom inline-block">Learn More</a>
             }
             { background == "light" ? 
-              <img loading="lazy"  className={`hidden lg:block absolute z-10 ${image_position == " row" ? 'right-0 bottom-0 ' : 'right-[60px] bottom-[20px]' } `}  src={require('../assets/images/hexagon-4.svg')?.default?.src} alt="" />
+              <div className='absolute hidden lg:block z-[1] w-[368px] h-[416px] bottom-0 right-0'>
+              <Image
+               src={require('../assets/images/hexagon-4.svg')}
+               width={368}
+               height={416}
+               sizes="100vw"
+               layout="responsive"
+                style={{width: '100%',height: '100%',objectFit: "cover"}} // optional
+               alt="Picture of the author"/>
+            </div>
+              //<img loading="lazy"  className={`hidden lg:block absolute z-10 ${image_position == " row" ? 'right-0 bottom-0 ' : 'right-[60px] bottom-[20px]' } `}  src={require('../assets/images/hexagon-4.svg')?.default?.src} alt="" />
             :
               <img loading="lazy"  className={`hidden lg:block absolute z-10 ${image_position == " row" ? 'right-0 bottom-0 ' : 'right-[60px] bottom-[20px]'} `}  src={require('../assets/images/hexagon-5.svg')?.default?.src}  alt="" />
             }

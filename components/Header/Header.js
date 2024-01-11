@@ -5,6 +5,8 @@ import {Container,Logo,MenuResponsive,NavigationMenu,SkipNavigationLink} from '.
 import styles from './Header.module.scss';
 import {useQuery,gql} from '@apollo/client';
 import {setRefreshTimer} from '@faustwp/core/dist/cjs/auth';
+import Image from "next/future/image";
+
 
 
 let cx = classNames.bind(styles);
@@ -35,7 +37,16 @@ export default function Header({
         <div className={`${reposition ? "reposition" : ""} container gap-0 transition-all duration-500 ease-out max-w-[1440px] px-[20px]  lg:px-[100px] xl:px-[150px] py-[30px] w-full items-center absolute z-[100]  flex-nowrap ` + cx('navbar')}>
         <div key="logo" className='w-1/2 lg:w-[16%]'>
           <Link href="/">
-            <a className={cx('title')}> <img className="w-[150px]" src={logoUrl} /> </a>
+            <a className={cx('title')}> 
+              <Image
+                src={logoUrl}
+                width={150}
+                height={32}
+                style={{}} // optional
+                alt="Picture of the author"
+              />
+              {/*<img className="w-[150px]" src={logoUrl} /> */}
+            </a>
           </Link>
         </div>
           <NavigationMenu

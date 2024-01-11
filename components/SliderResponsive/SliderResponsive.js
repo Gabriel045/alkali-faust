@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import Slider from "react-slick";
 import Link from 'next/link';
+import Image from "next/future/image";
 
 
 export default class SimpleSlider extends Component {
@@ -47,13 +48,29 @@ export default class SimpleSlider extends Component {
                                         <Link href={card.learnMore ? card.learnMore : ''}>
                                             <a href="#" className="text-[#0AADE5] text-[16px] flex">
                                                 Learn More
-                                                <img loading="lazy"  className="mb-[-2px] " src={require('../../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
+                                                <Image
+                                                    src={require('../../assets/images/arrow-right-blue.svg')}
+                                                    width={21}
+                                                    height={25}
+                                                    style={{}} // optional
+                                                    alt="Picture of the author"
+                                                />
+                                                {/*<img loading="lazy"  className="mb-[-2px] " src={require('../../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />*/}
                                             </a>
                                         </Link>
                                     </div>
 
-                                    <div className="flex lg:block items-end  rounded-[10px] p-[20px] lg:p-[50px] relative h-[524px] z-50" style={style}>
-                                        <div className="flex flex-wrap lg:flex-nowrap">
+                                    <div className="flex lg:block items-end   relative h-[524px] z-50">
+                                        <Image
+                                            src={img}
+                                            width={0}
+                                            height={0}
+                                            sizes="100vw"
+                                            layout="responsive"
+                                            style={{width: '100%',height: '100%',objectFit: "cover",borderRadius: '10px'}} // optional
+                                            alt="Picture of the author"
+                                        />
+                                        <div className="flex flex-wrap lg:flex-nowrap absolute p-[20px] pb-[40px] lg:p-[50px]">
                                             <div className="w-full lg:w-[60%]">
                                                 <p className="text-white text-[23px] font-[600] leading-[37px] mb-[25px] lg:mb-0"> {card.textImage} </p>
                                             </div>
@@ -63,7 +80,6 @@ export default class SimpleSlider extends Component {
 
                                         </div>
                                     </div>
-
                                 </div>
                             })
                         }

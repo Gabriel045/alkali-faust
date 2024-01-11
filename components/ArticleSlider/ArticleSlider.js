@@ -1,6 +1,8 @@
 import React,{Component} from "react";
 import Slider from "react-slick";
 import Link from 'next/link';
+import Image from "next/future/image";
+
 
 
 export default class SimpleSlider extends Component {
@@ -75,14 +77,29 @@ export default class SimpleSlider extends Component {
                             posts.map((card,index) => {
                                 return <div key={index} className="rounded-[10px] bg-[#F9F9F9] slick-slide">
                                     <div>
-                                        <img loading="lazy"  className="h-[250px] w-full object-cover rounded-t-[10px]" src={card?.node?.featuredImage?.node?.sourceUrl} alt="" />
+                                        <Image
+                                            src={card?.node?.featuredImage?.node?.sourceUrl}
+                                            width={250}
+                                            height={250}
+                                            style={{width:'100%', height:'250px',objectFit:'cover'}} // optional
+                                            className={'rounded-t-[10px]'}
+                                            alt="Picture of the author"
+                                        />
+                                        {/*<img loading="lazy"  className="h-[250px] w-full object-cover rounded-t-[10px]" src={card?.node?.featuredImage?.node?.sourceUrl} alt="" />*/}
                                     </div>
                                     <div className="py-[45px] px-[35px] articles-border">
                                         <p className="text-[#232323] text-[22px] font-[600] leading-[23px]"> {card?.node?.title} </p>
                                         <p className="text-[#525252] text-[16px] font-[400] my-[44px]" dangerouslySetInnerHTML={{__html: card?.node?.excerpt ?? ''}} />
                                         <a href="" className="text-[#0AADE5] text-[16px] flex hover-arrow"> 
                                             Resource 
-                                            <img loading="lazy"  className="ml-[5px] mt-[2px]" src={require('../../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
+                                            <Image
+                                                src={require('../../assets/images/arrow-right-blue.svg')}
+                                                width={21}
+                                                height={25}
+                                                style={{}} // optional
+                                                alt="Picture of the author"
+                                            />
+                                            {/*<img loading="lazy"  className="ml-[5px] mt-[2px]" src={require('../../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />*/}
                                         </a>
                                     </div>
                                 </div>

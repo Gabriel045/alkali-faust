@@ -2,6 +2,8 @@ import React from "react";
 import {useRef,useState,useEffect} from 'react';
 import {gql} from '@apollo/client';
 import {SliderResponsive} from '../components';
+import Image from "next/future/image";
+
 
 export default function AcfSlider({data}) {
 
@@ -53,7 +55,8 @@ export default function AcfSlider({data}) {
                   backgroundImage: `url(${img})`,
                   backgroundSize: 'cover'
                 };
-                return <div ref={refs.current[index]} key={index} onClick={() => slide(steps[index])} id={steps[index]} className={`w-[40%] cursor-pointer slider-item disable  py-[15px] mb-[40px] last:mb-0 border-l-[5px] border-[#7D7D7D]`} >
+                return <div ref={refs.current[index]} key={index} onClick={() => slide(steps[index])} id={steps[index]}
+                  className={`w-[40%] cursor-pointer slider-item disable  py-[15px] mb-[40px] last:mb-0 border-l-[5px] border-[#7D7D7D]`} >
                   <h4 className="" > {steps[index]} </h4>
                   <div className="item-content">
                     <p className="text-[16px] font-[400] text-[#23242499] pt-[26px] pb-[16px]"> {item.paragraph} </p>
@@ -63,15 +66,23 @@ export default function AcfSlider({data}) {
                   </div>
 
                   {/* image */}
-                  <div className="w-[56%] absolute right-0 top-0 side-image h-[700px] rounded-[10px] px-[50px] xl:px-[50px] sm:px-[20px] py-[50px] z-50" style={style}>
-                    <div className="flex h-full items-end">
+                  <div className="w-[56%] side-image h-[700px] rounded-[10px]  z-50 absolute right-0 top-0 side-image">
+                    <Image
+                      src={img}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      layout="responsive"
+                      style={{width: '100%',height: '100%',objectFit: "cover",borderRadius: '10px'}} // optional
+                      alt="Picture of the author"
+                    />
+                    <div className="flex h-full items-end absolute top-0  px-[50px] xl:px-[50px] sm:px-[20px] py-[50px]">
                       <div className="w-[60%]">
                         <p className="image-text text-white text-[23px] font-[600] leading-[37px]">{item.textImage} </p>
                       </div>
                       <div className="w-[40%] flex justify-end items-end">
                         <span className="button-transparent">Learn more</span>
                       </div>
-
                     </div>
                   </div>
                 </div>

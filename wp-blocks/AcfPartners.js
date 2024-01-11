@@ -2,7 +2,7 @@ import React from 'react';
 import {gql} from '@apollo/client';
 import Link from 'next/link';
 import {PartnerResponsive} from '../components';
-
+import Image from "next/future/image";
 
 export default function AcfPartners({data}) {
 
@@ -15,7 +15,7 @@ export default function AcfPartners({data}) {
   //console.log('all props',props);
   return (
     <section key="Partners" className="relative">
-      <img loading="lazy"  className="hidden lg:block absolute z-10 top-[40%] left-0 rotate-180" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
+      <img loading="lazy" className="hidden lg:block absolute z-10 top-[40%] left-0 rotate-180" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
       <div className="block_content">
         <div className="pb-[40px] lg:pb-[80px]">
           <h2 className="text-center text-[#232323] m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />
@@ -25,13 +25,31 @@ export default function AcfPartners({data}) {
         <div className="hidden lg:flex flex-row flex-wrap">
           {
             cards.map((card,index) => {
-             
-               return <div key={index} className={` ${columns == "four" ? 'lg:w-1/4 lg:px-[60px]' : 'lg:w-1/3 lg:px-[120px]'} w-1/2  pt-[70px] relative z-50  flex items-center cursor-pointer`} >
+
+              return <div key={index} className={` ${columns == "four" ? 'lg:w-1/4 lg:px-[60px]' : 'lg:w-1/3 lg:px-[120px]'} w-1/2  pt-[70px] relative z-50  flex items-center cursor-pointer`} >
                 {card.url != null ?
                   <Link href={card.url}>
-                     <a target="_blank"><img loading="lazy"  className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" /></a>
+                    <a target="_blank">
+                      <Image
+                        src={card.icon?.nodes[0]?.sourceUrl}
+                        width={0}
+                        height={0}
+                        style={{width: '100%',height: '100%'}} // optional
+                        className="icon_filter"
+                        alt="Picture of the author"
+                      />
+                      {/*<img loading="lazy"  className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />*/}
+                    </a>
                   </Link> :
-                   <img loading="lazy"  className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
+                    <Image
+                        src={card.icon?.nodes[0]?.sourceUrl}
+                        width={0}
+                        height={0}
+                        style={{width: '100%',height: '100%'}} // optional
+                        alt="Picture of the author"
+                        className="icon_filter"
+                      />
+                  //<img loading="lazy" className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
                 }
               </div>
             })
@@ -41,7 +59,7 @@ export default function AcfPartners({data}) {
 
 
       </div>
-      <img loading="lazy"  className="hidden lg:block absolute z-10 top-[10%] right-0" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
+      <img loading="lazy" className="hidden lg:block absolute z-10 top-[10%] right-0" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
     </section>
 
   );

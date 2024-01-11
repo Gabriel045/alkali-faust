@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import Slider from "react-slick";
 import Link from 'next/link';
+import Image from "next/future/image";
 
 
 export default class SimpleSlider extends Component {
@@ -35,10 +36,25 @@ export default class SimpleSlider extends Component {
                             return <div key={index} className="slick-testimonial slick-slide w-1/2 lg:w-1/4 lg:px-[30px] lg:pt-[51px] relative z-50 lg:h-auto flex items-center">
                                 {card.url != null ?
                                     <Link href={card.url}>
-                                        <a target="_blank"><img loading="lazy" className="icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" /></a>
+                                        <a target="_blank">
+                                            <Image
+                                                src={card.icon?.nodes[0]?.sourceUrl}
+                                                width={0}
+                                                height={0}
+                                                style={{width: '100%',height: '100%'}} // optional
+                                                alt="Picture of the author"
+                                                className="icon_filter"
+                                            />
+                                        </a>
                                     </Link> :
-                                    <img loading="lazy" className="icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
-                                }
+                                    <Image
+                                        src={card.icon?.nodes[0]?.sourceUrl}
+                                        width={0}
+                                        height={0}
+                                        style={{width: '100%',height: '100%'}} // optional
+                                        alt="Picture of the author"
+                                        className="icon_filter"
+                                    />}
                             </div>
                         })
 

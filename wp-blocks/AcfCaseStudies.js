@@ -1,6 +1,7 @@
 import React from 'react';
 import {gql} from '@apollo/client';
 import Link from 'next/link';
+import Image from "next/future/image";
 
 
 export default function AcfCaseStudies({data}) {
@@ -22,14 +23,28 @@ export default function AcfCaseStudies({data}) {
             cards.map((card,index) => { 
               return <div key={index} className="lg:w-[48%] px-[44px] py-[46px] rounded-[10px] mb-[35px] lg:mb-0 lg:first:mr-[4%] border-custom z-50">
                 <div className="relative z-50 flex justify-start pb-[23px] h-[100px]">
-                  <img loading="lazy" className="max-w-[150px]" src={card.logo?.nodes[0]?.sourceUrl} alt="" />
+                  <Image
+                    src={card.logo?.nodes[0]?.sourceUrl}
+                    width={150}
+                    height={0}
+                    style={{}} // optional
+                    alt="Picture of the author"
+                  />
+                  {/*<img loading="lazy" className="max-w-[150px]" src={card.logo?.nodes[0]?.sourceUrl} alt="" />*/}
                 </div>
                 <p className="text-[#FFF] font-[600] text-[24px] relative"> {card?.title} </p>
                 <p className="text-[18px] font-[400] text-[#929292] pt-[23px] pb-[37px] relative"> {card?.paragraph} </p>
                 <Link href={card?.link ? card?.link : ''}>
                   <a target="_blank" className="text-[#0AADE5] text-[16px] flex relative hover-arrow" > 
                     Learn More 
-                    <img loading="lazy"  className="mb-[-2px] " src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
+                    <Image
+                      src={require('../assets/images/arrow-right-blue.svg')}
+                      width={21}
+                      height={25}
+                      style={{}} // optional
+                      alt="Picture of the author"
+                    />
+                    {/*<img loading="lazy"  className="mb-[-2px] " src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />*/}
                   </a>  
                 </Link> :
               </div>

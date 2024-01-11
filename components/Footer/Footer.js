@@ -2,6 +2,8 @@ import classNames from 'classnames/bind';
 import {Container,NavigationMenu} from '../../components';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
+import Image from "next/future/image";
+
 
 
 let cx = classNames.bind(styles);
@@ -19,8 +21,25 @@ export default function Footer({footerTexts:{title, paragraph} , socialMedia:{fa
       <Container>
         <section className=" bg-background relative">
           <div className="w-full py-[30px] px-[40px] lg:px-[100px] max-w-[1440px] tablet:px-[150px]">
-            <img loading="lazy"  className="lg:block hidden" src={require('../../assets/images/alkali-line.svg')?.default?.src} alt="" />
-            <img loading="lazy"  className="lg:hidden block w-full" src={require('../../assets/images/alkali-line-resp.svg')?.default?.src} alt="" />
+            <Image
+              src={require('../../assets/images/alkali-line.svg')}
+              width={0}
+              height={0}
+              style={{width: '100%',height: 'auto'}} // optional
+              className={'lg:block hidden'}
+              alt="Picture of the author"
+            />
+            <Image
+              src={require('../../assets/images/alkali-line-resp.svg')}
+              width={0}
+              height={0}
+              style={{width: '100%',height: 'auto'}} // optional
+              className={'lg:hidden block w-full'}
+              alt="Picture of the author"
+            />
+
+            {/*<img loading="lazy"  className="lg:block hidden" src={require('../../assets/images/alkali-line.svg')?.default?.src} alt="" />
+            <img loading="lazy"  className="lg:hidden block w-full" src={require('../../assets/images/alkali-line-resp.svg')?.default?.src} alt="" />*/}
                 <div className="mt-[100px] flex flex-wrap lg:flex-nowrap lg:gap-[100px]">
                   <div className="mb-[90px] lg:mb-0 w-full lg:w-[30%] text-center lg:text-start">
                 <h4 className="text-[#fff] text-[22px] font-[600] ">{title}</h4>
