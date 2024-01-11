@@ -1,3 +1,5 @@
+
+import React,{lazy} from "react";
 import {useQuery,gql} from '@apollo/client';
 import * as MENUS from '../constants/menus';
 import {BlogInfoFragment, themeGeneralSettingsFragment} from '../fragments/GeneralSettings';
@@ -15,14 +17,41 @@ import {
 import {flatListToHierarchical} from '@faustwp/core';
 import {WordPressBlocksViewer} from '@faustwp/blocks';
 import components from '../wp-blocks';
-import AcfSlider from '../wp-blocks/AcfSlider';
-import AcfHeroHome from '../wp-blocks/AcfHeroHome';
-import AcfProvideSolutions from '../wp-blocks/AcfProvideSolutions';
-import AcfTextImageBlock from '../wp-blocks/AcfTextImageBlock';
-import AcfPartners from '../wp-blocks/AcfPartners';
-import AcfCaseStudies from '../wp-blocks/AcfCaseStudies';
-import AcfArticles from '../wp-blocks/AcfArticles';
-import AcfTestimonials from '../wp-blocks/AcfTestimonials';
+import dynamic from 'next/dynamic'
+
+const AcfHeroHome = dynamic({
+  loader: () => import('../wp-blocks/AcfHeroHome')
+})
+const AcfSlider = dynamic({
+  loader: () => import('../wp-blocks/AcfSlider')
+})
+const AcfProvideSolutions = dynamic({
+  loader: () => import('../wp-blocks/AcfProvideSolutions')
+})
+const AcfTextImageBlock = dynamic({
+  loader: () => import('../wp-blocks/AcfTextImageBlock')
+})
+const AcfPartners = dynamic({
+  loader: () => import('../wp-blocks/AcfPartners')
+})
+const AcfCaseStudies = dynamic({
+  loader: () => import('../wp-blocks/AcfCaseStudies')
+})
+const AcfArticles = dynamic({
+  loader: () => import('../wp-blocks/AcfArticles')
+})
+const AcfTestimonials = dynamic({
+  loader: () => import('../wp-blocks/AcfTestimonials')
+})
+
+//import AcfHeroHome from '../wp-blocks/AcfHeroHome';
+//import AcfSlider from '../wp-blocks/AcfSlider';
+//import AcfProvideSolutions from '../wp-blocks/AcfProvideSolutions';
+//import AcfTextImageBlock from '../wp-blocks/AcfTextImageBlock';
+//import AcfPartners from '../wp-blocks/AcfPartners';
+//import AcfCaseStudies from '../wp-blocks/AcfCaseStudies';
+//import AcfArticles from '../wp-blocks/AcfArticles';
+//import AcfTestimonials from '../wp-blocks/AcfTestimonials';
 
 export default function Component(props) {
   const {data} = useQuery(Component.query,{
