@@ -112,7 +112,6 @@ export default function Component(props) {
           {
             blocks.map((block) => {
               if(block.__typename === "AcfHeroHome") {
-                console.log(block.__typename);
                  return <AcfHeroHome data={block}/>
               } else if(block.__typename === "AcfSlider") {
                 return <AcfSlider data={block} />
