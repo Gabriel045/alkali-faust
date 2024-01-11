@@ -1,14 +1,19 @@
 import React from 'react';
 import {gql} from '@apollo/client';
+import {useRef,useState,useEffect} from 'react';
 
-export default function AcfHeroHome(props) {
+
+export default function AcfHeroHome({data}) {
+
+  //const [icons,setsicons] = useState([])
+  //useEffect(() => {
+  //  setsicons(data.heroHomeBlock?.clientsIcon?.nodes)
+  //},[]);
+  
   // Load values and assign defaults.
-  const title = props.heroHomeBlock?.title
-  const paragraph = props.heroHomeBlock?.paragraph
-  const icons = props.heroHomeBlock?.clientsIcon?.nodes
-  console.log('all icons',icons);
-
-
+  const title = data.heroHomeBlock?.title
+  const paragraph = data.heroHomeBlock?.paragraph
+  const icons = data.heroHomeBlock?.clientsIcon?.nodes
 
   return (
     <section className="relative bg-background">

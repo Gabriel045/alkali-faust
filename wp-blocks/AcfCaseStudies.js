@@ -3,11 +3,11 @@ import {gql} from '@apollo/client';
 import Link from 'next/link';
 
 
-export default function AcfCaseStudies(props) {
+export default function AcfCaseStudies({data}) {
   // Load values and assign defaults.
-  const title = props.caseStudiesBlock?.title
-  const cards = props.caseStudiesBlock?.cards
-  const browseCaseStudies = props.caseStudiesBlock?.browseCaseStudies
+  const title = data.caseStudiesBlock?.title
+  const cards = data.caseStudiesBlock?.cards
+  const browseCaseStudies = data.caseStudiesBlock?.browseCaseStudies
 
 
   return (

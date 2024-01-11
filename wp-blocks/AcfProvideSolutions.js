@@ -1,13 +1,27 @@
 import React from 'react';
 import {gql} from '@apollo/client';
+import {useRef,useState,useEffect} from 'react';
 
-export default function AcfProvideSolutions(props) {
+
+export default function AcfProvideSolutions({data}) {
   // Load values and assign defaults.
-  const background = props.provideSolutionsBlock?.background[0]
-  const title = props.provideSolutionsBlock?.title
-  const headline = props.provideSolutionsBlock?.headline
-  const cards = props.provideSolutionsBlock?.cards
-  const learnMoreLink = props.provideSolutionsBlock?.learnMoreLink
+
+  const [cards, setcards] = useState([])
+  useEffect(() => {
+    setcards(data.provideSolutionsBlock?.cards)
+  },[]);
+
+  const [title,settitle] = useState("")
+  useEffect(() => {
+    settitle(data.provideSolutionsBlock?.title)
+  },[]);
+
+
+  const background = data.provideSolutionsBlock?.background[0]
+  //const title = data.provideSolutionsBlock?.title
+  const headline = data.provideSolutionsBlock?.headline
+  //const cards = data.provideSolutionsBlock?.cards
+  const learnMoreLink = data.provideSolutionsBlock?.learnMoreLink
 
 
   return (
@@ -19,7 +33,7 @@ export default function AcfProvideSolutions(props) {
             <h2 className="text-center text-[#fff] lg:w-[38%] m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />
             <p className="paragraph sm:w-[60%] text-center text-[#929292] pt-[30px] lg:w-[55%] m-auto ">{headline} </p>
           </div>
-        }   
+        }  
         <div className="flex flex-row flex-wrap">
           { 
             cards.map((card,index)=>{

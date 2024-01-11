@@ -5,7 +5,7 @@ import {ArticleSlider} from '../components';
 
 
 export default function AcfArticles(props) {
-  const title = props.articlesBlock?.title 
+  const title = props.data.articlesBlock?.title 
   const {data} = useQuery(GET_POST);
   
     return (
