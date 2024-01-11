@@ -1,0 +1,81 @@
+query GravityForms {
+  gravityFormsForm(id: 1, idType: DATABASE_ID) {
+    formFields(first: 300) {
+      nodes {
+        id
+        type
+        cssClass
+        ... on TextField {
+          description
+          label
+          isRequired
+        }
+        ... on CheckboxField {
+          description
+          label
+          choices {
+            isSelected
+            text
+            value
+          }
+        }
+        ... on NameField {
+          description
+          label
+          inputs {
+            isHidden
+            label
+            placeholder
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+mutation submitForm{
+submitGravityFormsForm(
+    input: {
+      formId: 1
+      clientMutationId: "123abc"
+      createdBy: 1 # The user ID.
+      fieldValues: [
+        {
+          # Text field value
+          id: 1
+          value: "cabrera"
+        }
+        {
+          # MultiSelect field value
+          id: 3
+          value: "Gabriel"
+        }
+        {
+          # Address field value
+          id: 5
+          emailValues: {
+            value: "myemail@email.test"
+          }
+        }
+      ]
+      ip: "192.168.1.1" # IP address
+      saveAsDraft: false # If true, the submission will be saved as a draft entry.
+      # Set the following to validate part of a multipage form without saving the submission.
+      sourcePage: 1
+      targetPage: 0
+    }
+  ) {
+    errors {
+      id # The field that failed validation.
+      message
+    }
+    entryId # Will return null if submitting a draft entry
+    resumeToken # Will return null if submitting an entry.
+    entry {
+      # See above section on querying Entries.
+      id
+    }
+  }
+}
