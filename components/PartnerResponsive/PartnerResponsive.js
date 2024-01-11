@@ -37,7 +37,7 @@ export default class SimpleSlider extends Component {
                                     <Link href={card.url}>
                                         <a target="_blank"><img className="icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" /></a>
                                     </Link> :
-                                    <img className="icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
+                                    <img loading="lazy"  className="icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
                                 }
                             </div>
                         })

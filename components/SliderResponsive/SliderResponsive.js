@@ -47,7 +47,7 @@ export default class SimpleSlider extends Component {
                                         <Link href={card.learnMore ? card.learnMore : ''}>
                                             <a href="#" className="text-[#0AADE5] text-[16px] flex">
                                                 Learn More
-                                                <img className="mb-[-2px] " src={require('../../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
+                                                <img loading="lazy"  className="mb-[-2px] " src={require('../../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
                                             </a>
                                         </Link>
                                     </div>

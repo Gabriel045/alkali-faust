@@ -29,7 +29,7 @@ export default function AcfPartners({data}) {
                return <div key={index} className={` ${columns == "four" ? 'lg:w-1/4 lg:px-[60px]' : 'lg:w-1/3 lg:px-[120px]'} w-1/2  pt-[70px] relative z-50  flex items-center cursor-pointer`} >
                 {card.url != null ?
                   <Link href={card.url}>
-                    <a target="_blank"><img className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" /></a>
+                     <a target="_blank"><img loading="lazy"  className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" /></a>
                   </Link> :
                    <img loading="lazy"  className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
                 }
@@ -41,7 +41,7 @@ export default function AcfPartners({data}) {
 
 
       </div>
-      <img className="hidden lg:block absolute z-10 top-[10%] right-0" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
+      <img loading="lazy"  className="hidden lg:block absolute z-10 top-[10%] right-0" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
     </section>
 
   );

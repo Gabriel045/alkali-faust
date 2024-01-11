@@ -26,7 +26,7 @@ export default function AcfProvideSolutions({data}) {
 
   return (
     <section className={`relative ${background == 'Light' ? 'bg-white' : 'bg-background '} `}>
-      <img className="hidden lg:block absolute z-10 top-[100px] left-0" src={require('../assets/images/hexagon.svg')?.default?.src} alt="" />
+      <img loading="lazy"  className="hidden lg:block absolute z-10 top-[100px] left-0" src={require('../assets/images/hexagon.svg')?.default?.src} alt="" />
       <div className="block_content">
         {title.length > 0 &&
           <div className="pb-[60px] lg:pb-[90px]">

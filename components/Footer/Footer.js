@@ -19,8 +19,8 @@ export default function Footer({footerTexts:{title, paragraph} , socialMedia:{fa
       <Container>
         <section className=" bg-background relative">
           <div className="w-full py-[30px] px-[40px] lg:px-[100px] max-w-[1440px] tablet:px-[150px]">
-            <img className="lg:block hidden" src={require('../../assets/images/alkali-line.svg')?.default?.src} alt="" />
-            <img className="lg:hidden block w-full" src={require('../../assets/images/alkali-line-resp.svg')?.default?.src} alt="" />
+            <img loading="lazy"  className="lg:block hidden" src={require('../../assets/images/alkali-line.svg')?.default?.src} alt="" />
+            <img loading="lazy"  className="lg:hidden block w-full" src={require('../../assets/images/alkali-line-resp.svg')?.default?.src} alt="" />
                 <div className="mt-[100px] flex flex-wrap lg:flex-nowrap lg:gap-[100px]">
                   <div className="mb-[90px] lg:mb-0 w-full lg:w-[30%] text-center lg:text-start">
                 <h4 className="text-[#fff] text-[22px] font-[600] ">{title}</h4>

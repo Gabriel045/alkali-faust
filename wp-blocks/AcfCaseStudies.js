@@ -13,7 +13,7 @@ export default function AcfCaseStudies({data}) {
   return (
     <section className="bg-background">
       <div className="block_content relative">
-        <img className="absolute z-10 top-[15%] left-[-5%] rotate-180" src={require('../assets/images/hexagon-5.svg')?.default?.src} alt="" />
+        <img loading="lazy"  className="absolute z-10 top-[15%] left-[-5%] rotate-180" src={require('../assets/images/hexagon-5.svg')?.default?.src} alt="" />
         <div className="pb-[60px] lg:pb-[120px]">
           <h2 className="text-center text-[#fff] lg:w-[60%] m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} /> 
         </div>
@@ -22,7 +22,7 @@ export default function AcfCaseStudies({data}) {
             cards.map((card,index) => { 
               return <div key={index} className="lg:w-[48%] px-[44px] py-[46px] rounded-[10px] mb-[35px] lg:mb-0 lg:first:mr-[4%] border-custom z-50">
                 <div className="relative z-50 flex justify-start pb-[23px] h-[100px]">
-                  <img className="max-w-[150px]" src={card.logo?.nodes[0]?.sourceUrl} alt="" />
+                  <img loading="lazy" className="max-w-[150px]" src={card.logo?.nodes[0]?.sourceUrl} alt="" />
                 </div>
                 <p className="text-[#FFF] font-[600] text-[24px] relative"> {card?.title} </p>
                 <p className="text-[18px] font-[400] text-[#929292] pt-[23px] pb-[37px] relative"> {card?.paragraph} </p>
