@@ -1,0 +1,14 @@
+0000000000000000000000000000000000000000 370c7602c85ee09875661fdd00ca59222a9c8ef4 gabriel Cabrera <gabriel.cabera@gmail.com> 1702661276 -0400	branch: Created from HEAD
+370c7602c85ee09875661fdd00ca59222a9c8ef4 c90ba382b026dfde127ff9bbddd435aa99060035 gabriel Cabrera <gabriel.cabera@gmail.com> 1702661309 -0400	commit: test get all fields and submit form
+c90ba382b026dfde127ff9bbddd435aa99060035 2263b3a778cf4bd603590943c3dbe9225db37125 gabriel Cabrera <gabriel.cabera@gmail.com> 1702910035 -0400	commit: fist form subbmit success
+2263b3a778cf4bd603590943c3dbe9225db37125 404b0cf7e5faa498411f5c54824d1c8619678ed6 gabriel Cabrera <gabriel.cabera@gmail.com> 1702930419 -0400	commit: install tailwind
+404b0cf7e5faa498411f5c54824d1c8619678ed6 b1e4ffc06ad15cf3e940f224fa46ad0c8bc23042 gabriel Cabrera <gabriel.cabera@gmail.com> 1702952603 -0400	commit: validation complete
+b1e4ffc06ad15cf3e940f224fa46ad0c8bc23042 53fe39a867ec0e659dd5eedaa18b121cb0337ccd gabriel Cabrera <gabriel.cabera@gmail.com> 1702952791 -0400	commit: fix image size
+53fe39a867ec0e659dd5eedaa18b121cb0337ccd afc28199be8f253fc85c9d3cd3267d8f2c7f209e gabriel Cabrera <gabriel.cabera@gmail.com> 1703092573 -0400	commit: header
+afc28199be8f253fc85c9d3cd3267d8f2c7f209e 22d6dedf99306f83eca8826434daabe9132ddd80 gabriel Cabrera <gabriel.cabera@gmail.com> 1703109038 -0400	commit: footer ready
+22d6dedf99306f83eca8826434daabe9132ddd80 42c83fe9f281966124e70f044f8fc6013902cb6c gabriel Cabrera <gabriel.cabera@gmail.com> 1703120423 -0400	commit: add header and footer to the page template
+42c83fe9f281966124e70f044f8fc6013902cb6c 29589188ebd7ba828797e1229692f8c68252e3b3 gabriel Cabrera <gabriel.cabera@gmail.com> 1703123406 -0400	commit: fix arrow hover on the header
+29589188ebd7ba828797e1229692f8c68252e3b3 6a6332b25253b5561b645080c00ab98dd8e82ec7 gabriel Cabrera <gabriel.cabera@gmail.com> 1703284879 -0400	commit: fix contact page
+6a6332b25253b5561b645080c00ab98dd8e82ec7 7bee4a8aa495f8f7e64af659ca66b6c263c4792c gabriel Cabrera <gabriel.cabera@gmail.com> 1703285001 -0400	commit: fix merge problem
+7bee4a8aa495f8f7e64af659ca66b6c263c4792c 00a83b56991164586eb48c2a45a6e35cdee7541b gabriel Cabrera <gabriel.cabera@gmail.com> 1703285184 -0400	commit (merge): fix merge problem
+00a83b56991164586eb48c2a45a6e35cdee7541b a875e235a4b4cd1fef5b3a492fe026c42b589438 gabriel Cabrera <gabriel.cabera@gmail.com> 1703285369 -0400	commit: fix merge problem

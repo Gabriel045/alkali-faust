@@ -1,0 +1,42 @@
+0000000000000000000000000000000000000000 370c7602c85ee09875661fdd00ca59222a9c8ef4 gabriel Cabrera <gabriel.cabera@gmail.com> 1702404516 -0400	clone: from github.com:alkalidev/alkali-headless-front-end.git
+370c7602c85ee09875661fdd00ca59222a9c8ef4 370c7602c85ee09875661fdd00ca59222a9c8ef4 gabriel Cabrera <gabriel.cabera@gmail.com> 1702661245 -0400	reset: moving to HEAD
+370c7602c85ee09875661fdd00ca59222a9c8ef4 370c7602c85ee09875661fdd00ca59222a9c8ef4 gabriel Cabrera <gabriel.cabera@gmail.com> 1702661276 -0400	checkout: moving from main to GravityFom-component
+370c7602c85ee09875661fdd00ca59222a9c8ef4 c90ba382b026dfde127ff9bbddd435aa99060035 gabriel Cabrera <gabriel.cabera@gmail.com> 1702661309 -0400	commit: test get all fields and submit form
+c90ba382b026dfde127ff9bbddd435aa99060035 2263b3a778cf4bd603590943c3dbe9225db37125 gabriel Cabrera <gabriel.cabera@gmail.com> 1702910035 -0400	commit: fist form subbmit success
+2263b3a778cf4bd603590943c3dbe9225db37125 404b0cf7e5faa498411f5c54824d1c8619678ed6 gabriel Cabrera <gabriel.cabera@gmail.com> 1702930419 -0400	commit: install tailwind
+404b0cf7e5faa498411f5c54824d1c8619678ed6 b1e4ffc06ad15cf3e940f224fa46ad0c8bc23042 gabriel Cabrera <gabriel.cabera@gmail.com> 1702952603 -0400	commit: validation complete
+b1e4ffc06ad15cf3e940f224fa46ad0c8bc23042 53fe39a867ec0e659dd5eedaa18b121cb0337ccd gabriel Cabrera <gabriel.cabera@gmail.com> 1702952791 -0400	commit: fix image size
+53fe39a867ec0e659dd5eedaa18b121cb0337ccd afc28199be8f253fc85c9d3cd3267d8f2c7f209e gabriel Cabrera <gabriel.cabera@gmail.com> 1703092573 -0400	commit: header
+afc28199be8f253fc85c9d3cd3267d8f2c7f209e 22d6dedf99306f83eca8826434daabe9132ddd80 gabriel Cabrera <gabriel.cabera@gmail.com> 1703109038 -0400	commit: footer ready
+22d6dedf99306f83eca8826434daabe9132ddd80 42c83fe9f281966124e70f044f8fc6013902cb6c gabriel Cabrera <gabriel.cabera@gmail.com> 1703120423 -0400	commit: add header and footer to the page template
+42c83fe9f281966124e70f044f8fc6013902cb6c 29589188ebd7ba828797e1229692f8c68252e3b3 gabriel Cabrera <gabriel.cabera@gmail.com> 1703123406 -0400	commit: fix arrow hover on the header
+29589188ebd7ba828797e1229692f8c68252e3b3 370c7602c85ee09875661fdd00ca59222a9c8ef4 gabriel Cabrera <gabriel.cabera@gmail.com> 1703276619 -0400	checkout: moving from GravityFom-component to main
+370c7602c85ee09875661fdd00ca59222a9c8ef4 e080b784941453a167d3e2f06fbd807266cb3eae gabriel Cabrera <gabriel.cabera@gmail.com> 1703276627 -0400	pull origin main: Fast-forward
+e080b784941453a167d3e2f06fbd807266cb3eae e080b784941453a167d3e2f06fbd807266cb3eae gabriel Cabrera <gabriel.cabera@gmail.com> 1703284818 -0400	reset: moving to HEAD
+e080b784941453a167d3e2f06fbd807266cb3eae 29589188ebd7ba828797e1229692f8c68252e3b3 gabriel Cabrera <gabriel.cabera@gmail.com> 1703284828 -0400	checkout: moving from main to GravityFom-component
+29589188ebd7ba828797e1229692f8c68252e3b3 6a6332b25253b5561b645080c00ab98dd8e82ec7 gabriel Cabrera <gabriel.cabera@gmail.com> 1703284879 -0400	commit: fix contact page
+6a6332b25253b5561b645080c00ab98dd8e82ec7 7bee4a8aa495f8f7e64af659ca66b6c263c4792c gabriel Cabrera <gabriel.cabera@gmail.com> 1703285001 -0400	commit: fix merge problem
+7bee4a8aa495f8f7e64af659ca66b6c263c4792c 00a83b56991164586eb48c2a45a6e35cdee7541b gabriel Cabrera <gabriel.cabera@gmail.com> 1703285184 -0400	commit (merge): fix merge problem
+00a83b56991164586eb48c2a45a6e35cdee7541b a875e235a4b4cd1fef5b3a492fe026c42b589438 gabriel Cabrera <gabriel.cabera@gmail.com> 1703285369 -0400	commit: fix merge problem
+a875e235a4b4cd1fef5b3a492fe026c42b589438 f560241abb9eb9d128c7202cb62e15bfbdeed836 gabriel Cabrera <gabriel.cabera@gmail.com> 1703791540 -0400	checkout: moving from GravityFom-component to mapping-data
+f560241abb9eb9d128c7202cb62e15bfbdeed836 e080b784941453a167d3e2f06fbd807266cb3eae gabriel Cabrera <gabriel.cabera@gmail.com> 1703791566 -0400	merge main: Fast-forward
+e080b784941453a167d3e2f06fbd807266cb3eae 83c9b8d2956d36b97a25a0074a26647bf0c53c0f gabriel Cabrera <gabriel.cabera@gmail.com> 1703791884 -0400	commit: delete console.log
+83c9b8d2956d36b97a25a0074a26647bf0c53c0f a875e235a4b4cd1fef5b3a492fe026c42b589438 gabriel Cabrera <gabriel.cabera@gmail.com> 1703791887 -0400	checkout: moving from mapping-data to GravityFom-component
+a875e235a4b4cd1fef5b3a492fe026c42b589438 83c9b8d2956d36b97a25a0074a26647bf0c53c0f gabriel Cabrera <gabriel.cabera@gmail.com> 1703791910 -0400	checkout: moving from GravityFom-component to mapping-data
+83c9b8d2956d36b97a25a0074a26647bf0c53c0f 3cdd8535f75d6dbd657be1d76f3463f645b85e6c gabriel Cabrera <gabriel.cabera@gmail.com> 1703791922 -0400	merge GravityFom-component: Merge made by the 'ort' strategy.
+3cdd8535f75d6dbd657be1d76f3463f645b85e6c 60f89c9b2a32c514fbcdc4165a0f73bd0868740f gabriel Cabrera <gabriel.cabera@gmail.com> 1703876141 -0400	commit: server problem it returns 414 code
+60f89c9b2a32c514fbcdc4165a0f73bd0868740f fb2423a54c7431345b6dcd14142d35a6ea7b65be gabriel Cabrera <gabriel.cabera@gmail.com> 1703889655 -0400	commit: provideSolutions block and texImage block finished
+fb2423a54c7431345b6dcd14142d35a6ea7b65be fcd78cd097bf83d06672396d07b9610ca5c8379f gabriel Cabrera <gabriel.cabera@gmail.com> 1704750278 -0400	commit: implement sliders
+fcd78cd097bf83d06672396d07b9610ca5c8379f a875e235a4b4cd1fef5b3a492fe026c42b589438 gabriel Cabrera <gabriel.cabera@gmail.com> 1704750363 -0400	checkout: moving from mapping-data to GravityFom-component
+a875e235a4b4cd1fef5b3a492fe026c42b589438 fcd78cd097bf83d06672396d07b9610ca5c8379f gabriel Cabrera <gabriel.cabera@gmail.com> 1704750437 -0400	checkout: moving from GravityFom-component to mapping-data
+fcd78cd097bf83d06672396d07b9610ca5c8379f fcd78cd097bf83d06672396d07b9610ca5c8379f gabriel Cabrera <gabriel.cabera@gmail.com> 1704750451 -0400	checkout: moving from mapping-data to mapping-data
+fcd78cd097bf83d06672396d07b9610ca5c8379f 1a952ffee7259ec31cd4e60ee68f90772ff9108e gabriel Cabrera <gabriel.cabera@gmail.com> 1704821318 -0400	commit: finish homepage
+1a952ffee7259ec31cd4e60ee68f90772ff9108e 1a952ffee7259ec31cd4e60ee68f90772ff9108e gabriel Cabrera <gabriel.cabera@gmail.com> 1704833353 -0400	reset: moving to HEAD
+1a952ffee7259ec31cd4e60ee68f90772ff9108e 44fd644cf9d8347987de4ba41940965f6a5ec301 gabriel Cabrera <gabriel.cabera@gmail.com> 1704834362 -0400	commit: fix conflits to run build comand
+44fd644cf9d8347987de4ba41940965f6a5ec301 787d5ab6c96e3ca6e90a0552eec77ffc1cd25b39 gabriel Cabrera <gabriel.cabera@gmail.com> 1704835037 -0400	commit: fix conflits to run build comand
+787d5ab6c96e3ca6e90a0552eec77ffc1cd25b39 390dc91e0d7af994dc0b4bc9e498f96d5a313621 gabriel Cabrera <gabriel.cabera@gmail.com> 1704835109 -0400	commit: fix conflits to run build comand
+390dc91e0d7af994dc0b4bc9e498f96d5a313621 390dc91e0d7af994dc0b4bc9e498f96d5a313621 gabriel Cabrera <gabriel.cabera@gmail.com> 1704921311 -0400	reset: moving to HEAD
+390dc91e0d7af994dc0b4bc9e498f96d5a313621 390dc91e0d7af994dc0b4bc9e498f96d5a313621 gabriel Cabrera <gabriel.cabera@gmail.com> 1704922354 -0400	checkout: moving from mapping-data to 390dc91e0d7af994dc0b4bc9e498f96d5a313621
+390dc91e0d7af994dc0b4bc9e498f96d5a313621 e080b784941453a167d3e2f06fbd807266cb3eae gabriel Cabrera <gabriel.cabera@gmail.com> 1704922516 -0400	checkout: moving from 390dc91e0d7af994dc0b4bc9e498f96d5a313621 to main
+e080b784941453a167d3e2f06fbd807266cb3eae a875e235a4b4cd1fef5b3a492fe026c42b589438 gabriel Cabrera <gabriel.cabera@gmail.com> 1704922530 -0400	pull origin main: Fast-forward
+a875e235a4b4cd1fef5b3a492fe026c42b589438 390dc91e0d7af994dc0b4bc9e498f96d5a313621 gabriel Cabrera <gabriel.cabera@gmail.com> 1704922808 -0400	checkout: moving from main to mapping-data
