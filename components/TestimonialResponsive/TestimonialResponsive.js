@@ -69,10 +69,10 @@ export default class SimpleSlider extends Component {
                 </div >
                 <div className="lg:hidden flex justify-center gap-[200px]">
                     <span className="inline-block controlls controlls-hover z-50 prev" onClick={() => gotoPrev()}>
-                        <img className="w-[53px] h-[53px]" src={require('../../assets/images/prev-black.svg')?.default?.src} />
+                        <img loading="lazy"  className="w-[53px] h-[53px]" src={require('../../assets/images/prev-black.svg')?.default?.src} />
                     </span>
                     <span className="inline-block controlls controlls-hover z-50 next" onClick={() => gotoNext()}>
-                        <img className="w-[53px] h-[53px]" src={require('../../assets/images/next-black.svg')?.default?.src} />
+                        <img loading="lazy"  className="w-[53px] h-[53px]" src={require('../../assets/images/next-black.svg')?.default?.src} />
                     </span>
                 </div>
             </>

@@ -27,16 +27,16 @@ export default function Footer({footerTexts:{title, paragraph} , socialMedia:{fa
                 <p className="text-[#ffffffad] my-[35px] text-[14px] font-[400]lg:w-[80%]">{paragraph}</p>
                     <div className="flex gap-[40px] justify-center lg:justify-start">
                       <Link href={facebook}>
-                        <a className={cx('title')} target="_blank"><img className="w-[20px] h-[20px]" src={facebookImage} alt="" /></a>
+                        <a className={cx('title')} target="_blank"><img  loading="lazy" className="w-[20px] h-[20px]" src={facebookImage} alt="" /></a>
                       </Link>
                       <Link href={instagram}>
-                       <a className={cx('title')} target="_blank" ><img className="w-[20px] h-[20px]" src={instagramImage} alt="" /></a>
+                       <a className={cx('title')} target="_blank" ><img  loading="lazy"  className="w-[20px] h-[20px]" src={instagramImage} alt="" /></a>
                       </Link>
                       <Link href={linkedin}>
-                       <a className={cx('title')} target="_blank" ><img className="w-[20px] h-[20px]" src={linkedinImage} alt="" /></a>
+                       <a className={cx('title')} target="_blank" ><img  loading="lazy" className="w-[20px] h-[20px]" src={linkedinImage} alt="" /></a>
                       </Link>
                       <Link href={twitter}>
-                        <a className={cx('title')} target="_blank" ><img className="w-[20px] h-[20px]" src={twitterImage} alt="" /></a>
+                        <a className={cx('title')} target="_blank" ><img  loading="lazy" className="w-[20px] h-[20px]" src={twitterImage} alt="" /></a>
                       </Link>
                     </div>
                   </div>

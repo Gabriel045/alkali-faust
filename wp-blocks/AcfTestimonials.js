@@ -30,15 +30,15 @@ export default function AcfTestimonials({data}) {
                 <p className="text-[#fff] font-[400] text-[16px] relative mt-[18px]"> {testimonial.paragraph} </p>
                 {
                   testimonial?.logo[0] == 'Google' && 
-                  <span className="absolute top-[30px] right-[30px] z-50"> <img src={require('../assets/images/google-icon.svg')?.default?.src} alt="" /> </span>               
+                  <span className="absolute top-[30px] right-[30px] z-50"> <img loading="lazy" src={require('../assets/images/google-icon.svg')?.default?.src} alt="" /> </span>               
                }
                {
                   testimonial?.logo[0] == 'Clutch' &&
-                  <span className="absolute top-[30px] right-[30px] z-50"> <img src={require('../assets/images/clutch-logo.svg')?.default?.src}  alt="" />  </span>
+                  <span className="absolute top-[30px] right-[30px] z-50"> <img loading="lazy" src={require('../assets/images/clutch-logo.svg')?.default?.src}  alt="" />  </span>
                }
                {
                   testimonial?.logo[0] == 'UpCity' &&
-                  <span className="absolute top-[30px] right-[30px] z-50"> <img src={require('../assets/images/upcity-logo.svg')?.default?.src}  alt="" /> </span>
+                  <span className="absolute top-[30px] right-[30px] z-50"> <img loading="lazy" src={require('../assets/images/upcity-logo.svg')?.default?.src}  alt="" /> </span>
 
                }
                 </div>

@@ -15,7 +15,7 @@ export default function AcfPartners({data}) {
   //console.log('all props',props);
   return (
     <section className="relative">
-      <img className="hidden lg:block absolute z-10 top-[40%] left-0 rotate-180" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
+      <img loading="lazy"  className="hidden lg:block absolute z-10 top-[40%] left-0 rotate-180" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
       <div className="block_content">
         <div className="pb-[40px] lg:pb-[80px]">
           <h2 className="text-center text-[#232323] m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />

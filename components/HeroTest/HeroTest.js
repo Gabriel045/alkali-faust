@@ -34,7 +34,7 @@ export default function AcfHeroHome({data}) {
 
                             {
                                 icons.map((icon,index) => {
-                                    return <div key={index} className="w-1/4 flex justify-center z-[1]"> <img src={icon.sourceUrl} /> </div>
+                                    return <div key={index} className="w-1/4 flex justify-center z-[1]"> <img loading="lazy"  src={icon.sourceUrl} /> </div>
                                 })
                             }
                         </div>

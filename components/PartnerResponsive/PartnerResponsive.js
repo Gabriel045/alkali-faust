@@ -35,9 +35,9 @@ export default class SimpleSlider extends Component {
                             return <div key={index} className="slick-testimonial slick-slide w-1/2 lg:w-1/4 lg:px-[30px] lg:pt-[51px] relative z-50 lg:h-auto flex items-center">
                                 {card.url != null ?
                                     <Link href={card.url}>
-                                        <a target="_blank"><img className="icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" /></a>
+                                        <a target="_blank"><img loading="lazy" className="icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" /></a>
                                     </Link> :
-                                    <img loading="lazy"  className="icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
+                                    <img loading="lazy" className="icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
                                 }
                             </div>
                         })
