@@ -8,7 +8,7 @@ export default function AcfHero(props) {
     const title = props.heroBlock?.title
     const paragraph = props.heroBlock?.paragraph
     return (
-        <section key="section" className="relative bg-background ">
+        <section key="Hero" className="relative bg-background ">
             <div className="block_content flex flex-wrap w-full hero">
                 <div className="w-full lg:w-[60%]  relative z-[1] ">
                     <div className="text-white text-[36px] lg:text-[52px] font-[600] my-[30px] leading-[60px]" dangerouslySetInnerHTML={{__html: title ?? ''}} /> 

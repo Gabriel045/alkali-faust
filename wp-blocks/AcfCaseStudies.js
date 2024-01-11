@@ -11,7 +11,7 @@ export default function AcfCaseStudies({data}) {
 
 
   return (
-    <section className="bg-background">
+    <section key="CaseStudies" className="bg-background">
       <div className="block_content relative">
         <img loading="lazy"  className="absolute z-10 top-[15%] left-[-5%] rotate-180" src={require('../assets/images/hexagon-5.svg')?.default?.src} alt="" />
         <div className="pb-[60px] lg:pb-[120px]">

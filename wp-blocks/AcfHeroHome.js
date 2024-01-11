@@ -16,7 +16,7 @@ export default function AcfHeroHome({data}) {
   const icons = data.heroHomeBlock?.clientsIcon?.nodes
 
   return (
-    <section className="relative bg-background">
+    <section key="HeroHome" className="relative bg-background">
       <div className="flex justify-center flex-wrap w-full">
         <div className="home-hero flex flex-col w-full max-w-[1440px] items-center relative z-[1]">
           <h1 className="text-white text-center md:w-[80%]" dangerouslySetInnerHTML={{__html: title ?? ''}} />

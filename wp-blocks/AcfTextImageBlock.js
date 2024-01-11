@@ -15,7 +15,7 @@ export default function AcfTextImageBlock({data}) {
   const learnMoreUrl = data.textImageBlock?.learnMoreUrl
 
   return (
-    <section className={`text-block ${background}`}>
+    <section key="TextImage" className={`text-block ${background}`}>
       <div className={`block_content flex flex-wrap lg:flex-nowrap gap-[80px] flex-${image_position}`} >
         <div className= {`flex flex-wrap lg:flex-nowrap gap-[80px] flex-${image_position} `}>
           {image.length > 0 &&

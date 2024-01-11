@@ -128,9 +128,7 @@ export default function Component(props) {
                 return <AcfArticles data={block} />
               } else if(block.__typename === "AcfTestimonials") {
                 return <AcfTestimonials data={block} />
-              }
-
-              
+              }              
             })
           }
           {/*<Hero title={'Front Page'} />*/}

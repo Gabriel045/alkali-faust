@@ -10,7 +10,7 @@ export default function AcfTestimonials({data}) {
   const testimonials = data.testimonialBlock?.testimonial
 
   return (
-    <section className=" bg-background relative">
+    <section key="Testimonial" className=" bg-background relative">
       <div className="block_content w-full relative">
         <div className="pb-[60px] lg:pb-[120px] flex flex-wrap  lg:flex-nowrap w-full">
           <h2 className="w-full mb-[50px] lg:mb-0 lg:w-[60%] text-[#fff]"> {title}  </h2>
