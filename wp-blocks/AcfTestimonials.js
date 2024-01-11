@@ -15,9 +15,9 @@ export default function AcfTestimonials({data}) {
         <div className="pb-[60px] lg:pb-[120px] flex flex-wrap  lg:flex-nowrap w-full">
           <h2 className="w-full mb-[50px] lg:mb-0 lg:w-[60%] text-[#fff]"> {title}  </h2>
           <div className="w-full lg:w-[40%] flex lg:justify-end gap-[20px] lg:gap-[50px]">
-            <img className="lg:w-[90px] h-[30px]" src={require('../assets/images/google.svg')?.default?.src} alt="" />
-            <img className="lg:w-[90px] h-[30px]" src={require('../assets/images/clutch.svg')?.default?.src} alt="" />
-            <img className="lg:w-[90px] h-[30px]" src={require('../assets/images/upcity.svg')?.default?.src} alt="" />
+            <img loading="lazy"  className="lg:w-[90px] h-[30px]" src={require('../assets/images/google.svg')?.default?.src} alt="" />
+            <img loading="lazy"  className="lg:w-[90px] h-[30px]" src={require('../assets/images/clutch.svg')?.default?.src} alt="" />
+            <img loading="lazy"  className="lg:w-[90px] h-[30px]" src={require('../assets/images/upcity.svg')?.default?.src} alt="" />
           </div>
         </div>
         {/* Desktop */}

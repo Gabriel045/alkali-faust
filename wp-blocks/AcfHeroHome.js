@@ -31,15 +31,15 @@ export default function AcfHeroHome({data}) {
 
               {
                 icons.map((icon, index) => {
-                  return <div key={index} className="w-1/4 flex justify-center z-[1]"> <img src={icon.sourceUrl} /> </div>
+                  return <div key={index} className="w-1/4 flex justify-center z-[1]"> <img loading="lazy" src={icon.sourceUrl} /> </div>
                 })
               }
             </div>
           </div>
         </div>
       </div>
-      <img className="hidden lg:block absolute right-0 bottom-0 h-[600px]" src={require('../assets/images/hexagons.svg')?.default?.src} alt="" />
-      <img className="absolute  bottom-[-90px] left-0 z-[0]" src={require('../assets/images/hexagon.svg')?.default?.src} alt="" />
+      <img loading="lazy"  className="hidden lg:block absolute right-0 bottom-0 h-[600px]" src={require('../assets/images/hexagons.svg')?.default?.src} alt="" />
+      <img loading="lazy"  className="absolute  bottom-[-90px] left-0 z-[0]" src={require('../assets/images/hexagon.svg')?.default?.src} alt="" />
     </section>
   );
 }

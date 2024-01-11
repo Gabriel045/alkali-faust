@@ -39,7 +39,7 @@ export default function AcfProvideSolutions({data}) {
             cards.map((card,index)=>{
               return <div key={index} className={`w-full lg:w-1/3 px-[30px] py-[51px]  border-l ${background == 'Light' ? 'border-[#80808061]' : 'border-[#404040]'}  card-line relative`} >
                 <div>
-                  <img src={card?.icon.nodes[0].sourceUrl} alt="" />
+                  <img loading="lazy"  src={card?.icon.nodes[0].sourceUrl} alt="" />
                 </div>
                 <p className= {`${background == 'Light' ? 'text-background' : 'text-[#FFF] '}  font-[600] text-[16px] pt-[20px]`} > {card.title} </p>
                 <p className="text-[16px] font-[400] text-[#929292] py-[15px]"> {card.paragraph} </p>
@@ -49,7 +49,7 @@ export default function AcfProvideSolutions({data}) {
           }
         </div>    
       </div>
-      <img className="hidden lg:block absolute z-10 bottom-[-60px] right-0" src={require('../assets/images/hexagon-3.svg')?.default?.src} alt="" />
+      <img loading="lazy"  className="hidden lg:block absolute z-10 bottom-[-60px] right-0" src={require('../assets/images/hexagon-3.svg')?.default?.src} alt="" />
     </section>
 
   );

@@ -31,7 +31,7 @@ export default function AcfPartners({data}) {
                   <Link href={card.url}>
                     <a target="_blank"><img className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" /></a>
                   </Link> :
-                   <img className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
+                   <img loading="lazy"  className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
                 }
               </div>
             })

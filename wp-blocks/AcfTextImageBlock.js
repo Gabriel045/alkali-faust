@@ -1,5 +1,7 @@
 import React from 'react';
 import {gql} from '@apollo/client';
+import Image from 'next/image'
+
 
 export default function AcfTextImageBlock({data}) {
   
@@ -18,7 +20,7 @@ export default function AcfTextImageBlock({data}) {
         <div className= {`flex flex-wrap lg:flex-nowrap gap-[80px] flex-${image_position} `}>
           {image.length > 0 &&
             <div className="w-full lg:w-[45%]">
-              <img className="lg:h-full object-cover object-center m-auto rounded-[5px] lg:m-0" src={image} alt="" />
+              <img loading="lazy"  className="lg:h-full object-cover object-center m-auto rounded-[5px] lg:m-0" src={image} alt="" />
             </div>
           }
           <div className={`${image.length > 0 ? 'w-full lg:w-[50%]' : 'full'} relative lg:flex lg:flex-col lg:justify-center`}>
@@ -28,9 +30,9 @@ export default function AcfTextImageBlock({data}) {
               <a href={learnMoreUrl} className="button_custom inline-block">Learn More</a>
             }
             { background == "light" ? 
-              <img className={`hidden lg:block absolute z-10 ${image_position == " row" ? 'right-0 bottom-0 ' : 'right-[60px] bottom-[20px]' } `}  src={require('../assets/images/hexagon-4.svg')?.default?.src} alt="" />
+              <img loading="lazy"  className={`hidden lg:block absolute z-10 ${image_position == " row" ? 'right-0 bottom-0 ' : 'right-[60px] bottom-[20px]' } `}  src={require('../assets/images/hexagon-4.svg')?.default?.src} alt="" />
             :
-              <img className={`hidden lg:block absolute z-10 ${image_position == " row" ? 'right-0 bottom-0 ' : 'right-[60px] bottom-[20px]'} `}  src={require('../assets/images/hexagon-5.svg')?.default?.src}  alt="" />
+              <img loading="lazy"  className={`hidden lg:block absolute z-10 ${image_position == " row" ? 'right-0 bottom-0 ' : 'right-[60px] bottom-[20px]'} `}  src={require('../assets/images/hexagon-5.svg')?.default?.src}  alt="" />
             }
           </div>
         </div>

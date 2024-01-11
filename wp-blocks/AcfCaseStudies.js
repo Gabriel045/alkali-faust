@@ -29,7 +29,7 @@ export default function AcfCaseStudies({data}) {
                 <Link href={card?.link ? card?.link : ''}>
                   <a target="_blank" className="text-[#0AADE5] text-[16px] flex relative hover-arrow" > 
                     Learn More 
-                    <img className="mb-[-2px] " src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
+                    <img loading="lazy"  className="mb-[-2px] " src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
                   </a>  
                 </Link> :
               </div>

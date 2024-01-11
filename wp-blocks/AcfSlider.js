@@ -48,7 +48,6 @@ export default function AcfSlider({data}) {
           <div className="w-[100%] min-h-[700px] relative">
             {
               sliderItems.map((item,index) => {
-                console.log(item);
                 const img = item.image?.nodes[0]?.sourceUrl
                 const style = {
                   backgroundImage: `url(${img})`,
@@ -59,7 +58,7 @@ export default function AcfSlider({data}) {
                   <div className="item-content">
                     <p className="text-[16px] font-[400] text-[#23242499] pt-[26px] pb-[16px]"> {item.paragraph} </p>
                     <a href="#" className="text-[#0AADE5] text-[16px] flex hover-arrow"> Learn More
-                      <img className="mb-[-2px]" src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
+                      <img loading="lazy" className="mb-[-2px]" src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
                     </a>
                   </div>
 

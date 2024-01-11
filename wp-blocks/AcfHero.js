@@ -15,8 +15,8 @@ export default function AcfHero(props) {
                     <p className="subtext text-[#ffffffad] lg:w-[80%] my-[36px]"> {paragraph} </p>
                 </div>
             </div>
-            <img decoding="async"  className="hidden lg:block absolute right-0 bottom-0 h-[600px]" src={require('../assets/images/hexagons.svg')?.default?.src} alt="" />
-            <img decoding="async"  className="block lg:hidden absolute z-[1] right-0 bottom-[40px] h-[250px]" src={require('../assets/images/hexagon-5.svg')?.default?.src} alt="" />
+            <img loading="lazy"  decoding="async"  className="hidden lg:block absolute right-0 bottom-0 h-[600px]" src={require('../assets/images/hexagons.svg')?.default?.src} alt="" />
+            <img loading="lazy"  decoding="async"  className="block lg:hidden absolute z-[1] right-0 bottom-[40px] h-[250px]" src={require('../assets/images/hexagon-5.svg')?.default?.src} alt="" />
         </section>
     )
 }
