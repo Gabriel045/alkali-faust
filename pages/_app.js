@@ -8,6 +8,7 @@ import '../styles/global.scss';
 import { WordPressBlocksProvider } from '@faustwp/blocks';
 import blocks from '../wp-blocks';
 
+
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
