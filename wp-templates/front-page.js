@@ -23,6 +23,7 @@ import AcfPartners from '../wp-blocks/AcfPartners';
 import AcfCaseStudies from '../wp-blocks/AcfCaseStudies';
 import AcfArticles from '../wp-blocks/AcfArticles';
 import AcfTestimonials from '../wp-blocks/AcfTestimonials';
+import {SpeedInsights} from "@vercel/speed-insights/next"
 
 export default function Component(props) {
   const {data} = useQuery(Component.query,{
@@ -71,6 +72,7 @@ export default function Component(props) {
   
   return (
     <>
+      <SpeedInsights />
       <SEO title={siteTitle} description={siteDescription} logoUrl={logoUrl} />
       <Header
         title={siteTitle}
