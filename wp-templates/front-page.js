@@ -11,47 +11,13 @@ import {
   NavigationMenu,
   Hero,
   SEO,
+  RenderBlocks
 } from '../components';
 
 
 import {flatListToHierarchical} from '@faustwp/core';
 import {WordPressBlocksViewer} from '@faustwp/blocks';
 import components from '../wp-blocks';
-import dynamic from 'next/dynamic'
-
-const AcfHeroHome = dynamic({
-  loader: () => import('../wp-blocks/AcfHeroHome')
-})
-const AcfSlider = dynamic({
-  loader: () => import('../wp-blocks/AcfSlider')
-})
-const AcfProvideSolutions = dynamic({
-  loader: () => import('../wp-blocks/AcfProvideSolutions')
-})
-const AcfTextImageBlock = dynamic({
-  loader: () => import('../wp-blocks/AcfTextImageBlock')
-})
-const AcfPartners = dynamic({
-  loader: () => import('../wp-blocks/AcfPartners')
-})
-const AcfCaseStudies = dynamic({
-  loader: () => import('../wp-blocks/AcfCaseStudies')
-})
-const AcfArticles = dynamic({
-  loader: () => import('../wp-blocks/AcfArticles')
-})
-const AcfTestimonials = dynamic({
-  loader: () => import('../wp-blocks/AcfTestimonials')
-})
-
-//import AcfHeroHome from '../wp-blocks/AcfHeroHome';
-//import AcfSlider from '../wp-blocks/AcfSlider';
-//import AcfProvideSolutions from '../wp-blocks/AcfProvideSolutions';
-//import AcfTextImageBlock from '../wp-blocks/AcfTextImageBlock';
-//import AcfPartners from '../wp-blocks/AcfPartners';
-//import AcfCaseStudies from '../wp-blocks/AcfCaseStudies';
-//import AcfArticles from '../wp-blocks/AcfArticles';
-//import AcfTestimonials from '../wp-blocks/AcfTestimonials';
 
 export default function Component(props) {
   const {data} = useQuery(Component.query,{
@@ -62,10 +28,7 @@ export default function Component(props) {
   const {editorBlocks} = data.page;
   const blocks = flatListToHierarchical(editorBlocks);
   
-//console.log(blocks);
-
-  const {title: siteTitle,description: siteDescription} =
-  data?.generalSettings;
+  const {title: siteTitle,description: siteDescription} = data?.generalSettings;
   const primaryMenu = data?.headerMenuItems?.nodes ?? [];
   const footerMenu = data?.footerMenuItems?.nodes ?? [];
   const footerMenu2 = data?.footerMenuItems2?.nodes ?? [];
@@ -84,20 +47,6 @@ export default function Component(props) {
 
   }   
 
-  //let HeroHome = []
-  //let Slider = []
-  //let Provide = []
-  //blocks.map((block)=>{
-  //  //console.log("block",block.__typename);
-  //  if(block.__typename === "AcfHeroHome"){
-  //     HeroHome = block
-  //  } else if(block.__typename === "AcfSlider"){
-  //    Slider = block
-  //  } else if(block.__typename === "AcfProvideSolutions") {
-  //    Provide = block
-  //  }
-  //})
-  
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} logoUrl={logoUrl} />
@@ -109,27 +58,7 @@ export default function Component(props) {
       />
       <Main>
         <Container>
-          {
-            blocks.map((block) => {
-              if(block.__typename === "AcfHeroHome") {
-                 return <AcfHeroHome data={block}/>
-              } else if(block.__typename === "AcfSlider") {
-                return <AcfSlider data={block} />
-              } else if(block.__typename === "AcfProvideSolutions"){
-                return <AcfProvideSolutions data={block} />
-              } else if(block.__typename === "AcfTextImageBlock"){
-                return <AcfTextImageBlock data={block} />
-              } else if(block.__typename === "AcfPartners") {
-                return <AcfPartners data={block} />
-              } else if(block.__typename === "AcfCaseStudies") {
-                return <AcfCaseStudies data={block} />
-              } else if(block.__typename === "AcfArticles") {
-                return <AcfArticles data={block} />
-              } else if(block.__typename === "AcfTestimonials") {
-                return <AcfTestimonials data={block} />
-              }              
-            })
-          }
+          <RenderBlocks data={blocks} />
           {/*<Hero title={'Front Page'} />*/}
             {/*<WordPressBlocksViewer blocks={blocks} />*/}
             {/* <p>This page is utilizing the "front-page" WordPress template.</p>

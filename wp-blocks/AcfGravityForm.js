@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from 'react'
 import {useMutation,useQuery,gql} from '@apollo/client';
 import {useForm} from 'react-hook-form';
-
+import Image from "next/future/image";
 
 export default function AcfGravityForm(props) {
   const {data} = useQuery(GET_FIELDS,{
     variables: {
-      formID: props.gravytyFormBlock.idForm,
+      formID: props.data.gravytyFormBlock.idForm,
     },
   });
 
@@ -15,7 +15,7 @@ export default function AcfGravityForm(props) {
   const [confirmation,setConfirmation] = useState(undefined)
   const [submitText,setsubmitText] = useState(undefined)
   const {register,handleSubmit} = useForm()
-  const image = props.gravytyFormBlock.image.node.sourceUrl
+  const image = props.data.gravytyFormBlock.image.node.sourceUrl
 
 
   const [submitForm,{loading,error}] = useMutation(SUBMIT_FORM,
@@ -57,7 +57,7 @@ export default function AcfGravityForm(props) {
             placeholder={type.placeholder} key={type.label} required={`${type.isRequired == true ? 'required' : ''}`} {...register(`${type.label}`)} />
         </div>
       default:
-        return <div>nada</div>
+        return <div>void</div>
     }
   }
 
@@ -103,7 +103,7 @@ export default function AcfGravityForm(props) {
 
 
   return (
-    <section key="GravityForm" className="">
+    <section  className="">
       <div className="block_content">
         <div className="flex flex-wrap lg:flex-nowrap lg:gap-[45px]">
           <div className="flex flex-col lg:w-1/2">
@@ -115,14 +115,22 @@ export default function AcfGravityForm(props) {
               {
                 isLoading || loading ? <div key="loading" className='loading'>Loading...</div> : <>
                   {
-                    types.map(type => inputType(type))
+                    types.map((type, index) => inputType(type))
                   }
                     <button className='w-full rounded-[8px] px-[20px] py-[10px] text-white text-[16px] font-[500] bg-[#00BAFB]' 
                     type='submit'>{submitText ? submitText : 'Submit'}</button>
                 </>}
             </form>}
           </div>
-          <div className="lg:w-1/2 rounded-[10px] h-[400px] w-full lg:h-auto mt-[50px] lg:mt-0 min-h-[400px] bg-cover	" style={{backgroundImage: `url(${image})`}}>
+          <div className="lg:w-1/2 rounded-[10px] h-[400px] w-full lg:h-auto mt-[50px] lg:mt-0 min-h-[400px] bg-cover	">
+            <Image
+              src={image}
+              width={0}
+              height={0}
+              sizes="100vw"
+              layout="responsive"
+              style={{width: '100%',height: '100%', borderRadius:'10px'}} // optional
+              alt="Picture of the author" />
           </div>
         </div>
       </div>
@@ -263,9 +271,6 @@ submitGfForm(
   }
 }
 `
-
-// TODO
-// - Map the right properties of the alkali component
 
 
 

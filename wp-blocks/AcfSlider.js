@@ -40,7 +40,7 @@ export default function AcfSlider({data}) {
   }
 
   return (
-    <section key="Slider" id="slider" className="relative overflow-hidden <?php echo $background ?>">
+    <section  id="slider" className="relative overflow-hidden <?php echo $background ?>">
       <div className="block_content">
         <div className="pb-[60px] lg:pb-[120px]">
           <h2 className="text-center text-[#232323]" dangerouslySetInnerHTML={{__html: title ?? ''}} />

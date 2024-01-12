@@ -18,4 +18,5 @@ export { PartnerResponsive } from './PartnerResponsive';
 export {ArticleSlider} from './ArticleSlider';
 export {SliderResponsive} from './SliderResponsive';
 export {TestimonialResponsive} from './TestimonialResponsive';
-export {HeroTest} from './HeroTest';
+export {RenderBlocks} from './RenderBlocks';
+

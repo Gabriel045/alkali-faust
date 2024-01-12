@@ -14,6 +14,7 @@ import {
   EntryHeader,
   NavigationMenu,
   FeaturedImage,
+  RenderBlocks,
   SEO,
 } from '../components';
 
@@ -63,7 +64,8 @@ export default function Component(props) {
         <>
           {/*<EntryHeader title={title} image={featuredImage?.node} />*/}
           <Container>
-            <WordPressBlocksViewer blocks={blocks} />
+            <RenderBlocks data={blocks} />
+            {/*<WordPressBlocksViewer blocks={blocks} />*/}
           </Container>
         </>
       </Main>
@@ -91,6 +93,13 @@ Component.query = gql`
   ${FeaturedImage.fragments.entry}
   ${components?.AcfGravityForm.fragments.entry}
   ${components?.AcfHero.fragments.entry}
+  ${components?.AcfArticles.fragments.entry}
+  ${components?.AcfCaseStudies.fragments.entry}
+  ${components?.AcfPartners.fragments.entry}
+  ${components?.AcfProvideSolutions.fragments.entry}
+  ${components?.AcfSlider.fragments.entry}
+  ${components?.AcfTestimonials.fragments.entry}
+  ${components?.AcfTextImageBlock.fragments.entry}
 
   query GetPageData(
     $databaseId: ID!
@@ -108,6 +117,13 @@ Component.query = gql`
       editorBlocks(flat: false) {
         ...${components.AcfGravityForm.fragments.key}
         ...${components.AcfHero.fragments.key}
+        ...${components.AcfArticles.fragments.key}
+        ...${components.AcfCaseStudies.fragments.key}
+        ...${components.AcfPartners.fragments.key}
+        ...${components.AcfProvideSolutions.fragments.key}
+        ...${components.AcfSlider.fragments.key}
+        ...${components.AcfTestimonials.fragments.key}
+        ...${components.AcfTextImageBlock.fragments.key}
       }
     }
 
