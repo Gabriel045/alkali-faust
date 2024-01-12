@@ -19,7 +19,7 @@ export default function AcfHeroHome({data}) {
     <section  className="relative bg-background">
       <div className="flex justify-center flex-wrap w-full">
         <div className="home-hero flex flex-col w-full max-w-[1440px] items-center relative z-[1]">
-          <h1 className="text-white text-center md:w-[80%]" dangerouslySetInnerHTML={{__html: title ?? ''}} />
+          <div className="text-white text-center md:w-[80%]" dangerouslySetInnerHTML={{__html: title ?? ''}} />
           <p className="subtext text-[#ffffffad] text-center md:w-[70%] my-[36px]"> {paragraph}  </p>
           <a href="" className="button_custom inline-block z-1" target="_blank">Learn More</a>
           <div className="flex w-[100%] pt-[100px] lg:pt-[120px] lg:flex-nowrap  flex-wrap lg:pr-[96px] z-[1]">
