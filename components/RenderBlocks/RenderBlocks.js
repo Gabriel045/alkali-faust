@@ -44,7 +44,7 @@ const AcfSingleClientsContent = dynamic({
 
 
 
-export default function RenderBlocks({data,postIcon}) {
+export default function RenderBlocks({data,postIcon, clients}) {
     return (
         <>
             {
@@ -71,7 +71,7 @@ export default function RenderBlocks({data,postIcon}) {
                         case 'AcfHero' :
                             return <div key={index}> <AcfHero data={block} /> </div>
                         case 'AcfClients':
-                            return <div key={index}> <AcfClients/> </div>
+                            return <div key={index}> <AcfClients clients={clients}/> </div>
                         case 'AcfHeroSingleClients':
                             return <div key={index}> <AcfHeroSingleClients postIcon={postIcon} data={block} /> </div>
                         case 'AcfSingleClientsContent':

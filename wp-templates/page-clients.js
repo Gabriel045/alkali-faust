@@ -19,6 +19,7 @@ import {
 } from '../components';
 
 export default function Component(props) {
+
     // Loading state for previews
     if(props.loading) {
         return <>Loading...</>;
@@ -46,7 +47,9 @@ export default function Component(props) {
 
     const {editorBlocks} = props.data.page;
     const blocks = editorBlocks;
-
+    const clients = props.data?.clients.nodes ? props.data?.clients.nodes : []
+    console.log(clients);
+    
     return (
         <>
             <SEO
@@ -64,7 +67,7 @@ export default function Component(props) {
                 <>
                     {/*<EntryHeader title={title} image={featuredImage?.node} />*/}
                     <Container>
-                        <RenderBlocks data={blocks} />
+                        <RenderBlocks clients={clients} data={blocks} />
                         {/*<WordPressBlocksViewer blocks={blocks} />*/}
                     </Container>
                 </>
@@ -111,6 +114,24 @@ Component.query = gql`
       }
     }
 
+    clients {
+      nodes {
+        link
+        clients {
+          icon {
+            node {
+              sourceUrl
+            }
+          }
+        }
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+      }
+    }
+    
     themeGeneralSettings{
       ...themeGeneralSettingsFragment
     }
