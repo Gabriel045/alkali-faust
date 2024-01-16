@@ -9,6 +9,9 @@ import AcfProvideSolutions from "./AcfProvideSolutions";
 import AcfSlider from "./AcfSlider";
 import AcfTestimonials from "./AcfTestimonials";
 import AcfTextImageBlock from "./AcfTextImageBlock";
+import AcfClients from "./AcfClients";
+import AcfHeroSingleClients from "./AcfHeroSingleClients";
+import AcfSingleClientsContent from "./AcfSingleClientsContent";
 
 export default {
     AcfAlkali,
@@ -23,4 +26,7 @@ export default {
     AcfTestimonials,
     AcfTestimonials,
     AcfTextImageBlock,
+    AcfClients,
+    AcfHeroSingleClients,
+    AcfSingleClientsContent
 }

@@ -32,9 +32,19 @@ const AcfGravityForm = dynamic({
 const AcfHero = dynamic({
     loader: () => import('../../wp-blocks/AcfHero')
 })
+const AcfClients = dynamic({
+    loader: () => import('../../wp-blocks/AcfClients')
+})
+const AcfHeroSingleClients = dynamic({
+    loader: () => import('../../wp-blocks/AcfHeroSingleClients')
+})
+const AcfSingleClientsContent = dynamic({
+    loader: () => import('../../wp-blocks/AcfSingleClientsContent')
+})
 
 
-export default function RenderBlocks({data}) {
+
+export default function RenderBlocks({data,postIcon}) {
     return (
         <>
             {
@@ -60,6 +70,12 @@ export default function RenderBlocks({data}) {
                             return <div key={index}> <AcfGravityForm data={block} /> </div>
                         case 'AcfHero' :
                             return <div key={index}> <AcfHero data={block} /> </div>
+                        case 'AcfClients':
+                            return <div key={index}> <AcfClients/> </div>
+                        case 'AcfHeroSingleClients':
+                            return <div key={index}> <AcfHeroSingleClients postIcon={postIcon} data={block} /> </div>
+                        case 'AcfSingleClientsContent':
+                            return <div key={index}> <AcfSingleClientsContent data={block} /> </div>
                         default:
                             return <div></div>
                     }

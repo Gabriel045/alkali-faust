@@ -2,13 +2,11 @@ import React from 'react';
 import {gql} from '@apollo/client';
 
 export default function AcfHero({data}) {
-    //console.log('hero all props',props);
-
     // Load values and assign defaults.
     const title = data.heroBlock?.title
     const paragraph = data.heroBlock?.paragraph
     return (
-        <section className="relative bg-background ">
+        <section className="prueba  relative bg-background ">
             <div className="block_content flex flex-wrap w-full hero">
                 <div className="w-full lg:w-[60%]  relative z-[1] ">
                     <div className="text-white text-[36px] lg:text-[52px] font-[600] my-[30px] leading-[60px]" dangerouslySetInnerHTML={{__html: title ?? ''}} /> 

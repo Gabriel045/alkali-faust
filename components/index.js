@@ -19,4 +19,5 @@ export {ArticleSlider} from './ArticleSlider';
 export {SliderResponsive} from './SliderResponsive';
 export {TestimonialResponsive} from './TestimonialResponsive';
 export {RenderBlocks} from './RenderBlocks';
+export {ClientsCards} from './ClientsCards';
 
