@@ -528,12 +528,14 @@ h4 {
     right: 20px;
 }
 
-#testimonial .slick-prev{
+#testimonial .slick-prev,
+#lastest-blog .slick-prev{
     display: none !important;
     left: 20px;
 }
 
-#testimonial .slick-next{
+#testimonial .slick-next,
+#lastest-blog .slick-next{
     display: none !important;
     right: 20px;
 }
@@ -670,6 +672,19 @@ h4 {
     #menu-header-menu {
         gap: 25px;
     }
+}
+
+.triangle:before {
+    content: "";
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    width: 0px;
+    height: 0px;
+    border-top: 375px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-right: 60px solid #fff;
 }
 
 @media screen and (max-width: 1023px){

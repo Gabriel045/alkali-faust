@@ -17,6 +17,7 @@ export default function AcfSlider({data}) {
 
   //creating the ref
   const refs = useRef(steps.map(() => React.createRef()));
+  
   useEffect(() => {
     refs.current[0].current.focus();
   },[]);

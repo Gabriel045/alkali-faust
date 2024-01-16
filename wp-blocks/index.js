@@ -12,6 +12,9 @@ import AcfTextImageBlock from "./AcfTextImageBlock";
 import AcfClients from "./AcfClients";
 import AcfHeroSingleClients from "./AcfHeroSingleClients";
 import AcfSingleClientsContent from "./AcfSingleClientsContent";
+import AcfSingleClientsTestimonial from "./AcfSingleClientsTestimonial";
+import AcfLargeImage from "./AcfLargeImage";
+import AcfLatestClients from "./AcfLatestClients";
 
 export default {
     AcfAlkali,
@@ -28,5 +31,8 @@ export default {
     AcfTextImageBlock,
     AcfClients,
     AcfHeroSingleClients,
-    AcfSingleClientsContent
+    AcfSingleClientsContent,
+    AcfSingleClientsTestimonial,
+    AcfLargeImage,
+    AcfLatestClients
 }

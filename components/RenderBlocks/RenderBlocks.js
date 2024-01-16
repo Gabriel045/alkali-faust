@@ -41,10 +41,19 @@ const AcfHeroSingleClients = dynamic({
 const AcfSingleClientsContent = dynamic({
     loader: () => import('../../wp-blocks/AcfSingleClientsContent')
 })
+const AcfSingleClientsTestimonial = dynamic({
+    loader: () => import('../../wp-blocks/AcfSingleClientsTestimonial')
+})
+const AcfLargeImage = dynamic({
+    loader: () => import('../../wp-blocks/AcfLargeImage')
+})
+const AcfLatestClients = dynamic({
+    loader: () => import('../../wp-blocks/AcfLatestClients')
+})
 
 
 
-export default function RenderBlocks({data,postIcon, clients}) {
+export default function RenderBlocks({data,postIcon,clients,industries,latestClients}) {
     return (
         <>
             {
@@ -73,11 +82,17 @@ export default function RenderBlocks({data,postIcon, clients}) {
                         case 'AcfClients':
                             return <div key={index}> <AcfClients clients={clients}/> </div>
                         case 'AcfHeroSingleClients':
-                            return <div key={index}> <AcfHeroSingleClients postIcon={postIcon} data={block} /> </div>
+                            return <div key={index}> <AcfHeroSingleClients postIcon={postIcon} industries={industries} data={block} /> </div>
                         case 'AcfSingleClientsContent':
                             return <div key={index}> <AcfSingleClientsContent data={block} /> </div>
+                        case 'AcfSingleClientsTestimonial':
+                            return <div key={index}> <AcfSingleClientsTestimonial postIcon={postIcon}  data={block} /> </div>
+                        case 'AcfLargeImage':
+                            return <div key={index}> <AcfLargeImage data={block} /> </div>
+                        case 'AcfLatestClients':
+                            return <div key={index}> <AcfLatestClients latestClients={latestClients} /> </div>
                         default:
-                            return <div></div>
+                            return <div key={index}></div>
                     }
                 })
 

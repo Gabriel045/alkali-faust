@@ -45,10 +45,12 @@ export default function Component(props) {
 
     }
 
+    const latestClients = props.data?.clients.nodes 
     const {editorBlocks, clients , industries} = props.data.client;
     const blocks = editorBlocks;
 
-    //console.log(blocks);
+  //console.log(industries);
+
     return (
         <>
             <SEO
@@ -66,7 +68,7 @@ export default function Component(props) {
                 <>
                     {/*<EntryHeader title={title} image={featuredImage?.node} />*/}
                     <Container>
-                        <RenderBlocks industries={industries} postIcon={clients} data={blocks} />
+                      <RenderBlocks latestClients={latestClients} industries={industries} postIcon={clients} data={blocks} />
                         {/*<WordPressBlocksViewer blocks={blocks} />*/}
                     </Container>
                 </>
@@ -95,6 +97,8 @@ Component.query = gql`
   ${FeaturedImage.fragments.entry}
   ${components?.AcfHeroSingleClients.fragments.entry}
   ${components?.AcfSingleClientsContent.fragments.entry}
+  ${components?.AcfSingleClientsTestimonial.fragments.entry}
+  ${components?.AcfLargeImage.fragments.entry}
 
   query GetPageData(
     $databaseId: ID!
@@ -112,6 +116,8 @@ Component.query = gql`
       editorBlocks(flat: false) {
         ...${components.AcfHeroSingleClients.fragments.key}
         ...${components.AcfSingleClientsContent.fragments.key}
+        ...${components.AcfSingleClientsTestimonial.fragments.key}
+        ...${components.AcfLargeImage.fragments.key}
       }
       clients {
         icon {
@@ -120,12 +126,31 @@ Component.query = gql`
           }
         }
       } 
+
       industries {
         nodes {
             name
         }
       }
     }
+
+    clients(where: {notIn: "$databaseId"}, first: 3) {
+         nodes {
+          link     
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+          clients {
+            icon {
+              node {
+                sourceUrl
+              }
+            }
+          }
+        }
+   }
 
     themeGeneralSettings{
       ...themeGeneralSettingsFragment

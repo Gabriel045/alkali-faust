@@ -11,6 +11,7 @@ export default function AcfHeroSingleClients({data,postIcon,industries}) {
   const icon = postIcon?.icon?.node.sourceUrl
   const category = industries?.nodes[0].name
 
+
   return (
     <section className="relative dark lg:min-h-[800px]">
       <div className="block_content block_content-single flex flex-wrap w-full items-center">

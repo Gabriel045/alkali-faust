@@ -20,4 +20,5 @@ export {SliderResponsive} from './SliderResponsive';
 export {TestimonialResponsive} from './TestimonialResponsive';
 export {RenderBlocks} from './RenderBlocks';
 export {ClientsCards} from './ClientsCards';
+export {LatestClientsResponsive} from './LatestClientsResponsive';
 
