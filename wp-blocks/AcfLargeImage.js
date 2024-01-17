@@ -10,6 +10,9 @@ export default function AcfLargeImage({data}) {
     const headline = data?.largeImageBlock?.headline
     const image = data?.largeImageBlock?.image?.node?.sourceUrl
     const cta = data?.largeImageBlock?.cta
+    const ctaUrl = data?.largeImageBlock?.cta.url ?? "#"
+
+    //console.log(ctaUrl);
 
     return (
         <section className="relative">
@@ -18,9 +21,9 @@ export default function AcfLargeImage({data}) {
                     <div className="text-center text-[#232323] m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />
                     <p className="paragraph text-center text-[#525252] pt-[30px] lg:w-[55%] m-auto ">{headline}</p>
                     {
-                        cta.url.length > 0 &&
+                        ctaUrl.length > 0 &&
                         <div className="flex justify-center">
-                            <Link href={cta.url}>
+                            <Link href={ctaUrl}>
                                 <a className="lg:m-auto mb-[80px] lg:mb-0 mt-[38px] lg:mt-[60px] button_custom inline-block">{cta.text}</a>
                             </Link>
                         </div>

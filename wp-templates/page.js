@@ -47,6 +47,8 @@ export default function Component(props) {
   const {editorBlocks} = props.data.page;
   const blocks = editorBlocks;
 
+  //console.log(blocks);
+
   return (
     <>
       <SEO
@@ -100,6 +102,11 @@ Component.query = gql`
   ${components?.AcfSlider.fragments.entry}
   ${components?.AcfTestimonials.fragments.entry}
   ${components?.AcfTextImageBlock.fragments.entry}
+  ${components?.AcfTextImageBlock.fragments.entry}
+  ${components?.AcfListImages.fragments.entry}
+  ${components?.AcfSchedule.fragments.entry}
+  ${components?.AcfLargeImage.fragments.entry}
+  ${components?.AcfFaq.fragments.entry}
 
   query GetPageData(
     $databaseId: ID!
@@ -124,6 +131,10 @@ Component.query = gql`
         ...${components.AcfSlider.fragments.key}
         ...${components.AcfTestimonials.fragments.key}
         ...${components.AcfTextImageBlock.fragments.key}
+        ...${components.AcfListImages.fragments.key}
+        ...${components.AcfSchedule.fragments.key}
+        ...${components.AcfLargeImage.fragments.key}
+        ...${components.AcfFaq.fragments.key}
       }
     }
 

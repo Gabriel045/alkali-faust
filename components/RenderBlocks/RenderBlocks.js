@@ -50,6 +50,15 @@ const AcfLargeImage = dynamic({
 const AcfLatestClients = dynamic({
     loader: () => import('../../wp-blocks/AcfLatestClients')
 })
+const AcfListImages = dynamic({
+    loader: () => import('../../wp-blocks/AcfListImages')
+})
+const AcfSchedule = dynamic({
+    loader: () => import('../../wp-blocks/AcfSchedule')
+})
+const AcfFaq = dynamic({
+    loader: () => import('../../wp-blocks/AcfFaq')
+})
 
 
 
@@ -91,6 +100,12 @@ export default function RenderBlocks({data,postIcon,clients,industries,latestCli
                             return <div key={index}> <AcfLargeImage data={block} /> </div>
                         case 'AcfLatestClients':
                             return <div key={index}> <AcfLatestClients latestClients={latestClients} /> </div>
+                        case 'AcfListImages':
+                            return <div key={index}> <AcfListImages data={block} /> </div>
+                        case 'AcfSchedule':
+                            return <div key={index}> <AcfSchedule data={block} /> </div>
+                        case 'AcfFaq':
+                            return <div key={index}> <AcfFaq data={block} /> </div>
                         default:
                             return <div key={index}></div>
                     }

@@ -15,6 +15,9 @@ import AcfSingleClientsContent from "./AcfSingleClientsContent";
 import AcfSingleClientsTestimonial from "./AcfSingleClientsTestimonial";
 import AcfLargeImage from "./AcfLargeImage";
 import AcfLatestClients from "./AcfLatestClients";
+import AcfListImages from "./AcfListImages";
+import AcfSchedule from "./AcfSchedule";
+import AcfFaq from "./AcfFaq";
 
 export default {
     AcfAlkali,
@@ -34,5 +37,8 @@ export default {
     AcfSingleClientsContent,
     AcfSingleClientsTestimonial,
     AcfLargeImage,
-    AcfLatestClients
+    AcfLatestClients,
+    AcfListImages,
+    AcfSchedule,
+    AcfFaq
 }

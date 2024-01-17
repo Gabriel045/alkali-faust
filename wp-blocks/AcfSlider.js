@@ -17,7 +17,7 @@ export default function AcfSlider({data}) {
 
   //creating the ref
   const refs = useRef(steps.map(() => React.createRef()));
-  
+
   useEffect(() => {
     refs.current[0].current.focus();
   },[]);
@@ -41,7 +41,7 @@ export default function AcfSlider({data}) {
   }
 
   return (
-    <section  id="slider" className="relative overflow-hidden <?php echo $background ?>">
+    <section id="slider" className={`relative overflow-hidden ${background}`}>
       <div className="block_content">
         <div className="pb-[60px] lg:pb-[120px]">
           <h2 className="text-center text-[#232323]" dangerouslySetInnerHTML={{__html: title ?? ''}} />
