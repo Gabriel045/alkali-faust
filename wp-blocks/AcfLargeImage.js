@@ -18,7 +18,7 @@ export default function AcfLargeImage({data}) {
         <section className="relative">
             <div className="block_content">
                 <div className="pb-[40px] lg:pb-[80px]">
-                    <div className="text-center text-[#232323] m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />
+                    <div className="text-center text-[#232323] m-auto lg:w-[45%]" dangerouslySetInnerHTML={{__html: title ?? ''}} />
                     <p className="paragraph text-center text-[#525252] pt-[30px] lg:w-[55%] m-auto ">{headline}</p>
                     {
                         ctaUrl.length > 0 &&
