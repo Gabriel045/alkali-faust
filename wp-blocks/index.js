@@ -18,6 +18,8 @@ import AcfLatestClients from "./AcfLatestClients";
 import AcfListImages from "./AcfListImages";
 import AcfSchedule from "./AcfSchedule";
 import AcfFaq from "./AcfFaq";
+import AcfMap from "./AcfMap";
+import AcfCoreValues from "./AcfCoreValues";
 
 export default {
     AcfAlkali,
@@ -40,5 +42,7 @@ export default {
     AcfLatestClients,
     AcfListImages,
     AcfSchedule,
-    AcfFaq
+    AcfFaq,
+    AcfMap,
+    AcfCoreValues
 }

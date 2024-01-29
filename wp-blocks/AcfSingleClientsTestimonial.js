@@ -5,13 +5,17 @@ import Image from "next/future/image";
 import Link from "next/link";
 
 export default function AcfSingleClientsTestimonial({data,postIcon}) {
+
+    //console.log(data);
+
     const background = data?.singleClientsTestimonialBlock.backgroundColor
     const name = data?.singleClientsTestimonialBlock.name
     const paragraph = data?.singleClientsTestimonialBlock.paragraph
-    const title = data?.singleClientsTestimonialBlock.title ?? ""
-    const icon = postIcon?.icon?.node?.sourceUrl
+    const title = data?.singleClientsTestimonialBlock.title
+    const icon = postIcon?.icon?.node?.sourceUrl ?? ""
 
-    const style={
+
+    const style = {
         backgroundImage: `linear-gradient(0deg,${background} 0%,${background} 100%), url(${require('../assets/images/overlay.webp').default?.src})`,
         backgroundPosition: 'left center',
         backgroundSize: 'cover',
@@ -20,23 +24,26 @@ export default function AcfSingleClientsTestimonial({data,postIcon}) {
 
     return (
         <section className="">
-            <div className="block_content <?php echo $block['className'] ?> " style={{paddingBottom: title.lenght > 0 ? 'auto' : '0px',  paddingTop: title.lenght > 0 ? 'auto' : '0px'}}>
+            <div className="block_content <?php echo $block['className'] ?> " style={{paddingBottom: title ? 'auto' : '0px',paddingTop: title ? 'auto' : '0px'}}>
                 {
-                    title.lenght > 0 &&
+                    title &&
                     <div className="pb-[60px] lg:pb-[90px]">
-                            <h2 className="text-center text-background  m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} /> 
+                        <h2 className="text-center text-background  m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />
                     </div>
                 }
-                <div className="flex flex-wrap lg:flex-nowrap lg:h-[375px] rounded-[10px]" style={{ boxShadow: '4px 7px 15px 0px rgba(0, 0, 0, 0.08)' }}>
-                    <div className="w-full lg:w-[45%] h-[205px] lg:h-auto triangle relative  rounded-bl-[0px] lg:rounded-bl-[10px] rounded-tr-[10px] lg:rounded-tr-[0px] rounded-l-[10px]" style={style}> 
-                        <Image
-                            src={icon}
-                            width={276}
-                            height={160}
-                            style={{}} // optional
-                            className={'absolute z-[50] top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]'}
-                            alt="Picture of the author"
-                        />
+                <div className="flex flex-wrap lg:flex-nowrap lg:h-[375px] rounded-[10px]" style={{boxShadow: '4px 7px 15px 0px rgba(0, 0, 0, 0.08)'}}>
+                    <div className="w-full lg:w-[45%] h-[205px] lg:h-auto triangle relative  rounded-bl-[0px] lg:rounded-bl-[10px] rounded-tr-[10px] lg:rounded-tr-[0px] rounded-l-[10px]" style={style}>
+                        {
+                            icon.lenght > 0 &&
+                            <Image
+                                src={icon}
+                                width={276}
+                                height={160}
+                                style={{}} // optional
+                                className={'absolute z-[50] top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]'}
+                                alt="Picture of the author"
+                            />
+                        }
                     </div>
                     <div className="w-full lg:w-[55%] flex items-center px-[50px] lg:px-[60px] py-[55px] lg:py-[0px]">
                         <div>

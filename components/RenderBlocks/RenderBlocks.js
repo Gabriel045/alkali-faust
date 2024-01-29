@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 
 
-//I mport Blocks
+//Import Blocks
 const AcfHeroHome = dynamic({
     loader: () => import('../../wp-blocks/AcfHeroHome')
 })
@@ -59,6 +59,12 @@ const AcfSchedule = dynamic({
 const AcfFaq = dynamic({
     loader: () => import('../../wp-blocks/AcfFaq')
 })
+const AcfMap = dynamic({
+    loader: () => import('../../wp-blocks/AcfMap')
+})
+const AcfCoreValues = dynamic({
+    loader: () => import('../../wp-blocks/AcfCoreValues')
+})
 
 
 
@@ -106,6 +112,10 @@ export default function RenderBlocks({data,postIcon,clients,industries,latestCli
                             return <div key={index}> <AcfSchedule data={block} /> </div>
                         case 'AcfFaq':
                             return <div key={index}> <AcfFaq data={block} /> </div>
+                        case 'AcfMap':
+                            return <div key={index}> <AcfMap data={block} /> </div>
+                        case 'AcfCoreValues':
+                            return <div key={index}> <AcfCoreValues data={block} /> </div>
                         default:
                             return <div key={index}></div>
                     }

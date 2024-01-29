@@ -702,6 +702,39 @@ h4 {
 }
 
 
+.america-container {
+    top: 30%;
+    left: 12.5%;
+}
+
+.europe-container {
+    top: 10%;
+    left: 49.5%;
+}
+
+.asia-container {
+    top: 32%;
+    left: 58%;
+}
+
+.oceania-container {
+    top: 58%;
+    left: 76%;
+}
+
+.arrow-down::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    width: 0px;
+    height: 0px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 6px solid #fff;
+    left: 50%;
+    transform: translate(-50%);
+}
+
 /* responsive */
 @media screen and (max-width: 1250px) {
     .block_content {
@@ -864,6 +897,156 @@ h4 {
         bottom: -70px !important;
     }
 
+    .america-container {
+        top: 22%;
+        left: 8%;
+    }
+
+    .europe-container {
+        top: 10%;
+        left: 35%
+    }
+
+    .europe-container.arrow-down::after {
+        display: none;
+    }
+
+    .arrow-right::before {
+        content: "";
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        border-top: 11px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 9px solid #fff;
+        top: 50%;
+        right: -9px;
+        top: 50%;
+        right: -6px;
+        box-shadow: rgba(16, 24, 40, 0.03) 0px 4px 6px -2px, rgba(16, 24, 40, 0.08) 0px 12px 16px -4px;
+        transform: translate(0, -50%);
+    }
+
+    .asia-container {
+        top: 26%;
+        left: 59%;
+    }
+
+    .oceania-container {
+        top: 58%;
+        left: auto;
+        right: 2%;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .america-container {
+        top: 19%;
+        left: 6%;
+    }
+
+    .europe-container {
+        top: 0%;
+        left: 30%
+    }
+
+    .asia-container {
+        top: 22%;
+        left: 56%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .america-container {
+        top: 13%;
+        left: 3%;
+    }
+
+    .europe-container {
+        top: 4%;
+        left: 26%
+    }
+
+    .asia-container {
+        top: 17%;
+        left: 55%;
+    }
+
+    .oceania-container {
+        top: 55%;
+        left: auto;
+        right: 0px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .america-container {
+        top: 18%;
+        left: 7%;
+    }
+
+    .europe-container {
+        top: 12%;
+        left: 35%
+    }
+
+    .asia-container {
+        top: 22%;
+        left: 58%;
+    }
+
+    .oceania-container {
+        top: 58%;
+        left: auto;
+        right: 2%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .america-container {
+        top: 14%;
+        /*left: 4%;*/
+    }
+
+    .europe-container {
+        top: 9%;
+        left: 28%
+    }
+
+    .asia-container {
+        top: 18%;
+        left: 54%;
+    }
+
+    .oceania-container {
+        top: 55%;
+        left: auto;
+        right: 1%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .america-container {
+        top: 2%;
+        left: 2%;
+    }
+
+    .europe-container {
+        top: 7%;
+        left: 20%
+    }
+
+    .asia-container {
+        top: 9%;
+        left: 52%;
+    }
+
+    .oceania-container {
+        top: 43%;
+        left: auto;
+        right: 0;
+    }
 }
 
 @keyframes progressAnimationStrike {
