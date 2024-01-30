@@ -110,6 +110,8 @@ Component.query = gql`
   ${components?.AcfMap.fragments.entry}
   ${components?.AcfCoreValues.fragments.entry}
   ${components?.AcfSingleClientsTestimonial.fragments.entry}
+  ${components?.AcfCareers.fragments.entry}
+  ${components?.AcfCards.fragments.entry}
 
   query GetPageData(
     $databaseId: ID!
@@ -141,6 +143,8 @@ Component.query = gql`
         ...${components.AcfMap.fragments.key}
         ...${components.AcfCoreValues.fragments.key}
         ...${components.AcfSingleClientsTestimonial.fragments.key}
+        ...${components.AcfCareers.fragments.key}
+        ...${components.AcfCards.fragments.key}
       }
     }
 

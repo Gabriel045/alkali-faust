@@ -53,7 +53,7 @@ export default function AcfGravityForm(props) {
       case 'POST_CONTENT':
         return <div id={type.id}  className={`input-content flex flex-col ${(type.gridColumn == 6) ? "md:w-[49%] w-full" : "w-full"} `}>
           <label className='text-[14px] font-[600] mb-[5px]'>{type.label}</label>
-          <textarea className="py-[10px] px-[14px] shadow-md rounded-[10px] border-[1px] border-[#D0D5DD]"
+          <textarea className="h-[106px] py-[10px] px-[14px] shadow-md rounded-[10px] border-[1px] border-[#D0D5DD]"
             placeholder={type.placeholder} key={type.label} required={`${type.isRequired == true ? 'required' : ''}`} {...register(`${type.label}`)} />
         </div>
       default:
@@ -100,7 +100,10 @@ export default function AcfGravityForm(props) {
   },[data])
 
 
-
+  const style = {
+    backgroundImage: `url(${image})`,
+    backgroundSize: 'cover'
+  };
 
   return (
     <section  className="">
@@ -122,15 +125,7 @@ export default function AcfGravityForm(props) {
                 </>}
             </form>}
           </div>
-          <div className="lg:w-1/2 rounded-[10px] h-[400px] w-full lg:h-auto mt-[50px] lg:mt-0 min-h-[400px] bg-cover	">
-            <Image
-              src={image}
-              width={0}
-              height={0}
-              sizes="100vw"
-              layout="responsive"
-              style={{width: '100%',height: '100%', borderRadius:'10px'}} // optional
-              alt="Picture of the author" />
+          <div className="lg:w-1/2 rounded-[10px] h-[400px] w-full  mt-[50px] lg:h-auto lg:mt-0 min-h-[618px] bg-cover" style={style}>
           </div>
         </div>
       </div>

@@ -5,15 +5,14 @@ import Image from "next/future/image";
 import Link from "next/link";
 
 export default function AcfSingleClientsTestimonial({data,postIcon}) {
-
     //console.log(data);
 
     const background = data?.singleClientsTestimonialBlock.backgroundColor
     const name = data?.singleClientsTestimonialBlock.name
     const paragraph = data?.singleClientsTestimonialBlock.paragraph
+    const cssClassNames = data?.cssClassNames.toString()
     const title = data?.singleClientsTestimonialBlock.title
     const icon = postIcon?.icon?.node?.sourceUrl ?? ""
-
 
     const style = {
         backgroundImage: `linear-gradient(0deg,${background} 0%,${background} 100%), url(${require('../assets/images/overlay.webp').default?.src})`,
@@ -24,7 +23,7 @@ export default function AcfSingleClientsTestimonial({data,postIcon}) {
 
     return (
         <section className="">
-            <div className="block_content <?php echo $block['className'] ?> " style={{paddingBottom: title ? 'auto' : '0px',paddingTop: title ? 'auto' : '0px'}}>
+            <div className={`block_content ${cssClassNames}`} style={{paddingBottom: title ? 'auto' : '0px',paddingTop: title ? 'auto' : '0px'}}>
                 {
                     title &&
                     <div className="pb-[60px] lg:pb-[90px]">
@@ -67,6 +66,7 @@ AcfSingleClientsTestimonial.fragments = {
           title
           name
         }
+        cssClassNames
     }
   `,
 };

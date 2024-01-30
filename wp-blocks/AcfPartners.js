@@ -11,8 +11,10 @@ export default function AcfPartners({data}) {
   const headline = data.partnersBlock?.headline
   const columns = data.partnersBlock?.columns[0]
   const cards = data.partnersBlock?.cards
+  const cta = data.partnersBlock?.cta
 
-  //console.log('all props',props);
+  console.log(cta.url);
+
   return (
     <section  className="relative">
       <img loading="lazy" className="hidden lg:block absolute z-10 top-[40%] left-0 rotate-180" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
@@ -49,7 +51,6 @@ export default function AcfPartners({data}) {
                         alt="Picture of the author"
                         className="icon_filter"
                       />
-                  //<img loading="lazy" className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />
                 }
               </div>
             })
@@ -57,6 +58,14 @@ export default function AcfPartners({data}) {
         </div>
         <PartnerResponsive cards={cards} />
 
+        <div className="flex justify-center mt-[140px]">
+          {
+            cta.url != null &&
+            <Link href={cta.url}>
+              <a className="button_custom no-arrow inline-block">{cta.text}</a>
+            </Link>
+          }
+        </div>
 
       </div>
       <img loading="lazy" className="hidden lg:block absolute z-10 top-[10%] right-0" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
@@ -73,6 +82,10 @@ AcfPartners.fragments = {
         columns
         headline
         title
+        cta {
+          text
+          url
+        }
         cards {
           url
           icon {

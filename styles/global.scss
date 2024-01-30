@@ -352,6 +352,10 @@ h4 {
     position: relative;
 }
 
+.button_custom.no-arrow::after{
+    display: none;
+}
+
 .button_custom:hover {
     transform: translateY(2px);
 }
@@ -733,6 +737,10 @@ h4 {
     border-top: 6px solid #fff;
     left: 50%;
     transform: translate(-50%);
+}
+
+.pb-\[140px\] {
+    padding-bottom: 140px !important;
 }
 
 /* responsive */

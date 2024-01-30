@@ -11,18 +11,20 @@ export default function AcfProvideSolutions({data}) {
     setcards(data.provideSolutionsBlock?.cards)
   },[]);
 
-  const [title,settitle] = useState("")
+  const [title,setTitle] = useState("")
+
   useEffect(() => {
-    settitle(data.provideSolutionsBlock?.title)
-  },[]);
+    if(data.provideSolutionsBlock?.title){
+      setTitle(data.provideSolutionsBlock?.title)
+    }else{
+      setTitle("")
+    }
+  },[title]);
 
 
   const background = data.provideSolutionsBlock?.background[0]
-  //const title = data.provideSolutionsBlock?.title
   const headline = data.provideSolutionsBlock?.headline
-  //const cards = data.provideSolutionsBlock?.cards
   const learnMoreLink = data.provideSolutionsBlock?.learnMoreLink
-
 
   return (
     <section  className={`relative ${background == 'Light' ? 'bg-white' : 'bg-background '} `}>
@@ -33,7 +35,7 @@ export default function AcfProvideSolutions({data}) {
             <h2 className="text-center text-[#fff] lg:w-[38%] m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />
             <p className="paragraph sm:w-[60%] text-center text-[#929292] pt-[30px] lg:w-[55%] m-auto ">{headline} </p>
           </div>
-        }  
+        }
         <div className="flex flex-row flex-wrap">
           { 
             cards.map((card,index)=>{
@@ -41,12 +43,11 @@ export default function AcfProvideSolutions({data}) {
                 <div>
                   <Image
                     src={card?.icon.nodes[0].sourceUrl}
-                    width={43}
-                    height={42}
+                    width={64}
+                    height={65}
                     style={{}} // optional
                     alt="Picture of the author"
                   />
-                  {/*<img loading="lazy"  src={card?.icon.nodes[0].sourceUrl} alt="" />*/}
                 </div>
                 <p className= {`${background == 'Light' ? 'text-background' : 'text-[#FFF] '}  font-[600] text-[16px] pt-[20px]`} > {card.title} </p>
                 <p className="text-[16px] font-[400] text-[#929292] py-[15px]"> {card.paragraph} </p>
@@ -58,7 +59,6 @@ export default function AcfProvideSolutions({data}) {
                     style={{}} // optional
                     alt="Picture of the author"
                   />
-                  {/*<img className="mb-[-2px]" src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />*/}
                 </a>
               </div>
             })

@@ -65,6 +65,12 @@ const AcfMap = dynamic({
 const AcfCoreValues = dynamic({
     loader: () => import('../../wp-blocks/AcfCoreValues')
 })
+const AcfCareers = dynamic({
+    loader: () => import('../../wp-blocks/AcfCareers')
+})
+const AcfCards = dynamic({
+    loader: () => import('../../wp-blocks/AcfCards')
+})
 
 
 
@@ -116,6 +122,10 @@ export default function RenderBlocks({data,postIcon,clients,industries,latestCli
                             return <div key={index}> <AcfMap data={block} /> </div>
                         case 'AcfCoreValues':
                             return <div key={index}> <AcfCoreValues data={block} /> </div>
+                        case 'AcfCareers':
+                            return <div key={index}> <AcfCareers data={block} /> </div>
+                        case 'AcfCards':
+                            return <div key={index}> <AcfCards data={block} /> </div>
                         default:
                             return <div key={index}></div>
                     }

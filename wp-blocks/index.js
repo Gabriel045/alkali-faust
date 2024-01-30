@@ -20,6 +20,8 @@ import AcfSchedule from "./AcfSchedule";
 import AcfFaq from "./AcfFaq";
 import AcfMap from "./AcfMap";
 import AcfCoreValues from "./AcfCoreValues";
+import AcfCareers from "./AcfCareers";
+import AcfCards from "./AcfCards";
 
 export default {
     AcfAlkali,
@@ -44,5 +46,7 @@ export default {
     AcfSchedule,
     AcfFaq,
     AcfMap,
-    AcfCoreValues
+    AcfCoreValues,
+    AcfCareers,
+    AcfCards
 }
