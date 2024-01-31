@@ -7,8 +7,7 @@
     "build": "faust build",
     "generate": "faust generatePossibleTypes",
     "stylesheet": "faust generateGlobalStylesheet",
-    "start": "faust start",
-    "export": "next export"
+    "start": "faust start"
   },
   "dependencies": {
     "@apollo/client": "^3.6.6",

@@ -71,10 +71,16 @@ const AcfCareers = dynamic({
 const AcfCards = dynamic({
     loader: () => import('../../wp-blocks/AcfCards')
 })
+const AcfBlog = dynamic({
+    loader: () => import('../../wp-blocks/AcfBlog')
+})
+const AcfBlogContent = dynamic({
+    loader: () => import('../../wp-blocks/AcfBlogContent')
+})
 
 
 
-export default function RenderBlocks({data,postIcon,clients,industries,latestClients}) {
+export default function RenderBlocks({data,postIcon,clients,industries,latestClients,blog}) {
     return (
         <>
             {
@@ -126,6 +132,10 @@ export default function RenderBlocks({data,postIcon,clients,industries,latestCli
                             return <div key={index}> <AcfCareers data={block} /> </div>
                         case 'AcfCards':
                             return <div key={index}> <AcfCards data={block} /> </div>
+                        case 'AcfBlogs':
+                            return <div key={index}> <AcfBlog blog={blog} /> </div>
+                        case 'AcfBlogContent':
+                            return <div key={index}> <AcfBlogContent data={block} /> </div>
                         default:
                             return <div key={index}></div>
                     }

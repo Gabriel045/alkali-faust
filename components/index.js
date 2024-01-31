@@ -22,4 +22,5 @@ export {RenderBlocks} from './RenderBlocks';
 export {ClientsCards} from './ClientsCards';
 export {LatestClientsResponsive} from './LatestClientsResponsive';
 export {Map} from './Map';
+export {HeroSingleBlog} from './HeroSingleBlog';
 

@@ -22,6 +22,8 @@ import AcfMap from "./AcfMap";
 import AcfCoreValues from "./AcfCoreValues";
 import AcfCareers from "./AcfCareers";
 import AcfCards from "./AcfCards";
+import AcfBlog from "./AcfBlog";
+import AcfBlogContent from "./AcfBlogContent";
 
 export default {
     AcfAlkali,
@@ -48,5 +50,7 @@ export default {
     AcfMap,
     AcfCoreValues,
     AcfCareers,
-    AcfCards
+    AcfCards,
+    AcfBlog,
+    AcfBlogContent
 }
