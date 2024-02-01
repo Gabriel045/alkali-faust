@@ -78,13 +78,14 @@ Component.query = gql`
   ${themeGeneralSettingsFragment}
   ${NavigationMenu.fragments.entry}
   query GetCategoryPage(
+    $uri: String!
     $headerLocation:  MenuLocationEnum
     $footerLocation:  MenuLocationEnum
     $footerLocation2: MenuLocationEnum
     $footerLocation3: MenuLocationEnum
     $footerLocation4: MenuLocationEnum
   ) {
-    nodeByUri(uri: "blog/about-us") {
+    nodeByUri(uri: $uri) {
       ... on Category {
         posts {
           nodes {
