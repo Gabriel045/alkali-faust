@@ -80,7 +80,7 @@ const AcfBlogContent = dynamic({
 
 
 
-export default function RenderBlocks({data,postIcon,clients,industries,latestClients,blog}) {
+export default function RenderBlocks({data,postIcon,clients,industries,latestClients,blog,categories}) {
     return (
         <>
             {
@@ -135,7 +135,7 @@ export default function RenderBlocks({data,postIcon,clients,industries,latestCli
                         case 'AcfBlogs':
                             return <div key={index}> <AcfBlog blog={blog} /> </div>
                         case 'AcfBlogContent':
-                            return <div key={index}> <AcfBlogContent data={block} /> </div>
+                            return <div key={index}> <AcfBlogContent data={block} categories={categories}/> </div>
                         default:
                             return <div key={index}></div>
                     }

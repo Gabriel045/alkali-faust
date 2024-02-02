@@ -50,6 +50,8 @@ export default function Component(props) {
   const {editorBlocks,categories,featuredImage:FeaturedImage,title:Title, date} = props.data.post;
   const blocks = editorBlocks;
 
+  console.log(props.data);
+
     return (
         <>
             <SEO
@@ -68,7 +70,7 @@ export default function Component(props) {
                 <>
                     {/*<EntryHeader title={title} image={featuredImage?.node} />*/}
                     <Container>
-                      <RenderBlocks data={blocks} />
+                       <RenderBlocks data={blocks} categories={categories} />
                         {/*<WordPressBlocksViewer blocks={blocks} />*/}
                     </Container>
                 </>

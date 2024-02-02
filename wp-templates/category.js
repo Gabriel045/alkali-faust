@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import {gql} from '@apollo/client';
 import * as MENUS from '../constants/menus';
 import {BlogInfoFragment,themeGeneralSettingsFragment} from '../fragments/GeneralSettings';
 import {
@@ -13,11 +13,13 @@ import {
   SEO,
 } from '../components';
 
+import AcfBlog from '../wp-blocks/AcfBlog';
+import AcfHero from '../wp-blocks/AcfHero';
+
+
 export default function Component(props) {
 
-  console.log(props);
-  
-  const { title: siteTitle, description: siteDescription } =
+  const {title: siteTitle,description: siteDescription} =
     props?.data?.generalSettings;
   //const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
   //const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
@@ -27,7 +29,7 @@ export default function Component(props) {
   const footerMenu2 = props?.data.footerMenuItems2?.nodes ?? [];
   const footerMenu3 = props?.data.footerMenuItems3?.nodes ?? [];
   const footerMenu4 = props?.data.footerMenuItems4?.nodes ?? [];
-  const logoUrl     = props?.data.themeGeneralSettings?.themeSetting.header.logo?.node.mediaItemUrl
+  const logoUrl = props?.data.themeGeneralSettings?.themeSetting.header.logo?.node.mediaItemUrl
   const footerTexts = {
     'title': props?.data.themeGeneralSettings?.themeSetting.footer?.footerTitle,
     'paragraph': props?.data.themeGeneralSettings?.themeSetting.footer?.footerParagraph
@@ -38,9 +40,18 @@ export default function Component(props) {
     'linkedin': props?.data.themeGeneralSettings?.themeSetting.socialMedia?.linkedin,
     'twitter': props?.data.themeGeneralSettings?.themeSetting.socialMedia?.x
 
-  }  
+  }
 
-  const { name, posts } = props.data.nodeByUri;
+  const posts = props?.data.nodeByUri?.posts.nodes
+  const data = {
+    heroBlock: {
+      title: props?.data.nodeByUri.name
+    }
+  }
+
+
+  console.log(data);
+
 
   return (
     <>
@@ -53,19 +64,8 @@ export default function Component(props) {
       />
       <Main>
         <>
-          <EntryHeader title={`Category: ${name}`} />
-          {/*<Container>
-            {posts.edges.map((post) => (
-              <Post
-                title={post.node.title}
-                content={post.node.content}
-                date={post.node.date}
-                author={post.node.author?.node.name}
-                uri={post.node.uri}
-                featuredImage={post.node.featuredImage?.node}
-              />
-            ))}
-          </Container>*/}
+          <AcfHero data={data} />
+          <AcfBlog blog={posts} />
         </>
       </Main>
       <Footer footerTexts={footerTexts} socialMedia={socialMedia} footerMenu={footerMenu} footerMenu2={footerMenu2} footerMenu3={footerMenu3} footerMenu4={footerMenu4} />
@@ -87,6 +87,7 @@ Component.query = gql`
   ) {
     nodeByUri(uri: $uri) {
       ... on Category {
+        name
         posts {
           nodes {
             title
@@ -101,7 +102,7 @@ Component.query = gql`
         }
       }
     }
-
+  
     themeGeneralSettings{
       ...themeGeneralSettingsFragment
     }
@@ -136,7 +137,9 @@ Component.query = gql`
   }
 `;
 
-Component.variables = ({ uri }) => {
+
+Component.variables = ({uri}) => {
+  uri = uri.split(/(?=blog)/)[1]
   return {
     uri,
     headerLocation: MENUS.PRIMARY_LOCATION,
