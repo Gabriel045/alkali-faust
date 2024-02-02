@@ -4,8 +4,6 @@ import Link from 'next/link';
 import Image from "next/future/image";
 
 export default function AcfBlog({blog}) {
-
-    console.log(blog);
     return (
         <section>
             <div className="max-w-[1440px] w-full px-[20px] lg:px-[120px] pt-[80px] lg:pt-[120px] pb-[60px] lg:pb-[110px]">

@@ -1,9 +1,10 @@
 import React from "react";
 import {useRef,useState,useEffect} from 'react';
 import {gql} from '@apollo/client';
-import {SliderResponsive} from '../components';
 import Image from "next/future/image";
+import loadable from '@loadable/component'
 
+const SliderResponsive = loadable(() => import('../components/SliderResponsive/SliderResponsive'))
 
 export default function AcfListImages({data}) {
     const title = data?.listImageBlock?.title

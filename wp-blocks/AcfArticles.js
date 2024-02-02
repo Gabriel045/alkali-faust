@@ -1,7 +1,9 @@
 import React from 'react';
 import {useQuery,gql} from '@apollo/client';
-import {ArticleSlider} from '../components';
+import {} from '../components';
+import loadable from '@loadable/component'
 
+const ArticleSlider = loadable(() => import('../components/ArticleSlider/ArticleSlider'))
 
 export default function AcfArticles(props) {
   const title = props.data.articlesBlock?.title 

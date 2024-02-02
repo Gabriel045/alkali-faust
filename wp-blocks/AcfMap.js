@@ -1,7 +1,9 @@
 import React from "react";
 import {useRef,useState,useEffect} from 'react';
 import {gql} from '@apollo/client';
-import {Map} from '../components';
+import loadable from '@loadable/component'
+
+const Map = loadable(() => import('../components/Map/Map'))
 
 export default function AcfMap({data}) {
     const title = data?.mapBlock?.title

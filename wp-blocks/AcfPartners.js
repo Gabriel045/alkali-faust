@@ -1,8 +1,10 @@
 import React from 'react';
 import {gql} from '@apollo/client';
 import Link from 'next/link';
-import {PartnerResponsive} from '../components';
 import Image from "next/future/image";
+import loadable from '@loadable/component'
+
+const PartnerResponsive = loadable(() => import('../components/PartnerResponsive/PartnerResponsive'))
 
 export default function AcfPartners({data}) {
 
@@ -12,8 +14,6 @@ export default function AcfPartners({data}) {
   const columns = data.partnersBlock?.columns[0]
   const cards = data.partnersBlock?.cards
   const cta = data.partnersBlock?.cta
-
-  console.log(cta.url);
 
   return (
     <section  className="relative">

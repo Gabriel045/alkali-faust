@@ -3,7 +3,10 @@ import {gql} from '@apollo/client';
 import {useRef,useState,useEffect} from 'react';
 import Image from "next/future/image";
 import Link from "next/link";
-import {LatestClientsResponsive} from '../components';
+import loadable from '@loadable/component'
+
+
+const LatestClientsResponsive = loadable(() => import('../components/LatestClientsResponsive/LatestClientsResponsive'))
 
 
 export default function AcflatestClients({latestClients}) {

@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic'
 
-
 //Import Blocks
 const AcfHeroHome = dynamic({
     loader: () => import('../../wp-blocks/AcfHeroHome')

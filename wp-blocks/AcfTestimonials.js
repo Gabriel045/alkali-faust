@@ -1,8 +1,9 @@
 import React from 'react';
 import {gql} from '@apollo/client';
-import {TestimonialResponsive} from '../components';
 import Image from "next/future/image";
+import loadable from '@loadable/component'
 
+const TestimonialResponsive = loadable(() => import('../components/TestimonialResponsive/TestimonialResponsive'))
 
 export default function AcfTestimonials({data}) {
   //console.log('all props',props);
