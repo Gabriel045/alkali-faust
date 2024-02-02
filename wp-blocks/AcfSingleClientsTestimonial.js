@@ -10,7 +10,7 @@ export default function AcfSingleClientsTestimonial({data,postIcon}) {
     const background = data?.singleClientsTestimonialBlock.backgroundColor
     const name = data?.singleClientsTestimonialBlock.name
     const paragraph = data?.singleClientsTestimonialBlock.paragraph
-    const cssClassNames = data?.cssClassNames.toString()
+    const cssClassNames = data?.cssClassNames ? data?.cssClassNames.toString()  :  ""
     const title = data?.singleClientsTestimonialBlock.title
     const icon = postIcon?.icon?.node?.sourceUrl ?? ""
 

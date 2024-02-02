@@ -38,7 +38,6 @@ export default function AcfCoreValues({data}) {
                                         className={''}
                                         alt="Picture of the author"
                                     />
-                                    {/*<img className="rounded-[10px]" src="<?php echo $card[" icon"] ?>" alt="">*/}
                                 </div>
                                 <p className="text-[#FFF] font-[600] text-[20px] pt-[30px]"> {card.title} </p>
                                 <p className="text-[16px] lg:text-[18px] leading-[24px] font-[400] text-[#929292] pt-[10px]"> {card.paragraph} </p>

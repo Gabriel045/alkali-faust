@@ -29,17 +29,19 @@ export default function AcfCareers({data}) {
                                 <div key={index} className="border-[1px] border-[#EAECF0] rounded-[16px] py-[24px] px-[28px]">
                                     <div className="flex flex-row justify-between">
                                         <p className="text-[18px] font-[600] text-background">{element?.position}</p>
-                                        <a terget="_blank" href="<?php echo $item['link'] ?>" className="text-[14px] text-[#0AADE5] font-[600] flex items-center">
-                                            View job 
-                                            <Image
-                                                src={require('../assets/images/arrow-up-right.svg')}
-                                                width={250}
-                                                height={250}
-                                                style={{width: '21px',height: '20px'}} // optional
-                                                className={'mr-[8px]'}
-                                                alt="Picture of the author"
-                                            />
-                                        </a>
+                                        <Link href="">
+                                            <a target="_blank" className="text-[14px] text-[#0AADE5] font-[600] flex items-center">
+                                                View job 
+                                                <Image
+                                                    src={require('../assets/images/arrow-up-right.svg')}
+                                                    width={250}
+                                                    height={250}
+                                                    style={{width: '21px',height: '20px'}} // optional
+                                                    className={'mr-[8px]'}
+                                                    alt="Picture of the author"
+                                                />
+                                            </a>
+                                        </Link>
                                     </div>
                                     <p className="text-[16px] font-[400] text-background my-[16px]"> {element?.description} </p>
                                     <div className="flex gap-[24px] flex-row">

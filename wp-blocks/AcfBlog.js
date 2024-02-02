@@ -35,7 +35,7 @@ export default function AcfBlog({blog}) {
                                                 <span className="relative z-50">{date}</span>
                                                 <span className="relative z-50 mx-[5px]"> | 4 min read </span>
                                             </div>
-                                            <a className="cursor-pointer blog-title" href="<?php echo get_the_permalink($post->ID,) ?>">
+                                            <a className="cursor-pointer blog-title" href="#">
                                                 <h3 className="relative z-50 text-[22px] font-[600] text-secondary leading-[30px]"> {post?.title} </h3>
                                             </a>
                                             <div className="view_more_container read-article">
