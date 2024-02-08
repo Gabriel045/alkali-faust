@@ -14,7 +14,6 @@ const Header = loadable(() => import('../components/Header/Header'))
 const Footer = loadable(() => import('../components/Footer/Footer'))
 const Main = loadable(() => import('../components/Main/Main'))
 const Container = loadable(() => import('../components/Container/Container'))
-const Hero = loadable(() => import('../components/Hero/Hero'))
 const SEO = loadable(() => import('../components/SEO/SEO'))
 
 
@@ -63,7 +62,6 @@ export default function Component(props) {
       <Main>
         <Container>
           <RenderBlocks data={blocks} />
-          {/*<Hero title={'Front Page'} />*/}
             {/*<WordPressBlocksViewer blocks={blocks} />*/}
             {/* <p>This page is utilizing the "front-page" WordPress template.</p>
             <code>wp-templates/front-page.js</code> */}
