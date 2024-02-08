@@ -16,8 +16,20 @@ const Main = loadable(() => import('../components/Main/Main'))
 const Container = loadable(() => import('../components/Container/Container'))
 const SEO = loadable(() => import('../components/SEO/SEO'))
 
-import components from '../wp-blocks';
 
+
+import AcfHeroHome from '../wp-blocks/AcfHeroHome';
+import AcfArticles from '../wp-blocks/AcfArticles';
+import AcfCaseStudies from '../wp-blocks/AcfCaseStudies';
+import AcfPartners from '../wp-blocks/AcfPartners';
+import AcfProvideSolutions from '../wp-blocks/AcfProvideSolutions';
+import AcfSlider from '../wp-blocks/AcfSlider';
+import AcfTestimonials from '../wp-blocks/AcfTestimonials';
+import AcfTextImageBlock from '../wp-blocks/AcfTextImageBlock';
+
+
+
+//import components from '../wp-blocks';
 import {flatListToHierarchical} from '@faustwp/core';
 import {WordPressBlocksViewer} from '@faustwp/blocks';
 
@@ -87,15 +99,14 @@ Component.query = gql`
   ${BlogInfoFragment}
   ${themeGeneralSettingsFragment}
   ${NavigationMenu.fragments.entry}
-  ${components?.AcfAlkali.fragments.entry}
-  ${components?.AcfArticles.fragments.entry}
-  ${components?.AcfCaseStudies.fragments.entry}
-  ${components?.AcfHeroHome.fragments.entry}
-  ${components?.AcfPartners.fragments.entry}
-  ${components?.AcfProvideSolutions.fragments.entry}
-  ${components?.AcfSlider.fragments.entry}
-  ${components?.AcfTestimonials.fragments.entry}
-  ${components?.AcfTextImageBlock.fragments.entry}
+  ${AcfHeroHome?.fragments.entry}
+  ${AcfArticles.fragments.entry}
+  ${AcfCaseStudies.fragments.entry}
+  ${AcfPartners.fragments.entry}
+  ${AcfProvideSolutions.fragments.entry}
+  ${AcfSlider.fragments.entry}
+  ${AcfTestimonials.fragments.entry}
+  ${AcfTextImageBlock.fragments.entry}
   query GetPageData(
     $headerLocation:  MenuLocationEnum
     $footerLocation:  MenuLocationEnum
@@ -109,15 +120,14 @@ Component.query = gql`
         renderedHtml
         id: clientId
         parentClientId
-        ...${components.AcfAlkali.fragments.key}
-        ...${components.AcfArticles.fragments.key}
-        ...${components.AcfCaseStudies.fragments.key}
-        ...${components.AcfHeroHome.fragments.key}
-        ...${components.AcfPartners.fragments.key}
-        ...${components.AcfProvideSolutions.fragments.key}
-        ...${components.AcfSlider.fragments.key}
-        ...${components.AcfTestimonials.fragments.key}
-        ...${components.AcfTextImageBlock.fragments.key}
+        ...${AcfHeroHome.fragments.key}
+        ...${AcfArticles.fragments.key}
+        ...${AcfCaseStudies.fragments.key}
+        ...${AcfPartners.fragments.key}
+        ...${AcfProvideSolutions.fragments.key}
+        ...${AcfSlider.fragments.key}
+        ...${AcfTestimonials.fragments.key}
+        ...${AcfTextImageBlock.fragments.key}
       }
     }
     themeGeneralSettings{
