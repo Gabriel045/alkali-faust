@@ -10,7 +10,6 @@ import {
     Footer,
     Main,
     Container,
-    ContentWrapper,
     EntryHeader,
     NavigationMenu,
     FeaturedImage,

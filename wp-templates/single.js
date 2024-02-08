@@ -8,7 +8,6 @@ import {
   Container,
   EntryHeader,
   NavigationMenu,
-  ContentWrapper,
   FeaturedImage,
   SEO,
 } from '../components';
@@ -54,8 +53,6 @@ export default function Component(props) {
           />
           <Container>
             <WordPressBlocksViewer blocks={blocks} />
-            {/* <ContentWrapper content={content} /> */}
-
           </Container>
         </>
       </Main>
