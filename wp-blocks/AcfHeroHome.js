@@ -60,7 +60,7 @@ export default function AcfHeroHome({data}) {
           style={{width: '100%',height: '100%',objectFit: "cover"}} // optional
           alt="Picture of the author" />
       </div>
-      <div className="absolute bottom-[-90px] left-0 z-0 w-[103px] h-[398px]">
+      <div className="absolute hidden lg:block bottom-[-90px] left-0 z-0 w-[103px] h-[398px]">
         <Image
           src={require('../assets/images/hexagon.svg')}
           width={103}
