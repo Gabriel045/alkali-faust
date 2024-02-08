@@ -62,7 +62,7 @@ export default function Component(props) {
       />
       <Main>
         <>
-]          <Container>
+         <Container>
             <RenderBlocks data={blocks} />
             {/*<WordPressBlocksViewer blocks={blocks} />*/}
           </Container>

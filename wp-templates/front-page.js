@@ -4,19 +4,7 @@ import loadable from '@loadable/component'
 import {useQuery,gql} from '@apollo/client';
 import * as MENUS from '../constants/menus';
 import {BlogInfoFragment, themeGeneralSettingsFragment} from '../fragments/GeneralSettings';
-import {
-  NavigationMenu
-} from '../components';
-
-
-const RenderBlocks = loadable(() => import('../components/RenderBlocks/RenderBlocks'))
-const Header = loadable(() => import('../components/Header/Header'))
-const Footer = loadable(() => import('../components/Footer/Footer'))
-const Main = loadable(() => import('../components/Main/Main'))
-const Container = loadable(() => import('../components/Container/Container'))
-const SEO = loadable(() => import('../components/SEO/SEO'))
-
-
+import {NavigationMenu} from '../components';
 
 import AcfHeroHome from '../wp-blocks/AcfHeroHome';
 import AcfArticles from '../wp-blocks/AcfArticles';
@@ -27,13 +15,18 @@ import AcfSlider from '../wp-blocks/AcfSlider';
 import AcfTestimonials from '../wp-blocks/AcfTestimonials';
 import AcfTextImageBlock from '../wp-blocks/AcfTextImageBlock';
 
+const RenderBlocks = loadable(() => import('../components/RenderBlocks/RenderBlocks'))
+const Header = loadable(() => import('../components/Header/Header'))
+const Footer = loadable(() => import('../components/Footer/Footer'))
+const Main = loadable(() => import('../components/Main/Main'))
+const Container = loadable(() => import('../components/Container/Container'))
+const SEO = loadable(() => import('../components/SEO/SEO'))
+
 
 
 //import components from '../wp-blocks';
+//import {WordPressBlocksViewer} from '@faustwp/blocks';
 import {flatListToHierarchical} from '@faustwp/core';
-import {WordPressBlocksViewer} from '@faustwp/blocks';
-
-
 
 export default function Component(props) {
   const {data} = useQuery(Component.query,{
