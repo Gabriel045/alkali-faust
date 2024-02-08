@@ -3,8 +3,7 @@ import classNames from 'classnames/bind';
 import Link from 'next/link';
 import {Container,Logo,MenuResponsive,NavigationMenu,SkipNavigationLink} from '../../components';
 import styles from './Header.module.scss';
-import {useQuery,gql} from '@apollo/client';
-import {setRefreshTimer} from '@faustwp/core/dist/cjs/auth';
+
 import Image from "next/future/image";
 
 

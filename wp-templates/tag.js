@@ -6,7 +6,6 @@ import {
   Footer,
   Main,
   Container,
-  EntryHeader,
   NavigationMenu,
   FeaturedImage,
   Post,
@@ -30,7 +29,6 @@ export default function Component(props) {
       />
       <Main>
         <>
-          <EntryHeader title={`Tag: ${name}`} />
           <Container>
             {posts.edges.map((post) => (
               <Post

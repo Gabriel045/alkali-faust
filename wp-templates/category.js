@@ -6,7 +6,6 @@ import {
   Footer,
   Main,
   Container,
-  EntryHeader,
   NavigationMenu,
   Post,
   FeaturedImage,

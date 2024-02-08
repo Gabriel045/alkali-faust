@@ -6,7 +6,6 @@ import {
   Footer,
   Main,
   Container,
-  EntryHeader,
   NavigationMenu,
   FeaturedImage,
   SEO,
@@ -45,12 +44,6 @@ export default function Component(props) {
       />
       <Main>
         <>
-          <EntryHeader
-            title={title}
-            image={featuredImage?.node}
-            date={date}
-            author={author?.node?.name}
-          />
           <Container>
             <WordPressBlocksViewer blocks={blocks} />
           </Container>

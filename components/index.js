@@ -1,5 +1,4 @@
 export { Container } from './Container';
-export { EntryHeader } from './EntryHeader';
 export { FeaturedImage } from './FeaturedImage';
 export { Footer } from './Footer';
 export { FormatDate } from './FormatDate';

@@ -10,7 +10,6 @@ import {
     Footer,
     Main,
     Container,
-    EntryHeader,
     NavigationMenu,
     FeaturedImage,
     RenderBlocks,
@@ -67,7 +66,6 @@ export default function Component(props) {
             <Main>
           <HeroSingleBlog featuredImage={FeaturedImage} title={Title} categories={categories} date={date}/>
                 <>
-                    {/*<EntryHeader title={title} image={featuredImage?.node} />*/}
                     <Container>
                        <RenderBlocks data={blocks} categories={categories} />
                         {/*<WordPressBlocksViewer blocks={blocks} />*/}

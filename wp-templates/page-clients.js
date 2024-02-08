@@ -10,7 +10,6 @@ import {
     Footer,
     Main,
     Container,
-    EntryHeader,
     NavigationMenu,
     FeaturedImage,
     RenderBlocks,
@@ -64,7 +63,6 @@ export default function Component(props) {
             />
             <Main>
                 <>
-                    {/*<EntryHeader title={title} image={featuredImage?.node} />*/}
                     <Container>
                         <RenderBlocks clients={clients} data={blocks} />
                         {/*<WordPressBlocksViewer blocks={blocks} />*/}
