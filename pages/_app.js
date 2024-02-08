@@ -5,8 +5,6 @@ import { FaustProvider } from '@faustwp/core';
 //import '@faustwp/core/dist/css/toolbar.css';
 import '../styles/global.scss';
 
-import Inter from 'next/font/google'
-
 
 //import { WordPressBlocksProvider } from '@faustwp/blocks';
 //import blocks from '../wp-blocks';
