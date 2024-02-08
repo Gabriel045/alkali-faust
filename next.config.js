@@ -1,8 +1,16 @@
 const { withFaust, getWpHostname } = require('@faustwp/core');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
 
 /**
  * @type {import('next').NextConfig}
  **/
+
+const nextConfig = {}
+
+analyzer = withBundleAnalyzer(nextConfig)
+
 
 module.exports = withFaust({
   reactStrictMode: true,
@@ -10,7 +18,7 @@ module.exports = withFaust({
     includePaths: ['node_modules'],
   },
   images: {
-    domains: [getWpHostname()],
+    domains: ['wordpress-659833-4142894.cloudwaysapps.com',getWpHostname()],
   },
   i18n: {
     locales: ['en'],
@@ -18,17 +26,11 @@ module.exports = withFaust({
   },
   experimental: {
     images: {
-      allowFutureImage: true
+      domains: ['wordpress-659833-4142894.cloudwaysapps.com',getWpHostname()],
+      allowFutureImage: true,
     }
   },
-
+  
+  ...analyzer    
 });
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = withBundleAnalyzer(nextConfig)
