@@ -3,7 +3,6 @@ export { FeaturedImage } from './FeaturedImage';
 export { Footer } from './Footer';
 export { FormatDate } from './FormatDate';
 export { Header } from './Header';
-export { Heading } from './Heading';
 export { Main } from './Main';
 export { NavigationMenu } from './NavigationMenu';
 export { PostInfo } from './PostInfo';
