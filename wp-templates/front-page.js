@@ -16,11 +16,12 @@ const Main = loadable(() => import('../components/Main/Main'))
 const Container = loadable(() => import('../components/Container/Container'))
 const SEO = loadable(() => import('../components/SEO/SEO'))
 
+import components from '../wp-blocks';
 
 import {flatListToHierarchical} from '@faustwp/core';
 import {WordPressBlocksViewer} from '@faustwp/blocks';
 
-import components from '../wp-blocks';
+
 
 export default function Component(props) {
   const {data} = useQuery(Component.query,{
