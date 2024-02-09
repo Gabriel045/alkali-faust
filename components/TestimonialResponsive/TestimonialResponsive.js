@@ -1,6 +1,8 @@
 import React,{Component} from "react";
 import Slider from "react-slick";
 import Link from 'next/link';
+import Image from "next/future/image";
+
 
 
 export default class SimpleSlider extends Component {
