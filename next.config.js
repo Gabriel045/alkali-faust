@@ -28,7 +28,35 @@ module.exports = withFaust({
     images: {
       domains: ['wordpress-659833-4142894.cloudwaysapps.com',getWpHostname()],
       allowFutureImage: true,
+    },
+    polyfills: true,
+  },
+
+  webpack: (config,{isServer}) => {
+    if(!isServer) {
+      config.optimization = {
+        usedExports: true,
+        sideEffects: true,
+        innerGraph: true,
+        
+        minimize: true,
+        minimizer: [
+          new TerserPlugin({
+            terserOptions: {
+              ecma: 6,
+              warnings: true,
+              compress: true,
+              mangle: true,
+              output: {
+                comments: false,
+              },
+            },
+          }),
+        ],
+      };
     }
+
+    return config;
   },
   
   ...analyzer    
