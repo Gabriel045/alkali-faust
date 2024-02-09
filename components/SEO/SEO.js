@@ -19,6 +19,9 @@ export default function SEO({title,description,imageUrl,url,logoUrl }) {
   return (
     <>
       <Head>
+        {/*<link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />*/}
+
+
         <link rel="shortcut icon" href={logoUrl} />
 
         <meta property="og:type" content="website" />
