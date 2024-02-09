@@ -1,9 +1,9 @@
 
-import React,{lazy} from "react";
+import React,{lazy,useEffect,useState} from "react";
 import loadable from '@loadable/component'
 import {useQuery,gql} from '@apollo/client';
 import * as MENUS from '../constants/menus';
-import {BlogInfoFragment, themeGeneralSettingsFragment} from '../fragments/GeneralSettings';
+import {BlogInfoFragment,themeGeneralSettingsFragment} from '../fragments/GeneralSettings';
 import {NavigationMenu} from '../components';
 
 import AcfHeroHome from '../wp-blocks/AcfHeroHome';
@@ -36,7 +36,7 @@ export default function Component(props) {
 
   const {editorBlocks} = data.page;
   const blocks = flatListToHierarchical(editorBlocks);
-  
+
   const {title: siteTitle,description: siteDescription} = data?.generalSettings;
   const primaryMenu = data?.headerMenuItems?.nodes ?? [];
   const footerMenu = data?.footerMenuItems?.nodes ?? [];
@@ -45,16 +45,25 @@ export default function Component(props) {
   const footerMenu4 = data?.footerMenuItems4?.nodes ?? [];
   const logoUrl = data.themeGeneralSettings.themeSetting.header.logo?.node.mediaItemUrl
   const footerTexts = {
-    'title' :     data.themeGeneralSettings.themeSetting.footer?.footerTitle,
-    'paragraph':  data.themeGeneralSettings.themeSetting.footer?.footerParagraph
+    'title': data.themeGeneralSettings.themeSetting.footer?.footerTitle,
+    'paragraph': data.themeGeneralSettings.themeSetting.footer?.footerParagraph
   }
   const socialMedia = {
-   'facebook': data.themeGeneralSettings.themeSetting.socialMedia?.facebook,
-   'instagram': data.themeGeneralSettings.themeSetting.socialMedia?.instagram,
-   'linkedin': data.themeGeneralSettings.themeSetting.socialMedia?.linkedin,
-   'twitter': data.themeGeneralSettings.themeSetting.socialMedia?.x
+    'facebook': data.themeGeneralSettings.themeSetting.socialMedia?.facebook,
+    'instagram': data.themeGeneralSettings.themeSetting.socialMedia?.instagram,
+    'linkedin': data.themeGeneralSettings.themeSetting.socialMedia?.linkedin,
+    'twitter': data.themeGeneralSettings.themeSetting.socialMedia?.x
 
-  }   
+  }
+
+
+  const [isDisplayed,setIsDisplayed] = useState(false);
+
+  useEffect(() => {
+    setInterval(() => {
+      setIsDisplayed(true);
+    },1000);
+  },[]);
 
   return (
     <>
@@ -68,20 +77,24 @@ export default function Component(props) {
       <Main>
         <Container>
           <RenderBlocks data={blocks} />
-            {/*<WordPressBlocksViewer blocks={blocks} />*/}
-            {/* <p>This page is utilizing the "front-page" WordPress template.</p>
+          {/*<WordPressBlocksViewer blocks={blocks} />*/}
+          {/* <p>This page is utilizing the "front-page" WordPress template.</p>
             <code>wp-templates/front-page.js</code> */}
         </Container>
       </Main>
-      <Footer footerTexts={footerTexts} socialMedia={socialMedia} footerMenu={footerMenu} footerMenu2={footerMenu2} footerMenu3={footerMenu3} footerMenu4={footerMenu4} />
+     
+      {isDisplayed &&
+        <Footer footerTexts={footerTexts} socialMedia={socialMedia} footerMenu={footerMenu} footerMenu2={footerMenu2} footerMenu3={footerMenu3} footerMenu4={footerMenu4} />
+      }
+      
     </>
   );
 }
 
 Component.variables = () => {
   return {
-    headerLocation:  MENUS.PRIMARY_LOCATION,
-    footerLocation:  MENUS.HOW_WE_HELP,
+    headerLocation: MENUS.PRIMARY_LOCATION,
+    footerLocation: MENUS.HOW_WE_HELP,
     footerLocation2: MENUS.WHO_WE_HELP,
     footerLocation3: MENUS.WHY_APPLY,
     footerLocation4: MENUS.RESOURCES,

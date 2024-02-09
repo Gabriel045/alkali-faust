@@ -12,7 +12,6 @@ export default class SimpleSlider extends Component {
             infinite: true,
             slidesToShow: 2,
             slidesToScroll: 1,
-            infinite: true,
             useTransform: false,
             arrows: true,
             dots: true,
@@ -21,7 +20,7 @@ export default class SimpleSlider extends Component {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    infinite: true,
+                    infinite: false,
                     dots: true
                 }
             },]

@@ -58,14 +58,14 @@ export default function AcfPartners({data}) {
         </div>
         <PartnerResponsive cards={cards} />
 
-        <div className="flex justify-center mt-[140px]">
+        {/*<div className="flex justify-center mt-[140px]">
           {
             cta.url != null &&
             <Link href={cta.url}>
               <a className="button_custom no-arrow inline-block">{cta.text}</a>
             </Link>
           }
-        </div>
+        </div>*/}
 
       </div>
       <img loading="lazy" className="hidden lg:block absolute z-10 top-[10%] right-0" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />

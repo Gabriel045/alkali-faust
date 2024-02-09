@@ -71,13 +71,8 @@ export default class SimpleSlider extends Component {
                                             alt="Picture of the author"
                                         />
                                         <div className="flex flex-wrap lg:flex-nowrap absolute p-[20px] pb-[40px] lg:p-[50px]">
-                                            <div className="w-full lg:w-[60%]">
-                                                <p className="text-white text-[23px] font-[600] leading-[37px] mb-[25px] lg:mb-0"> {card.textImage} </p>
-                                            </div>
-                                            <div className="w-full lg:w-[40%] flex justify-start lg:justify-end items-end">
+                                                <p className="w-full lg:w-[60%] text-white text-[23px] font-[600] leading-[37px] mb-[25px] lg:mb-0"> {card.textImage} </p>
                                                 <span className="button-transparent">Learn more</span>
-                                            </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -87,18 +82,24 @@ export default class SimpleSlider extends Component {
                 </div >
                 <div className="lg:hidden flex justify-center gap-[200px]">
                     <span className="inline-block controlls controlls-hover z-50 prev" onClick={() => gotoPrev()}>
-                        <svg className="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
-                            <rect className="icon-bg" x="50.6641" y="51.5078" width="49.6667" height="49.6667" rx="24.8333" transform="rotate(180 50.6641 51.5078)" fill="" />
-                            <path className="icon-arrow" d="M31.6641 26.6745L19.9974 26.6745M19.9974 26.6745L25.8307 32.5078M19.9974 26.6745L25.8307 20.8411" stroke="#0AADE5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <rect x="50.6641" y="51.5078" width="49.6667" height="49.6667" rx="24.8333" transform="rotate(180 50.6641 51.5078)" stroke="#0AADE5" strokeWidth="2" />
-                        </svg>
+                        <Image
+                            src={require('../../assets/images/slider-prev.svg')}
+                            width={39}
+                            height={39}
+                            style={{}} // optional
+                            alt="Picture of the author"
+                            className=""
+                        />
                     </span>
                     <span className="inline-block controlls controlls-hover z-50 next" onClick={() => gotoNext()}>
-                        <svg className="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="52" height="53" viewBox="0 0 52 53" fill="none">
-                            <rect className="icon-bg" x="50.6641" y="51.5078" width="49.6667" height="49.6667" rx="24.8333" transform="rotate(180 50.6641 51.5078)" fill="" />
-                            <path className="icon-arrow" d="M19.9974 26.6745H31.6641M31.6641 26.6745L25.8307 20.8411M31.6641 26.6745L25.8307 32.5078" stroke="#0AADE5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <rect x="50.6641" y="51.5078" width="49.6667" height="49.6667" rx="24.8333" transform="rotate(180 50.6641 51.5078)" stroke="#0AADE5" strokeWidth="2" />
-                        </svg>
+                        <Image
+                            src={require('../../assets/images/slider-next.svg')}
+                            width={39}
+                            height={39}
+                            style={{}} // optional
+                            alt="Picture of the author"
+                            className=""
+                        />
                     </span>
                 </div>
             </>

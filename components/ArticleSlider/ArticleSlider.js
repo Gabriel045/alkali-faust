@@ -24,7 +24,7 @@ export default class SimpleSlider extends Component {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    infinite: true,
+                    infinite: false,
                     dots: true
                 }
             },

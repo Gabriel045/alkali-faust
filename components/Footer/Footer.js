@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import {Container,NavigationMenu} from '../../components';
+import {NavigationMenu} from '../../components';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
 import Image from "next/future/image";
@@ -17,9 +17,8 @@ export default function Footer({footerTexts:{title, paragraph} , socialMedia:{fa
   const twitterImage    = require('../../assets/images/twitter.png')?.default?.src
 
   return (
-    <footer className={cx('component')}>
-      <Container>
-        <section className=" bg-background relative">
+    <footer className={ cx('component')}>
+        <section className=" bg-background  h-full">
           <div className="w-full py-[30px] px-[40px] lg:px-[100px] max-w-[1440px] tablet:px-[150px]">
             <Image
               src={require('../../assets/images/alkali-line.svg')}
@@ -102,7 +101,6 @@ export default function Footer({footerTexts:{title, paragraph} , socialMedia:{fa
                 </div>
               </div>
         </section>
-      </Container>
     </footer>
   );
 }

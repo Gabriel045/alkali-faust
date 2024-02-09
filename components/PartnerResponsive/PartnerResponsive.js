@@ -12,7 +12,7 @@ export default class SimpleSlider extends Component {
         const settings = {
             slidesToShow: 4,
             slidesToScroll: 1,
-            infinite: true,
+            infinite: false,
             useTransform: false,
             autoplay: true,
             pauseOnFocus: false,
@@ -23,7 +23,7 @@ export default class SimpleSlider extends Component {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    infinite: true,
+                    infinite: false,
                     dots: false,
                 }
             },]
