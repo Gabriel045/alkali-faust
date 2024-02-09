@@ -19,9 +19,9 @@
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter/Inter-VariableFont.ttf');
+    src: url('../assets/fonts/inter/Inter-VariableFont.ttf') format('ttf');
     font-weight:1 999;
-    font-display: swap !important
+    font-display: swap 
 }
 
 //@font-face {
