@@ -38,14 +38,14 @@ module.exports = withFaust({
         usedExports: true,
         sideEffects: true,
         innerGraph: true,
-        
+
         minimize: true,
         minimizer: [
           new TerserPlugin({
             terserOptions: {
               ecma: 6,
               warnings: true,
-              compress: true,
+              compress: {},
               mangle: true,
               output: {
                 comments: false,
