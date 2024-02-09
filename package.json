@@ -16,8 +16,6 @@
     "@faustwp/core": "^1.2.0",
     "@loadable/component": "^5.16.3",
     "@next/bundle-analyzer": "^14.1.0",
-    "@next/font": "^14.1.0",
-    "@vercel/speed-insights": "^1.0.2",
     "@wordpress/base-styles": "^4.26.0",
     "@wordpress/block-library": "^7.19.0",
     "@wordpress/style-engine": "^1.30.0",
@@ -39,12 +37,11 @@
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.7"
   },
-
-    "browserslist": [
-      "chrome 64",
-      "edge 79",
-      "firefox 67",
-      "opera 51",
-      "safari 12"
-    ]
+  "browserslist": [
+    "chrome 64",
+    "edge 79",
+    "firefox 67",
+    "opera 51",
+    "safari 12"
+  ]
 }
