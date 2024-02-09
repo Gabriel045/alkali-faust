@@ -49,15 +49,42 @@ export default class SimpleSlider extends Component {
                                         <p className="text-[#fff] font-[400] text-[16px] relative mt-[18px]"> {testimonial.paragraph} </p>
                                         {
                                             testimonial?.logo[0] == 'Google' &&
-                                            <span className="absolute top-[30px] right-[30px] z-50"> <img loading="lazy" src={require('../../assets/images/google-icon.svg')?.default?.src} alt="" /> </span>
+                                            <span className="absolute top-[30px] right-[30px] z-50">
+                                                <Image
+                                                    src={require('../../assets/images/google-icon.svg')}
+                                                    width={30}
+                                                    height={30}
+                                                    style={{width: '30px',height: '30px'}} // optional
+                                                    className={'rounded-t-[10px]'}
+                                                    alt="Picture of the author"
+                                                />
+                                            </span>
                                         }
                                         {
                                             testimonial?.logo[0] == 'Clutch' &&
-                                            <span className="absolute top-[30px] right-[30px] z-50"> <img loading="lazy" src={require('../../assets/images/clutch-logo.svg')?.default?.src} alt="" />  </span>
+                                            <span className="absolute top-[30px] right-[30px] z-50">
+                                                <Image
+                                                    src={require('../../assets/images/clutch-logo.svg')}
+                                                    width={64}
+                                                    height={19}
+                                                    style={{width: '64px',height: '19px'}} // optional
+                                                    className={'rounded-t-[10px]'}
+                                                    alt="Picture of the author"
+                                                />
+                                            </span>
                                         }
                                         {
                                             testimonial?.logo[0] == 'UpCity' &&
-                                            <span className="absolute top-[30px] right-[30px] z-50"> <img loading="lazy" src={require('../../assets/images/upcity-logo.svg')?.default?.src} alt="" /> </span>
+                                            <span className="absolute top-[30px] right-[30px] z-50">
+                                                <Image
+                                                    src={require('../../assets/images/upcity-logo.svg')}
+                                                    width={64}
+                                                    height={20}
+                                                    style={{width: '64px',height: '19px'}} // optional
+                                                    className={'rounded-t-[10px]'}
+                                                    alt="Picture of the author"
+                                                />
+                                            </span>
 
                                         }
                                     </div>
@@ -68,10 +95,10 @@ export default class SimpleSlider extends Component {
                 </div >
                 <div className="lg:hidden flex justify-center gap-[200px]">
                     <span className="inline-block controlls controlls-hover z-50 prev" onClick={() => gotoPrev()}>
-                        <img loading="lazy"  className="w-[53px] h-[53px]" src={require('../../assets/images/prev-black.svg')?.default?.src} />
+                        <img loading="lazy" className="w-[53px] h-[53px]" src={require('../../assets/images/prev-black.svg')?.default?.src} />
                     </span>
                     <span className="inline-block controlls controlls-hover z-50 next" onClick={() => gotoNext()}>
-                        <img loading="lazy"  className="w-[53px] h-[53px]" src={require('../../assets/images/next-black.svg')?.default?.src} />
+                        <img loading="lazy" className="w-[53px] h-[53px]" src={require('../../assets/images/next-black.svg')?.default?.src} />
                     </span>
                 </div>
             </>

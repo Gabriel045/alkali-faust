@@ -74,7 +74,6 @@ export default function AcfTestimonials({data}) {
                         className={'rounded-t-[10px]'}
                         alt="Picture of the author"
                       />
-                    {/*<img loading="lazy" src={require('../assets/images/clutch-logo.svg')?.default?.src}  alt="" />  */}
                   </span>
                }
                {
@@ -88,7 +87,6 @@ export default function AcfTestimonials({data}) {
                         className={'rounded-t-[10px]'}
                         alt="Picture of the author"
                       />
-                   {/*<img loading="lazy" src={require('../assets/images/upcity-logo.svg')?.default?.src}  alt="" /> */}
                   </span>
 
                }
@@ -107,7 +105,6 @@ export default function AcfTestimonials({data}) {
         className={'lg:block hidden absolute z-10 bottom-[-300px] right-0'}
         alt="Picture of the author"
       />
-      {/*<img decoding="async" class="lg:block hidden absolute z-10 bottom-[-300px] right-0" src="https://new.alkali.cloud/wp-content/themes/alkali-theme/dist/assets/images/hexagon-7.svg" alt=""></img>*/}
     </section>
   );
 }
