@@ -19,7 +19,7 @@
 
 @font-face {
     font-family: Inter;
-    src: url('../assets/fonts/inter/Inter-VariableFont.ttf') format('ttf');
+    src: url('../assets/fonts/inter/Inter-VariableFont.ttf');
     font-weight:1 999;
     font-display: swap 
 }
@@ -43,7 +43,6 @@
 
 body {
     font-family: Inter;
-    font-display: swap !important;
     overflow-x: hidden;
 }
 
