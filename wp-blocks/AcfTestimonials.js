@@ -19,28 +19,26 @@ export default function AcfTestimonials({data}) {
           <div className="w-full lg:w-[40%] flex lg:justify-end gap-[20px] lg:gap-[50px]">
             <Image
               src={require('../assets/images/google.svg')}
-              width={0}
-              height={0}
+              width={90}
+              height={30}
               style={{width:'90px',height: '30px'}} // optional
               alt="Picture of the author"
             />
             <Image
               src={require('../assets/images/clutch.svg')}
-              width={0}
-              height={0}
+              width={90}
+              height={30}
               style={{width:'90px',height: '30px'}} // optional
               alt="Picture of the author"
             />
             <Image
               src={require('../assets/images/upcity.svg')}
-              width={0}
-              height={0}
+              width={90}
+              height={30}
               style={{width:'90px',height: '30px'}} // optional
               alt="Picture of the author"
             />
-            {/*<img loading="lazy"  className="lg:w-[90px] h-[30px]" src={require('../assets/images/google.svg')?.default?.src} alt="" />
-            <img loading="lazy"  className="lg:w-[90px] h-[30px]" src={require('../assets/images/clutch.svg')?.default?.src} alt="" />
-            <img loading="lazy"  className="lg:w-[90px] h-[30px]" src={require('../assets/images/upcity.svg')?.default?.src} alt="" />*/}
+
           </div>
         </div>
         {/* Desktop */}
@@ -56,8 +54,8 @@ export default function AcfTestimonials({data}) {
                   <span className="absolute top-[30px] right-[30px] z-50"> 
                       <Image
                         src={require('../assets/images/google-icon.svg')}
-                        width={0}
-                        height={0}
+                        width={30}
+                        height={30}
                         style={{width: '30px',height: '30px'}} // optional
                         className={'rounded-t-[10px]'}
                         alt="Picture of the author"
@@ -70,8 +68,8 @@ export default function AcfTestimonials({data}) {
                   <span className="absolute top-[30px] right-[30px] z-50"> 
                       <Image
                         src={require('../assets/images/clutch-logo.svg')}
-                        width={0}
-                        height={0}
+                        width={64}
+                        height={19}
                         style={{width: '64px',height: '19px'}} // optional
                         className={'rounded-t-[10px]'}
                         alt="Picture of the author"
@@ -84,8 +82,8 @@ export default function AcfTestimonials({data}) {
                   <span className="absolute top-[30px] right-[30px] z-50"> 
                       <Image
                         src={require('../assets/images/upcity-logo.svg')}
-                        width={0}
-                        height={0}
+                        width={64}
+                        height={20}
                         style={{width: '64px',height: '19px'}} // optional
                         className={'rounded-t-[10px]'}
                         alt="Picture of the author"
