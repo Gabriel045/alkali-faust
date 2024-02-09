@@ -11,15 +11,21 @@ import Head from 'next/head';
  *
  * @returns {React.ReactElement} The SEO component
  */
-export default function SEO({title,description,imageUrl,url,logoUrl }) {
-  if (!title && !description && !imageUrl && !url) {
+export default function SEO({title,description,imageUrl,url,logoUrl}) {
+  if(!title && !description && !imageUrl && !url) {
     return null;
   }
 
   return (
     <>
       <Head>
-        {/*<link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />*/}
+        <link
+          rel='preload'
+          as='font'
+          href='/_next/static/media/InterVariable.ff710c09.woff2'
+          type='font/woff2'
+          crossOrigin='anonymous'
+        />
 
 
         <link rel="shortcut icon" href={logoUrl} />

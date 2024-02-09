@@ -33,17 +33,23 @@
 		position: relative;
 		width: 100%;
 		flex-direction: column;
+		cursor: pointer;
 
 		@media (min-width: $breakpoint-small) {
 			width: auto;
 			flex-direction: row;
 		}
 
-		&:focus-within ul,
-		a:hover + ul,
-		a:focus + ul {
-			@extend %visible;
-		}
+		//&:focus-within ul,
+		//a:hover + ul,
+		//a:focus + ul {
+		//	@extend %visible;
+		//}
+	}
+
+	li:hover  ul,
+	li:focus  ul {
+		@extend %visible;
 	}
 
 	a {
