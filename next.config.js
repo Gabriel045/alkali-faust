@@ -31,6 +31,10 @@ module.exports = withFaust({
     },
     polyfills: true,
   },
+  
+  compress: {
+    brotli: true,
+  },
 
   webpack: (config,{isServer}) => {
     if(!isServer) {
