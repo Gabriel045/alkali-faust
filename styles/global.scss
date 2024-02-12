@@ -376,6 +376,10 @@ h4 {
     padding-left: 150px;
 }
 
+.button_custom.no-border{
+    background-image: none !important
+}
+
 .button_custom {
     padding: 15px 35px;
     display: flex;
@@ -791,8 +795,32 @@ h4 {
     padding-bottom: 128px;
 }
 
-#GravyForm .block_content {
-    padding-top: 0px;
+.testimonial-container:nth-child(2){
+    height: 261px;
+}
+
+.testimonial-container:nth-child(5){
+    height: 261px;
+    margin-top: -20px;
+}
+
+.testimonial-container:nth-child(8),
+.testimonial-container:nth-child(11){
+    height: 261px;
+    margin-top: -30px;
+}
+
+.rotate-arrow img{
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+}
+.rotate-arrow:hover img{
+    transform: rotate(45deg) translateX(3px) translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.pb-0{
+    padding-bottom: 0;
 }
 
 /* responsive */

@@ -29,8 +29,8 @@ export default function AcfCareers({data}) {
                                 <div key={index} className="border-[1px] border-[#EAECF0] rounded-[16px] py-[24px] px-[28px]">
                                     <div className="flex flex-row justify-between">
                                         <p className="text-[18px] font-[600] text-background">{element?.position}</p>
-                                        <Link href="">
-                                            <a target="_blank" className="text-[14px] text-[#0AADE5] font-[600] flex items-center">
+                                        <Link href="/apply-now/">
+                                            <a target="_blank" className="rotate-arrow text-[14px] text-[#0AADE5] font-[600] flex items-center">
                                                 View job 
                                                 <Image
                                                     src={require('../assets/images/arrow-up-right.svg')}

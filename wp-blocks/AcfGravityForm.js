@@ -35,25 +35,25 @@ export default function AcfGravityForm(props) {
       case 'TEXT':
         return <div id={type.id} className={`input-content flex flex-col ${(type.gridColumn == 6) ? "md:w-[49%] w-full" : "w-full"} `}>
                <label className='text-[14px] font-[600] mb-[5px]'>{type.label}</label>
-          <input className="py-[10px] px-[14px] shadow-md rounded-[10px] border-[1px] border-[#D0D5DD]" 
+          <input className="py-[10px] px-[14px] rounded-[10px] border-[1px] border-[#D0D5DD]" 
             placeholder={type.placeholder} key={type.label} type="text" required={`${type.isRequired == true ? 'required' : '' }`}  {...register(`${type.label}` )} />
           </div>
        case 'EMAIL':
         return <div id={type.id}  className={`input-content flex flex-col ${(type.gridColumn == 6) ? "md:w-[49%] w-full" : "w-full"} `}>
           <label className='text-[14px] font-[600] mb-[5px]'>{type.label}</label>
-          <input className="py-[10px] px-[14px] shadow-md rounded-[10px] border-[1px] border-[#D0D5DD]"
+          <input className="py-[10px] px-[14px] rounded-[10px] border-[1px] border-[#D0D5DD]"
             placeholder={type.placeholder} key={type.label} type="email" required={`${type.isRequired == true ? 'required' : ''}`} {...register(`${type.label}`)} />
         </div>
       case 'PHONE':
         return <div id={type.id}  className={`input-content flex flex-col ${(type.gridColumn == 6) ? "md:w-[49%] w-full" : "w-full"} `}>
           <label className='text-[14px] font-[600] mb-[5px]'>{type.label}</label>
-          <input className="py-[10px] px-[14px] shadow-md rounded-[10px] border-[1px] border-[#D0D5DD]"
+          <input className="py-[10px] px-[14px] rounded-[10px] border-[1px] border-[#D0D5DD]"
             placeholder={type.placeholder} key={type.label} type="tel" required={`${type.isRequired == true ? 'required' : ''}`} {...register(`${type.label}`)} />
         </div>
       case 'POST_CONTENT':
         return <div id={type.id}  className={`input-content flex flex-col ${(type.gridColumn == 6) ? "md:w-[49%] w-full" : "w-full"} `}>
           <label className='text-[14px] font-[600] mb-[5px]'>{type.label}</label>
-          <textarea className="h-[106px] py-[10px] px-[14px] shadow-md rounded-[10px] border-[1px] border-[#D0D5DD]"
+          <textarea className="h-[106px] py-[10px] px-[14px] rounded-[10px] border-[1px] border-[#D0D5DD]"
             placeholder={type.placeholder} key={type.label} required={`${type.isRequired == true ? 'required' : ''}`} {...register(`${type.label}`)} />
         </div>
       default:

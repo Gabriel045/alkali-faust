@@ -89,9 +89,9 @@ export default class SimpleSlider extends Component {
                                     </div>
                                     <div className="py-[45px] px-[35px] articles-border">
                                         <p className="text-[#232323] text-[22px] font-[600] leading-[23px]"> {card?.node?.title} </p>
-                                        <p className="text-[#525252] text-[16px] font-[400] my-[44px]" dangerouslySetInnerHTML={{__html: card?.node?.excerpt ?? ''}} />
-                                        <a href="" className="text-[#0AADE5] text-[16px] flex hover-arrow"> 
-                                            Resource 
+                                        {/*<p className="text-[#525252] text-[16px] font-[400] my-[44px]" dangerouslySetInnerHTML={{__html: card?.node?.excerpt ?? ''}} />*/}
+                                        <a href="" className="text-[#0AADE5] text-[16px] flex hover-arrow mt-[20px]"> 
+                                            Learn More 
                                             <Image
                                                 src={require('../../assets/images/arrow-right-blue.svg')}
                                                 width={21}

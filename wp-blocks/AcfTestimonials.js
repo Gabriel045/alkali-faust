@@ -45,10 +45,10 @@ export default function AcfTestimonials({data}) {
         <div className="flex-row flex-wrap lg:flex hidden ">
           {
             testimonials.map((testimonial,index) => {
-              return <div key={index} className="lg:w-[32%] p-[30px]  rounded-[10px] mb-[20px] mr-[2%] border-custom z-50 [&:nth-child(3n)]:mr-0 relative">
+              return <div key={index} className="testimonial-container lg:w-[32%] p-[30px]  rounded-[10px] mb-[20px] mr-[2%] border-custom z-50 [&:nth-child(3n)]:mr-0 relative h-[295px]">
                 <p className="text-[#A6A6A6] font-[600] text-[13px] relative"> {testimonial.personName}</p>
                 <p className="text-[#A6A6A6] font-[600] text-[13px] relative"> {testimonial.companyName}</p>
-                <p className="text-[#fff] font-[400] text-[16px] relative mt-[18px]"> {testimonial.paragraph} </p>
+                <p className="text-[#fff] font-[400] text-[18px] leading-[35px] relative mt-[30px]"> {testimonial.paragraph} </p>
                 {
                   testimonial?.logo[0] == 'Google' && 
                   <span className="absolute top-[30px] right-[30px] z-50"> 

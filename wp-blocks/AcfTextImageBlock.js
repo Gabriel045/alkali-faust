@@ -35,7 +35,7 @@ export default function AcfTextImageBlock({data}) {
             <h3 className="z-50 relative"> {title} </h3>
             <p className="paragraph text-[#929292] py-[32px] z-50 relative" dangerouslySetInnerHTML={{__html: paragraph ?? ''}} /> 
             {learnMoreCta == "Yes" &&
-              <a href={learnMoreUrl} className="button_custom inline-block">Learn More</a>
+              <a href={learnMoreUrl} className={`button_custom inline-block ${background == "light" ? 'no-border' : ''}`}>Learn More</a>
             }
             { background == "light" ? 
               <div className='absolute hidden lg:block z-[1] w-[368px] h-[416px] bottom-0 right-0'>
