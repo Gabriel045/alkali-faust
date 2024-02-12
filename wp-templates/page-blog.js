@@ -128,12 +128,7 @@ Component.query = gql`
     generalSettings {
       ...BlogInfoFragment
     }
-    footerMenuItems: menuItems(where: { location: $footerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-   headerMenuItems: menuItems(where: { location: $headerLocation }) {
+   headerMenuItems: menuItems(where: { location: $headerLocation },first: 30) {
       nodes {
         ...NavigationMenuItemFragment
       }
