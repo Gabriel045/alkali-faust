@@ -5,23 +5,37 @@ import Image from "next/future/image";
 
 export default function AcfHeroHome({data}) {
 
-  //const [icons,setsicons] = useState([])
-  //useEffect(() => {
-  //  setsicons(data.heroHomeBlock?.clientsIcon?.nodes)
-  //},[]);
+  console.log(data);
 
   // Load values and assign defaults.
   const title = data.heroHomeBlock?.title
   const paragraph = data.heroHomeBlock?.paragraph
   const icons = data.heroHomeBlock?.clientsIcon?.nodes
-
+  const sideImage = data.heroHomeBlock?.sideImage?.node?.sourceUrl
+console.log(sideImage);
   return (
-    <section  className="relative bg-background">
+    <section className="relative bg-background">
       <div className="flex justify-center flex-wrap w-full">
         <div className="home-hero flex flex-col w-full max-w-[1440px] items-center relative z-[1]">
-          <div className="text-white text-center md:w-[80%] w-full h-[160px] md:h-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />
-          <p className="subtext text-[#ffffffad] text-center md:w-[70%] my-[36px]"> {paragraph}  </p>
-          <a href="" className="button_custom inline-block z-1" target="_blank">Learn More</a>
+          <div className='flex flex-row'>
+            <div className={sideImage ? 'w-[55%]' : 'w-full flex flex-col items-center' }>
+              <div className={`text-white h-[160px] md:h-auto ${sideImage ? "w-full" : "text-center md:w-[80%] w-full" }`} dangerouslySetInnerHTML={{__html: title ?? ''}} />
+              <p className={`subtext text-[#ffffffad] md:w-[70%] my-[36px] ${sideImage ? "" : "text-center" }`}> {paragraph}  </p>
+              <a href="" className="button_custom inline-block z-1" target="_blank">Learn More</a>
+            </div>
+            { sideImage &&
+              <div className='w-[45%]'>
+                <Image
+                  src={sideImage}
+                  width={580}
+                  height={520}
+                  style={{}} // optional
+                  className={''}
+                  alt="Picture of the author"
+                />
+              </div>
+            }
+          </div>
           <div className="flex w-[100%] pt-[100px] lg:pt-[120px] lg:flex-nowrap  flex-wrap lg:pr-[96px] z-[1]">
             <span
               className="text-[18px] font-[600] text-white w-full lg:w-1/3 lg:text-start text-center mb-[46px] lg:mb-0 lg:flex lg:items-center relative z-50">
@@ -41,7 +55,6 @@ export default function AcfHeroHome({data}) {
                         layout="responsive"
                         style={{width: '100%',height: '100%'}} // optional
                         alt="Picture of the author" />
-                      {/*<img loading="lazy" src={icon.sourceUrl} /> */}
                     </div>
                   </div>
                 })
@@ -93,6 +106,11 @@ AcfHeroHome.fragments = {
             nodes {
               sourceUrl
             }
+        }
+        sideImage {
+           node {
+             sourceUrl
+          }
         }
         ctaUrl
       }    

@@ -1,5 +1,5 @@
 import React from 'react';
-import {gql} from '@apollo/client';
+import {gql,useQuery} from '@apollo/client';
 import {useRef,useState,useEffect} from 'react';
 import Image from "next/future/image";
 import Link from "next/link";
@@ -9,9 +9,23 @@ import loadable from '@loadable/component'
 const LatestClientsResponsive = loadable(() => import('../components/LatestClientsResponsive/LatestClientsResponsive'))
 
 
-export default function AcflatestClients({latestClients}) {
+export default function AcflatestClients({clientID}) {
+    const {data} = useQuery(GET_CLIENTS,{
+        variables: {
+            clientID: clientID,
+        },
+    });
 
-    //console.log(latestClients)
+    const [loadResponsive,setloadResponsive] = useState(false);
+
+    //setTimeout(() => {
+    //    setloadResponsive(true)
+    //}, 3000);
+
+    useEffect(() => {
+        if(data)
+        setloadResponsive(true)
+    },[data])
 
     return (
         <section id="" className="bg-background relative">
@@ -19,10 +33,10 @@ export default function AcflatestClients({latestClients}) {
                 <h2 className="text-white mb-[75px] lg:mb-[100px] w-full text-start">More Projects</h2>
                 <div className="hidden lg:flex flex-row flex-wrap lg:justify-center">
                     {
-                        latestClients.map((client,index) => {
+                        data?.clients?.nodes.map((client,index) => {
                             const icon = client?.clients?.icon?.node?.sourceUrl
                             const image = client?.featuredImage?.node.sourceUrl
-                            
+
                             return <div key={index} className="blog-card w-full lg:w-[33.3%] px-[7px] mb-[22px] rounded-[10px] relative">
                                 <div className="rounded-[10px] h-full">
                                     <div className="thumbnail rounded-t-[10px]">
@@ -74,8 +88,33 @@ export default function AcflatestClients({latestClients}) {
                         })
                     }
                 </div>
-                <LatestClientsResponsive  latestClients={latestClients} />
+                {
+                   loadResponsive &&
+                    <LatestClientsResponsive latestClients={data?.clients?.nodes} />
+                }
             </div>
         </section>
-    ) 
-} 
+    )
+}
+
+const GET_CLIENTS = gql`
+  query GetClients($clientID : [ID]){
+    clients(where: {notIn: $clientID}, first: 3) {
+       nodes {
+        link     
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        clients {
+          icon {
+            node {
+              sourceUrl
+            }
+          }
+        }
+      }
+    }   
+  }
+`;

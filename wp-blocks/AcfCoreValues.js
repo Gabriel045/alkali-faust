@@ -20,33 +20,37 @@ export default function AcfCoreValues({data}) {
                 className={'hidden lg:block absolute z-10 top-[100px] left-0'}
                 alt="Picture of the author"
             />
-                <div className="block_content">
-                    <div className="pb-[60px] lg:pb-[90px]">
-                    <h2 className="text-center text-[#fff]  m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}}  /> 
-                    </div>
-                    <div className="flex flex-row flex-wrap">
-                       {
-                        cards.map((card, index)=>{
-                            return(
-                            <div key={index} className=" w-full lg:w-1/3 px-[30px] py-[51px] relative">
-                                <div>
-                                    <Image
-                                        src={card?.icon?.node.sourceUrl ?? "#"}
-                                        width={0}
-                                        height={0}
-                                        style={{width: '64px',height: '65px',objectFit: 'cover'}} // optional
-                                        className={''}
-                                        alt="Picture of the author"
-                                    />
+            <div className="block_content">
+                <div className="pb-[60px] lg:pb-[90px]">
+                    <h2 className="text-center text-[#fff]  m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />
+                </div>
+                <div className="flex flex-row flex-wrap">
+                    {
+                        cards.map((card,index) => {
+                            return (
+                                <div key={index} className=" w-full lg:w-1/3 px-[30px] py-[51px] relative">
+                                    <div>
+                                        {
+                                            card.icon  &&
+                                            <Image
+                                                src={card?.icon?.node.sourceUrl}
+                                                width={0}
+                                                height={0}
+                                                style={{width: '64px',height: '65px',objectFit: 'cover'}} // optional
+                                                className={''}
+                                                alt="Picture of the author"
+                                            />
+                                        }
+
+                                    </div>
+                                    <p className="text-[#FFF] font-[600] text-[20px] pt-[30px]"> {card.title} </p>
+                                    <p className="text-[16px] lg:text-[18px] leading-[24px] font-[400] text-[#929292] pt-[10px]"> {card.paragraph} </p>
                                 </div>
-                                <p className="text-[#FFF] font-[600] text-[20px] pt-[30px]"> {card.title} </p>
-                                <p className="text-[16px] lg:text-[18px] leading-[24px] font-[400] text-[#929292] pt-[10px]"> {card.paragraph} </p>
-                            </div>
                             )
                         })
-                       }
-                    </div>
+                    }
                 </div>
+            </div>
         </section>
     );
 }

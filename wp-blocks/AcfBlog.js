@@ -9,8 +9,8 @@ export default function AcfBlog({blog}) {
             <div className="max-w-[1440px] w-full px-[20px] lg:px-[120px] pt-[80px] lg:pt-[120px] pb-[60px] lg:pb-[110px]">
                 <div className="flex flex-row flex-wrap lg:justify-center mb-[50px] lg:mb-[85px]">
                     {
-                        blog.map((post,index) => { 
-                            const date = new Date(post?.date).toLocaleDateString('en-us',{year: "numeric", month: "short", day: "numeric"}) 
+                        blog.map((post,index) => {
+                            const date = new Date(post?.date).toLocaleDateString('en-us',{year: "numeric",month: "short",day: "numeric"})
                             return (
                                 <div key={index} className="blog-card w-full sm:w-1/2 lg:w-[33.3%] px-[5px] mb-[10px] rounded-[10px] relative">
                                     <div className="border-[#0000000d] border-[1px] rounded-[10px] h-full">
@@ -21,7 +21,7 @@ export default function AcfBlog({blog}) {
                                                         src={post?.featuredImage?.node?.sourceUrl}
                                                         width={5000}
                                                         height={0}
-                                                        style={{width: '100%', height: '248px', objectFit: 'cover'}} // optional
+                                                        style={{width: '100%',height: '248px',objectFit: 'cover'}} // optional
                                                         className={''}
                                                         alt="Picture of the author"
                                                     />

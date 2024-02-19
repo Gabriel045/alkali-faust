@@ -45,9 +45,9 @@ export default class SimpleSlider extends Component {
                                     <h4 className="text-[#232628]">{steps[index]}</h4>
                                     <div className="item-content mb-[70px]">
                                         <p className="paragraph text-[#23242499] pt-[26px] pb-[16px]"> {card.paragraph}  </p>
-                                        <Link href={card.learnMore ? card.learnMore : ''}>
-                                            <a href="#" className="text-[#0AADE5] text-[16px] flex">
-                                                Learn More
+                                        <Link href={card?.learnMore?.url ?? "#"}>
+                                            <a className="text-[#0AADE5] text-[16px] flex" target={card?.learnMore?.target}>
+                                                {card?.learnMore?.title}
                                                 <Image
                                                     src={require('../../assets/images/arrow-right-blue.svg')}
                                                     width={21}
@@ -55,7 +55,6 @@ export default class SimpleSlider extends Component {
                                                     style={{}} // optional
                                                     alt="Picture of the author"
                                                 />
-                                                {/*<img loading="lazy"  className="mb-[-2px] " src={require('../../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />*/}
                                             </a>
                                         </Link>
                                     </div>
@@ -71,8 +70,19 @@ export default class SimpleSlider extends Component {
                                             alt="Picture of the author"
                                         />
                                         <div className="flex flex-wrap lg:flex-nowrap absolute p-[20px] pb-[40px] lg:p-[50px]">
-                                                <p className="w-full lg:w-[60%] text-white text-[23px] font-[600] leading-[37px] mb-[25px] lg:mb-0"> {card.textImage} </p>
-                                                <span className="button-transparent">Learn more</span>
+                                            <p className="w-full lg:w-[60%] text-white text-[23px] font-[600] leading-[37px] mb-[25px] lg:mb-0"> {card.textImage} </p>
+                                            <Link href={card?.learnMore?.url ?? "#"}>
+                                                <a className="button-transparent" target={card?.learnMore?.target}>
+                                                    {card?.learnMore?.title}
+                                                    <Image
+                                                        src={require('../../assets/images/arrow-right-blue.svg')}
+                                                        width={21}
+                                                        height={25}
+                                                        style={{}} // optional
+                                                        alt="Picture of the author"
+                                                    />
+                                                </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -84,8 +94,8 @@ export default class SimpleSlider extends Component {
                     <span className="inline-block controlls controlls-hover z-50 prev" onClick={() => gotoPrev()}>
                         <Image
                             src={require('../../assets/images/slider-prev.svg')}
-                            width={39}
-                            height={39}
+                            width={50}
+                            height={50}
                             style={{}} // optional
                             alt="Picture of the author"
                             className=""
@@ -94,8 +104,8 @@ export default class SimpleSlider extends Component {
                     <span className="inline-block controlls controlls-hover z-50 next" onClick={() => gotoNext()}>
                         <Image
                             src={require('../../assets/images/slider-next.svg')}
-                            width={39}
-                            height={39}
+                            width={50}
+                            height={50}
                             style={{}} // optional
                             alt="Picture of the author"
                             className=""

@@ -6,17 +6,18 @@ export default function AcfTextImageBlock({data}) {
   
   // Load values and assign defaults.
   const background = data.textImageBlock?.background
-  const image_position = data.textImageBlock?.imagePosition[0]
-  const image = data.textImageBlock?.image?.node?.sourceUrl
+  const image_position = data.textImageBlock?.imagePosition ? data.textImageBlock?.imagePosition[0] : ""
+  const image = data.textImageBlock?.image?.node?.sourceUrl ? data.textImageBlock?.image?.node?.sourceUrl  : ""
   const title = data.textImageBlock?.title
   const paragraph = data.textImageBlock?.paragraph
   const learnMoreCta = data.textImageBlock?.learnMoreCta[0]
   const learnMoreUrl = data.textImageBlock?.learnMoreUrl
+  const customID = data.textImageBlock?.customId  ?? ""
 
   return (
-    <section className={`text-block ${background}`}>
+    <section id={customID} className={`text-block ${background}`}>
       <div className={`block_content flex flex-wrap lg:flex-nowrap gap-[80px] flex-${image_position}`} >
-        <div className= {`flex flex-wrap lg:flex-nowrap gap-[80px] flex-${image_position} `}>
+        <div className= {`flex flex-wrap lg:flex-nowrap gap-[80px] w-full flex-${image_position} `}>
           {image.length > 0 &&
             <div className="w-full lg:w-[45%]">
               <Image
@@ -70,6 +71,7 @@ AcfTextImageBlock.fragments = {
         learnMoreUrl
         learnMoreCta
         imagePosition
+        customId
         image {
           node {
             sourceUrl

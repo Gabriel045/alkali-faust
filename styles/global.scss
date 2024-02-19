@@ -580,7 +580,7 @@ h4 {
 .border-custom::before {
     content: "";
     position: absolute;
-    background-image: url('../assets/images/bg.webp');
+    background-image: url('../assets/images/bg.svg');
     background-size: cover;
     width: 100%;
     height: 102%;
@@ -823,6 +823,10 @@ h4 {
     padding-bottom: 0;
 }
 
+.slick-slider .slick-dots li button:before {
+    font-size: 35px !important;
+}
+
 /* responsive */
 @media screen and (max-width: 1250px) {
     .block_content {
@@ -986,8 +990,15 @@ h4 {
         color: #00BAFB !important;
     }
 
-    .slick-dots {
+    .slider-mobile .slick-dots,
+    .multiple-items-article .slick-dots,
+    #testimonial .slick-dots{
         bottom: -70px !important;
+    }
+
+
+    .slick-dots {
+        bottom: -40px !important;
     }
 
     .america-container {

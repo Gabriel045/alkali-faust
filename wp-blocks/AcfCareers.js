@@ -78,11 +78,11 @@ export default function AcfCareers({data}) {
                     <h2 className="text-center text-[20px] lg:text-[36px]"> {contact?.title } </h2>
                     <p className="mt-[20px] text-[16px] lg:text-[20px] text-[#475467] sm:w-[70%] text-center"> {contact?.headline} </p>
                     <div className="mt-[32px] flex gap-[12px]">
-                        <Link href={contact?.cta1?.url}>
-                            <a className="text-background text-[16px] font-[600] bg-white border-[1px] border-[#D0D5DD] rounded-[10px]  px-[20px] py-[12px]  transform hover:translate-y-[2px]">{contact?.cta1?.text}</a>
+                        <Link href={contact?.cta1?.url ?? "#"}>
+                            <a target={contact?.cta1.target} className="text-background text-[16px] font-[600] bg-white border-[1px] border-[#D0D5DD] rounded-[10px]  px-[20px] py-[12px]  transform hover:translate-y-[2px]">{contact?.cta1?.title}</a>
                         </Link>
-                        <Link href={contact?.cta2?.url}>
-                            <a className="text-white text-[16px] font-[600] bg-primary rounded-[10px]  px-[20px] py-[12px]  transform hover:translate-y-[2px]">{contact?.cta2?.text}</a>
+                        <Link href={contact?.cta2?.url ?? "#"}>
+                            <a target={contact?.cta2.target} className="text-white text-[16px] font-[600] bg-primary rounded-[10px]  px-[20px] py-[12px]  transform hover:translate-y-[2px]">{contact?.cta2?.title}</a>
                         </Link>
                     </div>
                 </div>
@@ -110,11 +110,13 @@ AcfCareers.fragments = {
                 headline
                 title
                 cta1 {
-                    text
+                    title
+                    target
                     url
                 }
                 cta2 {
-                    text
+                    title
+                    target
                     url
                 }
             }

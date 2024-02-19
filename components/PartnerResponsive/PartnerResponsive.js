@@ -19,7 +19,7 @@ export default class SimpleSlider extends Component {
             autoplaySpeed: 3000,
             dots: false,
             responsive: [{
-                breakpoint: 768,
+                breakpoint: 768,    
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,

@@ -2,6 +2,7 @@ import React from "react";
 import {useRef,useState,useEffect} from 'react';
 import {gql} from '@apollo/client';
 import Image from "next/future/image";
+import Link from "next/link";
 import loadable from '@loadable/component'
 
 const SliderResponsive = loadable(() => import('../components/SliderResponsive/SliderResponsive'))
@@ -12,7 +13,6 @@ export default function AcfSlider({data}) {
   const title = data.sliderBlock?.title
   const headline = data.sliderBlock?.headline
   const sliderItems = data.sliderBlock?.sliderItems
-
   const steps = ["01. Discovery","02. Design","03. Development","04. Supporty"];
 
 
@@ -62,9 +62,18 @@ export default function AcfSlider({data}) {
                   <h4 className="" > {steps[index]} </h4>
                   <div className="item-content">
                     <p className="text-[16px] font-[400] text-[#23242499] pt-[26px] pb-[16px]"> {item.paragraph} </p>
-                    <a href="#" className="text-[#0AADE5] text-[16px] flex hover-arrow"> Learn More
-                      <img loading="lazy" className="mb-[-2px]" src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />
-                    </a>
+                    <Link href={item?.learnMore?.url ?? "#"}>
+                      <a className="text-[#0AADE5] text-[16px] flex hover-arrow" target={item?.learnMore?.target}> {item?.learnMore?.title}
+                        <Image
+                          src={require('../assets/images/arrow-right-blue.svg')}
+                          width={21}
+                          height={25}
+                          style={{}} // optional
+                          className={'mb-[-2px]'}
+                          alt="Picture of the author"
+                        />
+                      </a>
+                    </Link>
                   </div>
 
                   {/* image */}
@@ -83,7 +92,11 @@ export default function AcfSlider({data}) {
                         <p className="image-text text-white text-[23px] font-[600] leading-[37px]">{item.textImage} </p>
                       </div>
                       <div className="w-[40%] flex justify-end items-end">
-                        <span className="button-transparent">Learn more</span>
+                        <Link href={item?.learnMore?.url ?? "#"}>
+                          <a className="button-transparent" target={item?.learnMore?.target}>
+                            {item?.learnMore?.title}
+                          </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -97,7 +110,7 @@ export default function AcfSlider({data}) {
         {/* responsive */}
         <SliderResponsive cards={sliderItems} steps={steps} />
       </div>
-    </section>
+    </section >
   );
 }
 
@@ -115,7 +128,11 @@ AcfSlider.fragments = {
               sourceUrl
             }
           }
-          learnMore
+          learnMore {
+              target
+              title
+              url
+            }
           paragraph
           textImage
         }

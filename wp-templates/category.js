@@ -29,6 +29,7 @@ export default function Component(props) {
   const footerMenu3 = props?.data.footerMenuItems3?.nodes ?? [];
   const footerMenu4 = props?.data.footerMenuItems4?.nodes ?? [];
   const logoUrl = props?.data.themeGeneralSettings?.themeSetting.header.logo?.node.mediaItemUrl
+  const headerCta = props.data.themeGeneralSettings.themeSetting.header?.ctaUrlHeader
   const footerTexts = {
     'title': props?.data.themeGeneralSettings?.themeSetting.footer?.footerTitle,
     'paragraph': props?.data.themeGeneralSettings?.themeSetting.footer?.footerParagraph
@@ -48,10 +49,6 @@ export default function Component(props) {
     }
   }
 
-
-  console.log(data);
-
-
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
@@ -60,6 +57,7 @@ export default function Component(props) {
         description={siteDescription}
         menuItems={primaryMenu}
         logoUrl={logoUrl}
+        headerCta={headerCta}
       />
       <Main>
         <>

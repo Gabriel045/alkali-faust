@@ -14,13 +14,13 @@ export default function AcfCaseStudies({data}) {
   return (
     <section className="bg-background">
       <div className="block_content relative">
-        <img loading="lazy"  className="absolute z-10 top-[15%] left-[-5%] rotate-180" src={require('../assets/images/hexagon-5.svg')?.default?.src} alt="" />
+        <img loading="lazy" className="absolute z-10 top-[15%] left-[-5%] rotate-180" src={require('../assets/images/hexagon-5.svg')?.default?.src} alt="" />
         <div className="pb-[60px] lg:pb-[120px]">
-          <h2 className="text-center text-[#fff] lg:w-[60%] m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} /> 
+          <h2 className="text-center text-[#fff] lg:w-[60%] m-auto" dangerouslySetInnerHTML={{__html: title ?? ''}} />
         </div>
         <div className="flex flex-row flex-wrap">
           {
-            cards.map((card,index) => { 
+            cards.map((card,index) => {
               return <div key={index} className="lg:w-[48%] px-[44px] py-[46px] rounded-[10px] mb-[35px] lg:mb-0 lg:first:mr-[4%] border-custom z-50">
                 <div className="relative z-50 flex justify-start pb-[23px] h-[100px]">
                   <Image
@@ -34,27 +34,30 @@ export default function AcfCaseStudies({data}) {
                 </div>
                 <p className="text-[#FFF] font-[600] text-[24px] relative"> {card?.title} </p>
                 <p className="text-[18px] font-[400] text-[#929292] pt-[23px] pb-[37px] relative"> {card?.paragraph} </p>
-                <Link href={card?.link ? card?.link : ''}>
-                  <a target="_blank" className="text-[#0AADE5] text-[16px] flex relative hover-arrow" > 
-                    Learn More 
-                    <Image
-                      src={require('../assets/images/arrow-right-blue.svg')}
-                      width={21}
-                      height={25}
-                      style={{}} // optional
-                      alt="Picture of the author"
-                    />
-                    {/*<img loading="lazy"  className="mb-[-2px] " src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />*/}
-                  </a>  
-                </Link> :
+                {
+                  card?.link?.url &&
+                  <Link href={card?.link?.url ?? "#"}>
+                    <a target={card?.link?.target} className="text-[#0AADE5] text-[16px] flex relative hover-arrow" >
+                      {card?.link?.title}
+                      <Image
+                        src={require('../assets/images/arrow-right-blue.svg')}
+                        width={21}
+                        height={25}
+                        style={{}} // optional
+                        alt="Picture of the author"
+                      />
+                      {/*<img loading="lazy"  className="mb-[-2px] " src={require('../assets/images/arrow-right-blue.svg')?.default?.src} alt="" />*/}
+                    </a>
+                  </Link>
+                }
               </div>
 
             })
           }
         </div>
         <div className="mt-[60px] lg:mt-[140px] flex justify-center gap-[30px] lg:gap-[20px] flex-wrap lg:flex-nowrap">
-          <Link href={browseCaseStudies ? browseCaseStudies  : ''}>
-            <a className='text-white w-auto py-[15px] px-[35px] bg-[#333232] rounded-[10px] transform hover:translate-y-[2px] border-button'> Browse Case Studies  </a>
+          <Link href={browseCaseStudies?.url ?? '#'}>
+            <a target={browseCaseStudies?.target} className='text-white w-auto py-[15px] px-[35px] bg-[#333232] rounded-[10px] transform hover:translate-y-[2px] border-button'> {browseCaseStudies?.title} </a>
           </Link>
         </div>
       </div>
@@ -63,16 +66,24 @@ export default function AcfCaseStudies({data}) {
 }
 
 AcfCaseStudies.fragments = {
-  key: `AcfCaseStudiesBlockFragment`,                  
+  key: `AcfCaseStudiesBlockFragment`,
   entry: gql`
     fragment AcfCaseStudiesBlockFragment on AcfCaseStudies {
       caseStudiesBlock {
         title
-        browseCaseStudies
+        browseCaseStudies{
+          url
+          target
+          title
+        }
         cards {
           paragraph
           title
-          link 
+          link{
+            url
+            target
+            title
+          } 
           logo {
             nodes {
               sourceUrl

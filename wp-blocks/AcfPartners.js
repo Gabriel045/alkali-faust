@@ -16,7 +16,7 @@ export default function AcfPartners({data}) {
   const cta = data.partnersBlock?.cta
 
   return (
-    <section  className="relative">
+    <section className="relative">
       <img loading="lazy" className="hidden lg:block absolute z-10 top-[40%] left-0 rotate-180" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
       <div className="block_content">
         <div className="pb-[40px] lg:pb-[80px]">
@@ -28,7 +28,7 @@ export default function AcfPartners({data}) {
           {
             cards.map((card,index) => {
 
-              return <div key={index} className={` ${columns == "four" ? 'lg:w-1/4 lg:px-[60px]' : 'lg:w-1/3 lg:px-[120px]'} w-1/2  pt-[70px] relative z-50  flex items-center cursor-pointer`} >
+              return <div key={index} className={` ${columns == "four" ? 'lg:w-1/4 lg:px-[60px]' : 'lg:w-1/3 lg:px-[120px]'} w-1/2  pt-[70px] relative z-50  flex items-center`} >
                 {card.url != null ?
                   <Link href={card.url}>
                     <a target="_blank">
@@ -43,30 +43,28 @@ export default function AcfPartners({data}) {
                       {/*<img loading="lazy"  className="w-full icon_filter" src={card.icon?.nodes[0]?.sourceUrl} alt="" />*/}
                     </a>
                   </Link> :
-                    <Image
-                        src={card.icon?.nodes[0]?.sourceUrl}
-                        width={0}
-                        height={0}
-                        style={{width: '100%',height: '100%'}} // optional
-                        alt="Picture of the author"
-                        className="icon_filter"
-                      />
+                  <Image
+                    src={card.icon?.nodes[0]?.sourceUrl}
+                    width={0}
+                    height={0}
+                    style={{width: '100%',height: '100%'}} // optional
+                    alt="Picture of the author"
+                    className="icon_filter"
+                  />
                 }
               </div>
             })
           }
         </div>
         <PartnerResponsive cards={cards} />
-
-        {/*<div className="flex justify-center mt-[140px]">
-          {
-            cta.url != null &&
-            <Link href={cta.url}>
-              <a className="button_custom no-arrow inline-block">{cta.text}</a>
-            </Link>
-          }
-        </div>*/}
-
+        {
+          cta?.url &&
+          <div className="flex justify-center  mt-[60px] lg:mt-[140px]">
+              <Link href={cta?.url ?? "#"}>
+                <a  target={cta?.target} className="button_custom no-arrow inline-block">{cta?.title}</a>
+              </Link>
+          </div>
+        }
       </div>
       <img loading="lazy" className="hidden lg:block absolute z-10 top-[10%] right-0" src={require('../assets/images/hexagon-2.svg')?.default?.src} alt="" />
     </section>
@@ -83,7 +81,8 @@ AcfPartners.fragments = {
         headline
         title
         cta {
-          text
+          target
+          title
           url
         }
         cards {

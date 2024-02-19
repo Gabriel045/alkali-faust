@@ -44,6 +44,7 @@ export default function Component(props) {
   const footerMenu3 = data?.footerMenuItems3?.nodes ?? [];
   const footerMenu4 = data?.footerMenuItems4?.nodes ?? [];
   const logoUrl = data.themeGeneralSettings.themeSetting.header.logo?.node.mediaItemUrl
+  const headerCta = data.themeGeneralSettings.themeSetting.header?.ctaUrlHeader
   const footerTexts = {
     'title': data.themeGeneralSettings.themeSetting.footer?.footerTitle,
     'paragraph': data.themeGeneralSettings.themeSetting.footer?.footerParagraph
@@ -73,6 +74,7 @@ export default function Component(props) {
         description={siteDescription}
         menuItems={primaryMenu}
         logoUrl={logoUrl}
+        headerCta={headerCta}
       />
       <Main>
         <Container>

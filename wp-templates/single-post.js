@@ -6,87 +6,89 @@ import {BlogInfoFragment,themeGeneralSettingsFragment} from '../fragments/Genera
 import components from '../wp-blocks';
 
 import {
-    Header,
-    Footer,
-    Main,
-    Container,
-    NavigationMenu,
-    FeaturedImage,
-    RenderBlocks,
-    SEO,
-    HeroSingleBlog
+  Header,
+  Footer,
+  Main,
+  Container,
+  NavigationMenu,
+  FeaturedImage,
+  RenderBlocks,
+  SEO,
+  HeroSingleBlog
 } from '../components';
 
 export default function Component(props) {
 
-    // Loading state for previews
-    if(props.loading) {
-        return <>Loading...</>;
-    }
+  // Loading state for previews
+  if(props.loading) {
+    return <>Loading...</>;
+  }
 
-    const {title: siteTitle,description: siteDescription} =
-        props?.data?.generalSettings;
-    const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
-    const footerMenu = props.data?.footerMenuItems?.nodes ?? [];
-    const footerMenu2 = props.data?.footerMenuItems2?.nodes ?? [];
-    const footerMenu3 = props.data?.footerMenuItems3?.nodes ?? [];
-    const footerMenu4 = props.data?.footerMenuItems4?.nodes ?? []; const {title,content,featuredImage} = props?.data?.page ?? {title: ''};
-    const logoUrl = props.data.themeGeneralSettings.themeSetting.header.logo?.node.mediaItemUrl
-    const footerTexts = {
-        'title': props.data.themeGeneralSettings.themeSetting.footer?.footerTitle ?? '',
-        'paragraph': props.data.themeGeneralSettings.themeSetting.footer?.footerParagraph ?? '',
-    }
-    const socialMedia = {
-        'facebook': props.data.themeGeneralSettings.themeSetting.socialMedia?.facebook ?? '',
-        'instagram': props.data.themeGeneralSettings.themeSetting.socialMedia?.instagram ?? '',
-        'linkedin': props.data.themeGeneralSettings.themeSetting.socialMedia?.linkedin ?? '',
-        'twitter': props.data.themeGeneralSettings.themeSetting.socialMedia?.x ?? ''
+  const {title: siteTitle,description: siteDescription} =
+    props?.data?.generalSettings;
+  const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
+  const footerMenu = props.data?.footerMenuItems?.nodes ?? [];
+  const footerMenu2 = props.data?.footerMenuItems2?.nodes ?? [];
+  const footerMenu3 = props.data?.footerMenuItems3?.nodes ?? [];
+  const footerMenu4 = props.data?.footerMenuItems4?.nodes ?? []; const {title,content,featuredImage} = props?.data?.page ?? {title: ''};
+  const logoUrl = props.data.themeGeneralSettings.themeSetting.header.logo?.node.mediaItemUrl
+  const headerCta = props.data.themeGeneralSettings.themeSetting.header?.ctaUrlHeader
+  const footerTexts = {
+    'title': props.data.themeGeneralSettings.themeSetting.footer?.footerTitle ?? '',
+    'paragraph': props.data.themeGeneralSettings.themeSetting.footer?.footerParagraph ?? '',
+  }
+  const socialMedia = {
+    'facebook': props.data.themeGeneralSettings.themeSetting.socialMedia?.facebook ?? '',
+    'instagram': props.data.themeGeneralSettings.themeSetting.socialMedia?.instagram ?? '',
+    'linkedin': props.data.themeGeneralSettings.themeSetting.socialMedia?.linkedin ?? '',
+    'twitter': props.data.themeGeneralSettings.themeSetting.socialMedia?.x ?? ''
 
-    }
+  }
 
 
-  const {editorBlocks,categories,featuredImage:FeaturedImage,title:Title, date} = props.data.post;
+  const {editorBlocks,categories,featuredImage: FeaturedImage,title: Title,date} = props.data.post;
   const blocks = editorBlocks;
 
   console.log(props.data);
 
-    return (
+  return (
+    <>
+      <SEO
+        title={siteTitle}
+        description={siteDescription}
+        imageUrl={featuredImage?.node?.sourceUrl}
+      />
+      <Header
+        title={siteTitle}
+        description={siteDescription}
+        menuItems={primaryMenu}
+        logoUrl={logoUrl}
+        headerCta={headerCta}
+      />
+      <Main>
+        <HeroSingleBlog featuredImage={FeaturedImage} title={Title} categories={categories} date={date} />
         <>
-            <SEO
-                title={siteTitle}
-                description={siteDescription}
-                imageUrl={featuredImage?.node?.sourceUrl}
-            />
-            <Header
-                title={siteTitle}
-                description={siteDescription}
-                menuItems={primaryMenu}
-                logoUrl={logoUrl}
-            />
-            <Main>
-          <HeroSingleBlog featuredImage={FeaturedImage} title={Title} categories={categories} date={date}/>
-                <>
-                    <Container>
-                       <RenderBlocks data={blocks} categories={categories} />
-                        {/*<WordPressBlocksViewer blocks={blocks} />*/}
-                    </Container>
-                </>
-            </Main>
-            <Footer footerTexts={footerTexts} socialMedia={socialMedia} footerMenu={footerMenu} footerMenu2={footerMenu2} footerMenu3={footerMenu3} footerMenu4={footerMenu4} />
+          <Container>
+            <RenderBlocks data={blocks} categories={categories} />
+            {/*<WordPressBlocksViewer blocks={blocks} />*/}
+          </Container>
         </>
-    );
+      </Main>
+      <Footer footerTexts={footerTexts} socialMedia={socialMedia} footerMenu={footerMenu} footerMenu2={footerMenu2} footerMenu3={footerMenu3} footerMenu4={footerMenu4} />
+    </>
+  );
 }
 
 Component.variables = ({databaseId},ctx) => {
-    return {
-        databaseId,
-        headerLocation: MENUS.PRIMARY_LOCATION,
-        footerLocation: MENUS.HOW_WE_HELP,
-        footerLocation2: MENUS.WHO_WE_HELP,
-        footerLocation3: MENUS.WHY_APPLY,
-        footerLocation4: MENUS.RESOURCES,
-        asPreview: ctx?.asPreview,
-    };
+  return {
+    databaseId,
+    headerLocation: MENUS.PRIMARY_LOCATION,
+    footerLocation: MENUS.HOW_WE_HELP,
+    footerLocation2: MENUS.WHO_WE_HELP,
+    footerLocation3: MENUS.WHY_APPLY,
+    footerLocation4: MENUS.RESOURCES,
+    asPreview: ctx?.asPreview,
+  };
 };
 
 Component.query = gql`

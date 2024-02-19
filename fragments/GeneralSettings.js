@@ -16,6 +16,7 @@ export const themeGeneralSettingsFragment = gql`
             mediaItemUrl
           }
         }
+       ctaUrlHeader
       }
       footer {
         footerParagraph
