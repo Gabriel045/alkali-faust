@@ -97,6 +97,7 @@ Component.query = gql`
   ${FeaturedImage.fragments.entry}
   ${components?.AcfHeroSingleClients.fragments.entry}
   ${components?.AcfSingleClientsContent.fragments.entry}
+  ${components?.AcfSingleClientsColumns.fragments.entry}
   ${components?.AcfSingleClientsTestimonial.fragments.entry}
   ${components?.AcfLargeImage.fragments.entry}
 
@@ -116,6 +117,7 @@ Component.query = gql`
       editorBlocks(flat: false) {
         ...${components.AcfHeroSingleClients.fragments.key}
         ...${components.AcfSingleClientsContent.fragments.key}
+        ...${components.AcfSingleClientsColumns.fragments.key}
         ...${components.AcfSingleClientsTestimonial.fragments.key}
         ...${components.AcfLargeImage.fragments.key}
       }

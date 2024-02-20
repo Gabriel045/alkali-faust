@@ -12,6 +12,7 @@ import AcfTextImageBlock from "./AcfTextImageBlock";
 import AcfClients from "./AcfClients";
 import AcfHeroSingleClients from "./AcfHeroSingleClients";
 import AcfSingleClientsContent from "./AcfSingleClientsContent";
+import AcfSingleClientsColumns from "./AcfSingleClientsColumns";
 import AcfSingleClientsTestimonial from "./AcfSingleClientsTestimonial";
 import AcfLargeImage from "./AcfLargeImage";
 import AcfLatestClients from "./AcfLatestClients";
@@ -41,6 +42,7 @@ export default {
     AcfClients,
     AcfHeroSingleClients,
     AcfSingleClientsContent,
+    AcfSingleClientsColumns,
     AcfSingleClientsTestimonial,
     AcfLargeImage,
     AcfLatestClients,

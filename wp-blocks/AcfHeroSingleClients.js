@@ -26,27 +26,30 @@ export default function AcfHeroSingleClients({data,postIcon,industries}) {
         <div className="w-full lg:w-[40%] pb-[100px] lg:pb-0 flex lg:justify-end items-center">
           <div className="w-full lg:w-[60%] bg-[#2D2D2D] border-[1px] border-[#4D4D4D] rounded-[5px] relative z-50 h-fit">
             <div className="py-[25px] border-b-[1px] border-[#4D4D4D]">
-              <Image
-                src={icon}
-                width={0}
-                height={0}
-                style={{width: '110px',height: 'auto'}} // optional
-                className={'m-auto'}
-                alt="Picture of the author"
-              />
+              {
+                icon &&
+                <Image
+                  src={icon}
+                  width={0}
+                  height={0}
+                  style={{width: '110px',height: 'auto'}} // optional
+                  className={'m-auto'}
+                  alt="Picture of the author"
+                />
+              }
             </div>
             <div className="py-[30px] px-[20px] border-b-[1px] border-[#4D4D4D]">
               <p className="text-[#B9B9BA] font-[600]">Products Used</p>
             </div>
             <div className="py-[20px] px-[20px] border-b-[1px] border-[#4D4D4D]">
               {
-                servicesProvide.map((item, index) => {
-                  return item.url !== null ? <p key={index} className="fon-[400] mb-[10px] last:mb-0 text-[#ffffff99]"> {item.service} </p> 
-                    : <p key={index}  className="font-[400] mb-[10px] last:mb-0 text-[#ffffff99]">
-                        <Link href={"#"}>
-                          <a> {item.service} </a>
-                        </Link>
-                      </p>
+                servicesProvide.map((item,index) => {
+                  return item.url !== null ? <p key={index} className="fon-[400] mb-[10px] last:mb-0 text-[#ffffff99]"> {item.service} </p>
+                    : <p key={index} className="font-[400] mb-[10px] last:mb-0 text-[#ffffff99]">
+                      <Link href={"#"}>
+                        <a> {item.service} </a>
+                      </Link>
+                    </p>
                 })
               }
             </div>

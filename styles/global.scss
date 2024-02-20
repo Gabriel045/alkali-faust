@@ -858,6 +858,25 @@ h4 {
     font-size: 35px !important;
 }
 
+#hero-home #GravyForm{
+    form{
+        background-color: #323232;
+
+        input[type='text'],
+        input[type='email'],
+        input[type='tel'],
+        textarea{
+            background-color: #393939;
+            border-color: #4F4F4F;
+            color: white;
+        }
+
+        label{
+            color: white;
+        }
+    }
+}
+
 /* responsive */
 @media screen and (max-width: 1250px) {
     .block_content {

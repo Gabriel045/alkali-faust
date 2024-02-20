@@ -3,6 +3,9 @@ import {gql} from '@apollo/client';
 import {useRef,useState,useEffect} from 'react';
 import Image from "next/future/image";
 import Link from 'next/link';
+import loadable from '@loadable/component'
+const AcfGravityForm = loadable(() => import('../wp-blocks/AcfGravityForm'))
+
 
 export default function AcfHeroHome({data}) {
 
@@ -11,15 +14,27 @@ export default function AcfHeroHome({data}) {
   const paragraph = data.heroHomeBlock?.paragraph
   const icons = data.heroHomeBlock?.clientsIcon?.nodes
   const sideImage = data.heroHomeBlock?.sideImage?.node?.sourceUrl
+  const formId = data.heroHomeBlock?.formId
+  const imageOrForm = data.heroHomeBlock?.imageOrForm
+  const idForm = [
+    data => [
+      gravytyFormBlock=>[
+        idForm => formId
+      ]
+    ]
+  ]
   const ctaUrl = data.heroHomeBlock?.ctaUrl
+
+  const sideElement = (ctaUrl?.url || formId )? true : false
+
   return (
-    <section className="relative bg-background">
+    <section id="hero-home" className="relative bg-background">
       <div className="flex justify-center flex-wrap w-full">
         <div className="home-hero flex flex-col w-full max-w-[1440px] items-center relative z-[1]">
-          <div className='flex flex-row'>
-            <div className={sideImage ? 'w-[55%]' : 'w-full flex flex-col items-center' }>
-              <div className={`text-white h-[160px] md:h-auto ${sideImage ? "w-full" : "text-center md:w-[80%] w-full" }`} dangerouslySetInnerHTML={{__html: title ?? ''}} />
-              <p className={`subtext text-[#ffffffad] md:w-[70%] my-[36px] ${sideImage ? "" : "text-center" }`}> {paragraph}  </p>
+          <div className={`flex flex-row ${formId ? "gap-[40px]" : ""}`}>
+            <div className={imageOrForm != "None" ? 'w-[53%]' : 'w-full flex flex-col items-center' }>
+              <div className={`text-white h-[160px] md:h-auto ${imageOrForm != "None" ? "w-full" : "text-center md:w-[80%] w-full" }`} dangerouslySetInnerHTML={{__html: title ?? ''}} />
+              <p className={`subtext text-[#ffffffad] md:w-[70%] my-[36px] ${sideElement ? "" : "text-center" }`}> {paragraph}  </p>
               {
                 ctaUrl?.url &&  
                 <Link href={ctaUrl?.url ?? "#"}>
@@ -28,7 +43,7 @@ export default function AcfHeroHome({data}) {
               }
             </div>
             { sideImage &&
-              <div className='w-[45%]'>
+              <div className='w-[47%]'>
                 <Image
                   src={sideImage}
                   width={580}
@@ -37,6 +52,12 @@ export default function AcfHeroHome({data}) {
                   className={''}
                   alt="Picture of the author"
                 />
+              </div>
+            }
+            {
+              formId &&
+              <div className='w-[47%]'>
+                <AcfGravityForm idForm={formId} />
               </div>
             }
           </div>
@@ -108,6 +129,8 @@ AcfHeroHome.fragments = {
               sourceUrl
             }
         }
+        imageOrForm
+        formId
         sideImage {
            node {
              sourceUrl

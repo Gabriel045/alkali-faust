@@ -72,7 +72,12 @@ export default function RenderBlocks({data,postIcon,clients,industries,clientID,
                             const AcfSingleClientsContent = dynamic({
                                 loader: () => import('../../wp-blocks/AcfSingleClientsContent')
                             })
-                            return <div key={index}> <AcfSingleClientsContent data={block} /> </div>
+                            return <div key={index}> <AcfSingleClientsContent data={block}/> </div>
+                        case 'AcfSingleClientsColumns':
+                            const AcfSingleClientsColumns = dynamic({
+                                loader: () => import('../../wp-blocks/AcfSingleClientsColumns')
+                            })
+                            return <div key={index}> <AcfSingleClientsColumns data={block}/> </div>
                         case 'AcfSingleClientsTestimonial':
                             const AcfSingleClientsTestimonial = dynamic({
                                 loader: () => import('../../wp-blocks/AcfSingleClientsTestimonial')
