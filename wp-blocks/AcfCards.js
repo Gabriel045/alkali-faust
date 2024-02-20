@@ -12,7 +12,6 @@ export default function AcfCards({data}) {
   const cardBackground = data?.cardsBlock?.cardBackground[0]
 
   const cssClassNames = data?.cssClassNames ? data?.cssClassNames[0] : ''
-  console.log(cssClassNames);
   return (
     <section >
       <div className={"block_content " + cssClassNames}>

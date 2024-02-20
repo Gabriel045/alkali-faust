@@ -49,8 +49,6 @@ export default function Component(props) {
   const {editorBlocks,categories,featuredImage: FeaturedImage,title: Title,date} = props.data.post;
   const blocks = editorBlocks;
 
-  console.log(props.data);
-
   return (
     <>
       <SEO
@@ -66,10 +64,10 @@ export default function Component(props) {
         headerCta={headerCta}
       />
       <Main>
-        <HeroSingleBlog featuredImage={FeaturedImage} title={Title} categories={categories} date={date} />
+        <HeroSingleBlog featuredImage={FeaturedImage} title={Title} categories={categories} date={date}/>
         <>
           <Container>
-            <RenderBlocks data={blocks} categories={categories} />
+            <RenderBlocks data={blocks} categories={categories} socialMedia={socialMedia} />
             {/*<WordPressBlocksViewer blocks={blocks} />*/}
           </Container>
         </>

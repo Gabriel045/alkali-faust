@@ -7,8 +7,6 @@ import Image from "next/future/image";
 export default function HeroSingleBlog({featuredImage, title, categories, date}) {
     const dateFormated = new Date(date).toLocaleDateString('en-us',{year: "numeric",month: "short",day: "numeric"}) 
     const CategoryUrl = categories?.nodes[0]?.link
-    console.log(CategoryUrl);
-
     return (
             <section className="bg-background relative">
                 <div className="block_content flex flex-wrap w-full hero">

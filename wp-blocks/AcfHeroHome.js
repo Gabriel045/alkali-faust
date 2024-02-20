@@ -2,17 +2,16 @@ import React from 'react';
 import {gql} from '@apollo/client';
 import {useRef,useState,useEffect} from 'react';
 import Image from "next/future/image";
+import Link from 'next/link';
 
 export default function AcfHeroHome({data}) {
-
-  console.log(data);
 
   // Load values and assign defaults.
   const title = data.heroHomeBlock?.title
   const paragraph = data.heroHomeBlock?.paragraph
   const icons = data.heroHomeBlock?.clientsIcon?.nodes
   const sideImage = data.heroHomeBlock?.sideImage?.node?.sourceUrl
-console.log(sideImage);
+  const ctaUrl = data.heroHomeBlock?.ctaUrl
   return (
     <section className="relative bg-background">
       <div className="flex justify-center flex-wrap w-full">
@@ -21,7 +20,12 @@ console.log(sideImage);
             <div className={sideImage ? 'w-[55%]' : 'w-full flex flex-col items-center' }>
               <div className={`text-white h-[160px] md:h-auto ${sideImage ? "w-full" : "text-center md:w-[80%] w-full" }`} dangerouslySetInnerHTML={{__html: title ?? ''}} />
               <p className={`subtext text-[#ffffffad] md:w-[70%] my-[36px] ${sideImage ? "" : "text-center" }`}> {paragraph}  </p>
-              <a href="" className="button_custom inline-block z-1" target="_blank">Learn More</a>
+              {
+                ctaUrl?.url &&  
+                <Link href={ctaUrl?.url ?? "#"}>
+                  <a className="button_custom inline-block z-1" target={ctaUrl?.target}>{ctaUrl?.title}</a>
+                </ Link>
+              }
             </div>
             { sideImage &&
               <div className='w-[45%]'>
@@ -83,9 +87,6 @@ console.log(sideImage);
           style={{width: '100%',height: '100%',objectFit: "cover"}} // optional
           alt="Picture of the author" />
       </div>
-
-      {/*<img loading="lazy"  className="hidden lg:block absolute right-0 bottom-0 h-[600px]" src={require('../assets/images/hexagons.svg')?.default?.src} alt="" />*/}
-      {/*<img loading="lazy"  className="absolute  bottom-[-90px] left-0 z-[0]" src={require('../assets/images/hexagon.svg')?.default?.src} alt="" />*/}
     </section>
   );
 }
@@ -112,7 +113,11 @@ AcfHeroHome.fragments = {
              sourceUrl
           }
         }
-        ctaUrl
+        ctaUrl{
+          url
+          target
+          title
+        }
       }    
     }
   `,

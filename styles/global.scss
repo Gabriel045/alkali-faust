@@ -28,6 +28,11 @@
 body {
     font-family: Inter, sans-serif;
     overflow-x: hidden;
+    scroll-behavior:smooth
+}
+
+html{
+    scroll-behavior:smooth
 }
 
 
@@ -126,6 +131,17 @@ h4 {
     color: #fff;
 }
 
+.text-block ul{
+    list-style: disc;
+    margin-left: 40px;
+
+    li::marker {
+        color: #0AADE5;
+    }
+    li{
+        margin-top: 15px;
+    }
+}
 .container {
     max-width: 1440px;
 }
@@ -438,12 +454,14 @@ h4 {
 #slider .disable .item-content{
     height: 0px;
     opacity: 0;
+    visibility: hidden;
     transition: all 0.3s ease;
 }
 
 #slider .enable .item-content {
     height: auto !important;
     opacity: 1 !important;
+    visibility: visible;
     transition: all 0.3s ease;
 }
 
@@ -452,6 +470,12 @@ h4 {
     color: #23242466;
     padding-left: 36px;
     padding-right: 36px;
+     transition: all 0.5s ease;
+}
+
+#slider .disable:hover{
+    background-color: #fafafad6 !important;
+    border-left: 5px solid #0AADE5;
 }
 
 #slider .enable {
@@ -559,6 +583,10 @@ h4 {
 }
 
 /* the slides */
+.articles-section .multiple-items-article .slick-arrow{
+    display: none !important;
+}
+
 #partner .slick-slide, 
 .multiple-items-article .slick-slide{
     margin: 0 20px !important;
@@ -580,8 +608,8 @@ h4 {
 .border-custom::before {
     content: "";
     position: absolute;
-    background-image: url('../assets/images/bg.svg');
-    background-size: cover;
+    background: rgb(63,63,63);
+    background: linear-gradient(125deg, rgba(63,63,63,1) 0%, rgba(35,35,35,1) 100%);
     width: 100%;
     height: 102%;
     top: 0;
@@ -687,12 +715,15 @@ h4 {
     transition: all 0.3s ease;
 }
 
-.thumbnail:hover+.card-content .read-article img, .card-logo:hover+.view_more_container img, .blog-title:hover+.read-article img {
+.blog-card:hover .card-content .read-article img, .card-logo:hover+.view_more_container img, .blog-title:hover+.read-article img {
     margin-right: 0px !important;
     margin-left: 10px !important;
     transition: all 0.3s ease;
 }
-
+.blog-card:hover>div{
+    @apply shadow-xl;
+    transition: all 0.3s ease;
+}
 .rounded-t-\[10px\] {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -895,6 +926,7 @@ h4 {
     border-bottom: 0px solid transparent;
     border-right: 60px solid #fff;
 }
+
 
 
 @media screen and (max-width: 1023px){

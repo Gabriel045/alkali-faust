@@ -10,7 +10,6 @@ export default function AcfHero({data}) {
     const title = data.heroBlock?.title
     const paragraph = data.heroBlock?.paragraph
     const cta = data.heroBlock?.ctaUrl
-    console.log(cta);
     return (
         <section className="prueba  relative bg-background ">
             <div className="block_content flex flex-wrap w-full hero">
@@ -18,9 +17,9 @@ export default function AcfHero({data}) {
                     <div className="text-white text-[36px] lg:text-[52px] font-[600] my-[30px] leading-[60px]" dangerouslySetInnerHTML={{__html: title ?? ''}} /> 
                     <p className="subtext text-[#ffffffad] lg:w-[80%] my-[36px]"> {paragraph} </p>
                     {
-                        cta.url && 
-                        <Link href={cta.url}>       
-                            <a className="button_custom inline-block z-1">{cta.title}</a>
+                        cta?.url && 
+                        <Link href={cta?.url} >       
+                            <a target={cta?.target} className="button_custom inline-block z-1">{cta?.title}</a>
                         </Link>
                     }
                 </div>

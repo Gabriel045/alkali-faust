@@ -16,7 +16,7 @@ export default function ClientsCards({data}) {
 
     //const clients = data?.clients?.nodes
 
-    console.log(clients);
+    //console.log(clients);
 
     return (
         <div>

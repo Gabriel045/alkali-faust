@@ -3,7 +3,7 @@ import {useQuery,gql} from '@apollo/client';
 import Link from 'next/link';
 import Image from "next/future/image";
 
-export default function AcfBlogContent({data,categories}) {
+export default function AcfBlogContent({data,categories,socialMedia}) {
     const content = data?.blogContentBlock?.content
     const categoryUrl = categories?.nodes[0]?.link
 
@@ -32,7 +32,7 @@ export default function AcfBlogContent({data,categories}) {
                         <div className="sticky top-[40px] bg-white z-[100]">
                             <h4 className="text-background text-[22px] font-[600]">Share</h4>
                             <div className="flex gap-[8px] py-[26px] border-b-[1px] border-[#D8D8D8]">
-                                <Link href="#" >
+                                <Link href={socialMedia?.instagram ?? "#"} >
                                     <a target="_blank" className="cursor-pointer hover:translate-y-[2px] transform">
                                         <Image
                                             src={require('../assets/images/instagram_blue.svg')}
@@ -44,7 +44,7 @@ export default function AcfBlogContent({data,categories}) {
                                         />
                                     </a>
                                 </Link>
-                                <Link href="#" >
+                                <Link href={socialMedia?.twitter ?? "#"} >
                                     <a target="_blank" className="cursor-pointer hover:translate-y-[2px] transform">
                                         <Image
                                             src={require('../assets/images/twitter_blue.svg')}
@@ -56,7 +56,7 @@ export default function AcfBlogContent({data,categories}) {
                                         />
                                     </a>
                                 </Link>
-                                <Link href="#" >
+                                <Link href={socialMedia?.facebook ?? "#"} >
                                     <a target="_blank" className="cursor-pointer hover:translate-y-[2px] transform">
                                         <Image
                                             src={require('../assets/images/facebook_blue.svg')}

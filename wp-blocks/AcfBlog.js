@@ -7,7 +7,7 @@ export default function AcfBlog({blog}) {
     return (
         <section>
             <div className="max-w-[1440px] w-full px-[20px] lg:px-[120px] pt-[80px] lg:pt-[120px] pb-[60px] lg:pb-[110px]">
-                <div className="flex flex-row flex-wrap lg:justify-center mb-[50px] lg:mb-[85px]">
+                <div className="flex flex-row flex-wrap lg:justify-start mb-[50px] lg:mb-0">
                     {
                         blog.map((post,index) => {
                             const date = new Date(post?.date).toLocaleDateString('en-us',{year: "numeric",month: "short",day: "numeric"})

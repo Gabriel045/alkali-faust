@@ -1,6 +1,7 @@
 import React from 'react';
 import {gql} from '@apollo/client';
 import Image from "next/future/image";
+import Link from "next/link";
 
 export default function AcfTextImageBlock({data}) {
   
@@ -10,7 +11,6 @@ export default function AcfTextImageBlock({data}) {
   const image = data.textImageBlock?.image?.node?.sourceUrl ? data.textImageBlock?.image?.node?.sourceUrl  : ""
   const title = data.textImageBlock?.title
   const paragraph = data.textImageBlock?.paragraph
-  const learnMoreCta = data.textImageBlock?.learnMoreCta[0]
   const learnMoreUrl = data.textImageBlock?.learnMoreUrl
   const customID = data.textImageBlock?.customId  ?? ""
 
@@ -34,9 +34,11 @@ export default function AcfTextImageBlock({data}) {
           }
           <div className={`${image.length > 0 ? 'w-full lg:w-[50%]' : 'full'} lg:flex lg:flex-col lg:justify-center relative`}>
             <h3 className="z-50 relative"> {title} </h3>
-            <p className="paragraph text-[#929292] py-[32px] z-50 relative" dangerouslySetInnerHTML={{__html: paragraph ?? ''}} /> 
-            {learnMoreCta == "Yes" &&
-              <a href={learnMoreUrl} className={`button_custom inline-block ${background == "light" ? 'no-border' : ''}`}>Learn More</a>
+            <div className={`paragraph text-[#929292] z-50 relative ${title ? "py-[32px]" : ""}`} dangerouslySetInnerHTML={{__html: paragraph ?? ''}} /> 
+            {learnMoreUrl?.url &&
+              <Link href={learnMoreUrl} >
+                <a target={learnMoreUrl?.target} className={`button_custom inline-block ${background == "light" ? 'no-border' : ''}`}>{learnMoreUrl?.title}</a>            
+              </Link>
             }
             { background == "light" ? 
               <div className='absolute hidden lg:block z-[1] w-[368px] h-[416px] bottom-0 right-0'>
@@ -68,8 +70,11 @@ AcfTextImageBlock.fragments = {
         background
         title
         paragraph
-        learnMoreUrl
-        learnMoreCta
+        learnMoreUrl{
+          url
+          target
+          title
+        }
         imagePosition
         customId
         image {

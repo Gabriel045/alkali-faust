@@ -10,7 +10,7 @@ export default function AcfArticles(props) {
   const {data} = useQuery(GET_POST);
   
     return (
-      <section className="relative">
+      <section className="articles-section relative">
         <img loading="lazy"  className="hidden lg:block absolute z-10 top-[40%] left-[-80px] rotate-180" src={require('../assets/images/hexagon-2.svg')?.default?.src}  alt="" />
         <ArticleSlider title={title} cards={data}/>
       </section>
