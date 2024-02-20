@@ -11,8 +11,16 @@ export default function AcfHero({data}) {
     const paragraph = data.heroBlock?.paragraph
     const cta = data.heroBlock?.ctaUrl
     return (
-        <section className="prueba  relative bg-background ">
+        <section className="relative bg-background ">
             <div className="block_content flex flex-wrap w-full hero">
+            <Image
+                src={require('../assets/images/hexagons.svg')}
+                width={500}
+                height={600}
+                layout="responsive"
+                style={{}} // optional
+                className={'hidden lg:block absolute right-0 bottom-0'}
+                alt="Picture of the author" />
                 <div className="w-full lg:w-[60%]  relative z-[1] ">
                     <div className="text-white text-[36px] lg:text-[52px] font-[600] my-[30px] leading-[60px]" dangerouslySetInnerHTML={{__html: title ?? ''}} /> 
                     <p className="subtext text-[#ffffffad] lg:w-[80%] my-[36px]"> {paragraph} </p>
@@ -25,19 +33,9 @@ export default function AcfHero({data}) {
                 </div>
             </div>
             <Image
-                src={require('../assets/images/hexagons.svg')}
-                width={500}
-                height={600}
-                sizes="100vw"
-                layout="responsive"
-                style={{width: '100%',height: '100%'}} // optional
-                className={'hidden lg:block absolute right-0 bottom-0'}
-                alt="Picture of the author" />
-            <Image
                 src={require('../assets/images/hexagon-5.svg')}
                 width={0}
                 height={250}
-                sizes="100vw"
                 layout="responsive"
                 style={{width: '100%',height: '100%'}} // optional
                 className={'block lg:hidden absolute z-[1] right-0 bottom-[40px]'}
