@@ -38,7 +38,7 @@ export default function HeroSingleBlog({featuredImage, title, categories, date})
                             </div>
                         </div>
                     </div>
-                    <div className="hidden lg:block w-full lg:w-[45%] relative z-50">
+                    <div className="hidden lg:block w-full lg:w-[45%] relative z-[1]">
                     <Image
                         src={featuredImage?.node?.sourceUrl}
                         width={500}
