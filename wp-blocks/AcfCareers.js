@@ -1,5 +1,5 @@
 import React from 'react';
-import {gql} from '@apollo/client';
+import {gql,useQuery} from '@apollo/client';
 import Link from 'next/link';
 import {PartnerResponsive} from '../components';
 import Image from "next/future/image";
@@ -8,9 +8,14 @@ export default function AcfCareers({data}) {
 
     const title = data?.careersBlock?.title
     const paragraph = data?.careersBlock?.paragraph
-    const job = data?.careersBlock?.job
+    //const job = data?.careersBlock?.job
     const contact = data?.careersBlock?.contact
+
+
     // Load values and assign defaults.
+    const jobs = useQuery(GET_JOBS)?.data?.jobs?.nodes;
+
+    console.log(jobs);
 
     return (
         <section className="relative">
@@ -23,13 +28,13 @@ export default function AcfCareers({data}) {
                         </div>
                     </div>
                     <div className="lg:w-1/2 flex gap-y-[24px] flex-col">
-                       { job.map((element, index)=>{
+                       { jobs.map((job, index)=>{
                             return (
                                 <div key={index} className="border-[1px] border-[#EAECF0] rounded-[16px] py-[24px] px-[28px]">
                                     <div className="flex flex-row justify-between">
-                                        <p className="text-[18px] font-[600] text-background">{element?.position}</p>
-                                        <Link href="/apply-now/">
-                                            <a target="_blank" className="rotate-arrow text-[14px] text-[#0AADE5] font-[600] flex items-center">
+                                        <p className="text-[18px] font-[600] text-background">{job?.title}</p>
+                                        <Link href={job?.link ?? "#"}>
+                                            <a className="rotate-arrow text-[14px] text-[#0AADE5] font-[600] flex items-center">
                                                 View job 
                                                 <Image
                                                     src={require('../assets/images/arrow-up-right.svg')}
@@ -42,7 +47,7 @@ export default function AcfCareers({data}) {
                                             </a>
                                         </Link>
                                     </div>
-                                    <p className="text-[16px] font-[400] text-background my-[16px]"> {element?.description} </p>
+                                    <div className="text-[16px] font-[400] text-background my-[16px]" dangerouslySetInnerHTML={{__html: job?.excerpt}} /> 
                                     <div className="flex gap-[24px] flex-row">
                                         <span className="flex items-center text-[16px] font-[500]"> 
                                             <Image
@@ -53,7 +58,7 @@ export default function AcfCareers({data}) {
                                                 className={'mr-[8px]'}
                                                 alt="Picture of the author"
                                             />
-                                            {element?.location} 
+                                            Remote
                                         </span>
                                         <span className="flex items-center text-[16px] font-[500]"> 
                                             <Image
@@ -64,7 +69,7 @@ export default function AcfCareers({data}) {
                                                 className={'mr-[8px]'}
                                                 alt="Picture of the author"
                                             />
-                                            {element?.schedule}
+                                            Full-time
                                          </span>
                                     </div>
                                 </div>
@@ -90,6 +95,20 @@ export default function AcfCareers({data}) {
 
     );
 }
+
+
+const GET_JOBS = gql`
+  query GetJobs{
+    jobs {
+    nodes {
+      excerpt
+      title
+      link
+    }
+  } 
+  }
+`;
+
 
 AcfCareers.fragments = {
     key: `AcfCareersBlockFragment`,

@@ -5,6 +5,7 @@ import page from './page';
 import single from './single';
 import singleClients from './single-client';
 import singlePost from './single-post';
+import singleJob from './single-job';
 import pageClients from './page-clients';
 import pageBlog from './page-blog';
 
@@ -18,4 +19,5 @@ export default {
   'page-blog': pageBlog,
   'single-client': singleClients,
   'single-post': singlePost,
+  'single-job': singleJob
 };

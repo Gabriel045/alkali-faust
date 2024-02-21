@@ -11,7 +11,6 @@ export default function AcfSingleClientsTestimonial({data,postIcon}) {
     const cssClassNames = data?.cssClassNames ? data?.cssClassNames.toString()  :  ""
     const title = data?.singleClientsTestimonialBlock.title
     const icon = postIcon?.icon?.node?.sourceUrl
-console.log(icon);
     const style = {
         backgroundImage: `linear-gradient(0deg,${background} 0%,${background} 100%), url(${require('../assets/images/overlay.webp').default?.src})`,
         backgroundPosition: 'left center',

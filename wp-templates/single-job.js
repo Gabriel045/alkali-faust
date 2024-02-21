@@ -12,11 +12,10 @@ import {
   FeaturedImage,
   RenderBlocks,
   SEO,
+  HeroSingleBlog
 } from '../components';
 
 export default function Component(props) {
-
-  const clientID = props.__TEMPLATE_VARIABLES__?.databaseId
 
   // Loading state for previews
   if(props.loading) {
@@ -44,10 +43,9 @@ export default function Component(props) {
 
   }
 
-  const {editorBlocks,clients,industries} = props.data.client;
-  const blocks = editorBlocks;
 
-  //console.log(industries);
+  const {editorBlocks,excerpt,categories,featuredImage: FeaturedImage,title: Title,date} = props.data.job;
+  const blocks = editorBlocks;
 
   return (
     <>
@@ -64,9 +62,10 @@ export default function Component(props) {
         headerCta={headerCta}
       />
       <Main>
+        <HeroSingleBlog featuredImage={FeaturedImage} title={Title} categories={categories} date={date} excerpt={excerpt}/>
         <>
           <Container>
-            <RenderBlocks clientID={clientID} industries={industries} postIcon={clients} data={blocks} />
+            <RenderBlocks  data={blocks} categories={categories} socialMedia={socialMedia} type="job"/>
             {/*<WordPressBlocksViewer blocks={blocks} />*/}
           </Container>
         </>
@@ -93,11 +92,7 @@ Component.query = gql`
   ${NavigationMenu.fragments.entry}
   ${themeGeneralSettingsFragment}
   ${FeaturedImage.fragments.entry}
-  ${components?.AcfHeroSingleClients.fragments.entry}
-  ${components?.AcfSingleClientsContent.fragments.entry}
-  ${components?.AcfSingleClientsColumns.fragments.entry}
-  ${components?.AcfSingleClientsTestimonial.fragments.entry}
-  ${components?.AcfLargeImage.fragments.entry}
+  ${components?.AcfBlogContent.fragments.entry}
 
   query GetPageData(
     $databaseId: ID!
@@ -108,30 +103,16 @@ Component.query = gql`
     $footerLocation4: MenuLocationEnum
     $asPreview: Boolean = false
   ) {
-    client(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
+    job(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
       title
-      content
+      date
+      excerpt
       ...FeaturedImageFragment
-      editorBlocks(flat: false) {
-        ...${components.AcfHeroSingleClients.fragments.key}
-        ...${components.AcfSingleClientsContent.fragments.key}
-        ...${components.AcfSingleClientsColumns.fragments.key}
-        ...${components.AcfSingleClientsTestimonial.fragments.key}
-        ...${components.AcfLargeImage.fragments.key}
-      }
-      clients {
-        icon {
-          node {
-            sourceUrl
-          }
-        }
-      } 
 
-      industries {
-        nodes {
-            name
-        }
+      editorBlocks(flat: false) {
+        ...${components.AcfBlogContent.fragments.key}
       }
+      
     }
 
     themeGeneralSettings{

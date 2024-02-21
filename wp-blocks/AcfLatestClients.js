@@ -18,10 +18,6 @@ export default function AcflatestClients({clientID}) {
 
     const [loadResponsive,setloadResponsive] = useState(false);
 
-    //setTimeout(() => {
-    //    setloadResponsive(true)
-    //}, 3000);
-
     useEffect(() => {
         if(data)
         setloadResponsive(true)
