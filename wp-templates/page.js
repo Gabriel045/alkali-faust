@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 import * as MENUS from '../constants/menus';
-import {WordPressBlocksViewer} from '@faustwp/blocks';
-import {flatListToHierarchical} from '@faustwp/core';
-import {BlogInfoFragment,themeGeneralSettingsFragment } from '../fragments/GeneralSettings';
+import {BlogInfoFragment,themeGeneralSettingsFragment} from '../fragments/GeneralSettings';
+import {JobsFragment} from '../wp-blocks/AcfCareers'
+
 import components from '../wp-blocks';
 
 import {
@@ -17,6 +17,9 @@ import {
 } from '../components';
 
 export default function Component(props) {
+  const clientID = props.__TEMPLATE_VARIABLES__?.databaseId
+
+
   // Loading state for previews
   if (props.loading) {
     return <>Loading...</>;
@@ -31,6 +34,7 @@ export default function Component(props) {
   const footerMenu4 = props.data?.footerMenuItems4?.nodes ?? [];  const { title, content, featuredImage } = props?.data?.page ?? { title: '' };
   const logoUrl = props.data.themeGeneralSettings.themeSetting.header.logo?.node.mediaItemUrl
   const headerCta = props.data.themeGeneralSettings.themeSetting.header?.ctaUrlHeader
+  const jobs = props.data?.jobs?.nodes
   const footerTexts = {
     'title': props.data.themeGeneralSettings.themeSetting.footer?.footerTitle ?? '',
     'paragraph': props.data.themeGeneralSettings.themeSetting.footer?.footerParagraph ?? '',
@@ -45,9 +49,6 @@ export default function Component(props) {
 
   const {editorBlocks} = props.data.page;
   const blocks = editorBlocks;
-
-  //console.log(blocks);
-
   return (
     <>
       <SEO
@@ -65,7 +66,7 @@ export default function Component(props) {
       <Main>
         <>
          <Container>
-            <RenderBlocks data={blocks} />
+            <RenderBlocks data={blocks} jobs={jobs} />
             {/*<WordPressBlocksViewer blocks={blocks} />*/}
           </Container>
         </>
@@ -87,7 +88,9 @@ Component.variables = ({ databaseId }, ctx) => {
   };
 };
 
+
 Component.query = gql`
+  ${JobsFragment}
   ${BlogInfoFragment}
   ${NavigationMenu.fragments.entry}
   ${themeGeneralSettingsFragment}
@@ -153,6 +156,14 @@ Component.query = gql`
     generalSettings {
       ...BlogInfoFragment
     }
+
+    
+    jobs: jobs(where: {status: PUBLISH}) {
+      nodes{
+        ...JobsFragment
+      } 
+    }
+
    headerMenuItems: menuItems(where: { location: $headerLocation },first: 30) {
       nodes {
         ...NavigationMenuItemFragment

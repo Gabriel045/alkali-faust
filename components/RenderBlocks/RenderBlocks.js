@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 
 //Import Blocks
-export default function RenderBlocks({data,postIcon,clients,industries,clientID,blog,categories,socialMedia, type}) {
+export default function RenderBlocks({data,postIcon,clients,industries,clientID,blog,categories,socialMedia,type,jobs}) {
     return (
         <>
             {
@@ -122,7 +122,7 @@ export default function RenderBlocks({data,postIcon,clients,industries,clientID,
                             const AcfCareers = dynamic({
                                 loader: () => import('../../wp-blocks/AcfCareers')
                             })
-                            return <div key={index}> <AcfCareers data={block} /> </div>
+                            return <div key={index}> <AcfCareers data={block} jobs={jobs} /> </div>
                         case 'AcfCards':
                             const AcfCards = dynamic({
                                 loader: () => import('../../wp-blocks/AcfCards')
