@@ -29,6 +29,7 @@ const SEO = loadable(() => import('../components/SEO/SEO'))
 import {flatListToHierarchical} from '@faustwp/core';
 
 export default function Component(props) {
+  console.log(props);
   const {data} = useQuery(Component.query,{
     variables: Component.variables()
 
@@ -138,6 +139,58 @@ Component.query = gql`
         ...${AcfTextImageBlock.fragments.key}
       }
     }
+
+     gfForm(id: 2, idType: DATABASE_ID) {
+      submitButton {
+        text
+      }
+      formFields(first: 300) {
+        nodes {
+          id
+          type
+          ... on TextField {
+            id
+            label
+            isRequired
+            layoutGridColumnSpan
+            placeholder
+          }
+          ... on NameField {
+            id
+            description
+            label
+            inputs {
+              label
+            }
+          }
+          ... on EmailField {
+            id
+            isRequired
+            hasEmailConfirmation
+            label
+            layoutGridColumnSpan
+            placeholder
+          }
+          ... on PhoneField {
+            id
+            label
+            isRequired
+            inputType
+            layoutGridColumnSpan
+            placeholder
+          }
+          ... on PostContentField {
+            id
+            label
+            isRequired
+            layoutGridColumnSpan
+            placeholder
+          }
+        }
+      }
+    }
+
+
     themeGeneralSettings{
       ...themeGeneralSettingsFragment
     }
