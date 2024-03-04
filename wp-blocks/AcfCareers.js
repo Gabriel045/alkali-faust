@@ -20,8 +20,6 @@ export default function AcfCareers({data, jobs}) {
             setloadJobs(true)
     },[jobs])
 
-    //console.log(jobs);
-
     return (
         <section className="relative">
             <div className="block_content w-full relative ">

@@ -163,7 +163,7 @@ AcfGravityForm.fragments = {
 
 //Query to get all fields (set the id form)
 const GET_FIELDS = gql`
-  query GravityForms($formID : ID!) {
+  query GravityForms($formID : 2) {
   gfForm(id: $formID, idType: DATABASE_ID) {
     submitButton {
        text
