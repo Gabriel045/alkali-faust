@@ -30,6 +30,7 @@ import {flatListToHierarchical} from '@faustwp/core';
 
 export default function Component({data}) {
   // console.log(props);
+  console.log('testing s deploy')
   
 
   const {editorBlocks} = data.page;
