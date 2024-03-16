@@ -11,4 +11,5 @@ export default setConfig({
   experimentalToolbar: true,
   possibleTypes,
   useGETForQueries: false,
+  disableLogging: false,
 });

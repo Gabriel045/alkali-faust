@@ -70,6 +70,7 @@ export default function Component(props) {
   );
 }
 
+
 Component.query = gql`
   ${BlogInfoFragment}
   ${themeGeneralSettingsFragment}

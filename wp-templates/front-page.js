@@ -28,12 +28,9 @@ const SEO = loadable(() => import('../components/SEO/SEO'))
 //import {WordPressBlocksViewer} from '@faustwp/blocks';
 import {flatListToHierarchical} from '@faustwp/core';
 
-export default function Component(props) {
-  console.log(props);
-  const {data} = useQuery(Component.query,{
-    variables: Component.variables()
-
-  });
+export default function Component({data}) {
+  // console.log(props);
+  
 
   const {editorBlocks} = data.page;
   const blocks = flatListToHierarchical(editorBlocks);
@@ -92,6 +89,20 @@ export default function Component(props) {
       
     </>
   );
+}
+
+export async function getStaticProps(){
+
+    const {data} = useQuery(Component.query,{
+      variables: Component.variables()
+
+    });
+
+    return {
+      props:{
+          data
+      }
+    }
 }
 
 Component.variables = () => {
