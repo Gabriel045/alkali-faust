@@ -34,7 +34,7 @@ export default function NavigationMenu({ menuItems, className }) {
 
           return (
             <li key={id} onMouseOver={() => setRotate(true)} onMouseLeave={() => setRotate(false)}  className={`${children.length ? "menu-item-has-children" : ""} text-white text-[18px]` + cxFromWp(cssClasses)}>
-              <Link href={path ?? ''}>{label ?? ''}</Link>
+              <Link href={path ?? ''} legacyBehavior>{label ?? ''}</Link>
               {children.length ? renderMenu(children) : null}
             </li>
           );

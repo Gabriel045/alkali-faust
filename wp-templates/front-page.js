@@ -1,7 +1,7 @@
 
 import React,{lazy,useEffect,useState} from "react";
 import loadable from '@loadable/component'
-import {useQuery,gql} from '@apollo/client';
+import {query,gql} from '@apollo/client';
 import * as MENUS from '../constants/menus';
 import {BlogInfoFragment,themeGeneralSettingsFragment} from '../fragments/GeneralSettings';
 import {NavigationMenu} from '../components';
@@ -30,7 +30,7 @@ import {flatListToHierarchical} from '@faustwp/core';
 
 export default function Component({data}) {
   // console.log(props);
-  console.log('testing s deploy')
+  console.log('testing s deploy 18/3')
   
 
   const {editorBlocks} = data.page;
@@ -92,9 +92,8 @@ export default function Component({data}) {
   );
 }
 
-export async function getStaticProps(){
-
-    const {data} = useQuery(Component.query,{
+export async function getServerSideProps(){
+    const {data} = query(Component.query,{
       variables: Component.variables()
 
     });
