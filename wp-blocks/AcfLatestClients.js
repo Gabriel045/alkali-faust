@@ -1,5 +1,5 @@
 import React from 'react'
-import { gql, useQuery } from '@apollo/client'
+import { gql, query } from '@apollo/client'
 import { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,12 +9,8 @@ const LatestClientsResponsive = loadable(() =>
 	import('../components/LatestClientsResponsive/LatestClientsResponsive')
 )
 
-export default function AcflatestClients({ clientID }) {
-	const { data } = useQuery(GET_CLIENTS, {
-		variables: {
-			clientID: clientID,
-		},
-	})
+export default function AcflatestClients({ data }) {
+
 
 	const [loadResponsive, setloadResponsive] = useState(false)
 
@@ -104,6 +100,21 @@ export default function AcflatestClients({ clientID }) {
 		</section>
     );
 }
+
+export async function getStaticProps(){
+	const { data } = query(GET_CLIENTS, {
+		variables: {
+			clientID: clientID,
+		},
+	})
+  
+	return {
+	  props:{
+		  data
+	  }
+	}
+  }
+  
 
 const GET_CLIENTS = gql`
 	query GetClients($clientID: [ID]) {

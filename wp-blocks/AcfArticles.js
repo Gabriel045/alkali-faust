@@ -5,9 +5,9 @@ import loadable from '@loadable/component'
 
 const ArticleSlider = loadable(() => import('../components/ArticleSlider/ArticleSlider'))
 
-export default function AcfArticles(props) {
-  const title = props.data.articlesBlock?.title 
-  const {data} = useQuery(GET_POST);
+export default function AcfArticles({data}) {
+  const title = data.articlesBlock?.title 
+  
   
     return (
       <section className="articles-section relative">
@@ -16,6 +16,17 @@ export default function AcfArticles(props) {
       </section>
   );
 }
+
+export async function getStaticProps(){
+  const {data} = useQuery(GET_POST);
+
+  return {
+    props:{
+        data
+    }
+  }
+}
+
 
 AcfArticles.fragments = {
   key: `AcfArticlesBlockFragment`,

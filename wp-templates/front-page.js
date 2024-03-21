@@ -92,7 +92,7 @@ export default function Component({data}) {
   );
 }
 
-export async function getServerSideProps(){
+export async function getStaticProps(){
     const {data} = query(Component.query,{
       variables: Component.variables()
 
